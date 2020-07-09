@@ -1,0 +1,55 @@
+\documentclass{report}   %Documento tipo reporte
+\usepackage[spanish]{babel}    %Paquete de Idioma
+
+
+\begin{document}
+
+
+\begin{titlepage}    %Portada
+	\centering
+	{\scshape\LARGE Universidad de Antioquia \par}
+	\vspace{4cm}
+	{\scshape\Large Informática II  \par}
+	\vspace{4cm}
+	{\huge\bfseries Propuesta proyecto final\par}
+	\vspace{2cm}
+	{\Large\itshape Valentina Botero Vivas \par}
+    \vspace{4cm}
+	{\large 28 de Junio del 2020 \par}
+		
+\end{titlepage}
+
+Teniendo en cuenta los diferentes aprendizajes a lo largo del semestre y los requisitos mínimos para el proyecto final, el cual es un videojuego se propone lo siguiente: 
+
+\section{Justificación}
+
+Analizando el desarrollo de las últimas prácticas de laboratorio, la interfaz gráfica ha sido una herramienta que se ha disfrutado mucho. De los conocimientos adquiridos durante el curso aprender a mover y generar interacciones entre objetos ha sido de los aprendizajes más interesante que he tenido a lo largo de la carrera, ya que esto puede ser llevado a niveles muchos más altos y realizar cosas inimaginables.\\
+Ahora según los requisitos mínimos que debe tener el proyecto, utilizar y afianzar los conocimientos adquiridos hasta ahora y además los gustos propios por la física, se buscará integrar en el juego varios tipos de interacciones.  
+ 
+
+\section{Motivación}
+
+La motivación principal es lograr un videojuego que esté fuera de lo común, teniendo como objetivo la correcta interacción de los personajes con los objetos en la escena, además conseguir que los movimientos de los personajes se vean fluidos y que la parte gráfica del videojuego también sea diferente.
+
+\section{Desafíos a afrontar}
+
+\begin{itemize}
+\item La recuperación de partidas.
+\item	Dado que se quiere implementar poleas, péndulos e imanes en el desarrollo de los niveles del video juego, uno de los desafíos más grandes será implementar estos movimientos de forma fluida.
+\item	Lograr que el personaje se agache, pase por diferentes superficies y se note el cambio o la dificultad del movimiento.
+\item	En la parte de multijugador mover varios personajes en una misma escena.
+\item	Desarrollar la parte gráfica del proyecto, ya que se busca que sea un juego bien hecho y además que tenga buena presentación.
+\end{itemize}
+
+\section{Descripción}
+El videojuego propuesto se basa en un personaje el cual debe atravesar un laberinto con diferentes tipos de obstáculos como péndulos con armas, superficies viscosas e imanes que lo atraen según su cercanía.
+El objetivo del juego es que el personaje recorra el laberinto acumulando sacos con peso, con el fin de llegar al final, donde se encontrará con una polea la cual tiene un frasco lleno de líquido. Si el personaje al poner el peso acumulado logra el contrapeso suficiente para evitar que el contenido del frasco llegue al suelo, gana, de lo contrario deberá volver a empezar.\\
+Contará con 3 niveles de dificultad, los cuales se trabajarán aumentando la cantidad de obstáculos, subiendo la cantidad de sacos a recoger y además el juego tendrá un límite de tiempo para pasar el nivel, mientras más avanzado sea, menor tiempo se tendrá para pasarlo.
+Para el control de acceso todo se trabajará por medio de archivos de texto. \\
+Para la recuperación de partidas se harán puntos seguros, es decir, zonas del nivel las cuales aseguran su avance, cuando se recupere la partida empezará desde el punto seguro anterior más cercano. Para guardar todos estos datos también se utilizarán archivos de texto.
+Respecto a los sistemas físicos, se piensa modelar la interacción con imanes y péndulos para poner obstáculos en los laberintos, también se introducirán diferentes superficies las cuales logren que el desplazamiento del personaje sea más difícil y como objetivo final se trabajará con una polea.\\
+Para la parte de multijugador se ingresarán 2 personajes en la misma escena con un tiempo definido para completar el nivel según su dificultad, el primer jugador que logre cumplir con el objetivo del juego será el ganador.
+
+
+
+\end{document}

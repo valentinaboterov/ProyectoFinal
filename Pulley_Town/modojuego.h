@@ -2,12 +2,13 @@
 #define MODOJUEGO_H
 
 #include <QWidget>
-#include "registro.h"
+#include"niveles.h"
 
+QT_BEGIN_NAMESPACE
 namespace Ui {
 class Modojuego;
 }
-
+QT_END_NAMESPACE
 class Modojuego : public QWidget
 {
     Q_OBJECT
@@ -17,8 +18,6 @@ public:
     ~Modojuego();
 
 private slots:
-
-
     void on_Jugador_clicked();
 
     void on_Multijugador_clicked();
@@ -33,7 +32,8 @@ private slots:
 
 private:
     Ui::Modojuego *ui;
-    Registro registro;
+    int modo;
+    Niveles *nivel;
 };
 
 #endif // MODOJUEGO_H

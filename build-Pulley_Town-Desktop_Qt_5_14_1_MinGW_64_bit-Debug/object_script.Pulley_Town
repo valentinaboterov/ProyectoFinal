@@ -1,0 +1,12 @@
+creditos.o
+main.o
+modojuego.o
+niveles.o
+registro.o
+widget.o
+qrc_Imagenes.o
+moc_creditos.o
+moc_modojuego.o
+moc_niveles.o
+moc_registro.o
+moc_widget.o

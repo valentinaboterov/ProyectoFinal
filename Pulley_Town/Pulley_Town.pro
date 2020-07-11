@@ -19,16 +19,22 @@ SOURCES += \
     creditos.cpp \
     main.cpp \
     modojuego.cpp \
+    niveles.cpp \
+    registro.cpp \
     widget.cpp
 
 HEADERS += \
     creditos.h \
     modojuego.h \
+    niveles.h \
+    registro.h \
     widget.h
 
 FORMS += \
     creditos.ui \
     modojuego.ui \
+    niveles.ui \
+    registro.ui \
     widget.ui
 
 # Default rules for deployment.

@@ -50,43 +50,93 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="Registro">
+  <widget class="QPushButton" name="Multi">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>480</y>
-     <width>161</width>
-     <height>51</height>
+     <x>560</x>
+     <y>360</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Registro</string>
+    <string>Multijugador</string>
    </property>
   </widget>
   <widget class="QPushButton" name="Creditos">
    <property name="geometry">
     <rect>
-     <x>740</x>
-     <y>480</y>
-     <width>161</width>
-     <height>51</height>
+     <x>420</x>
+     <y>510</y>
+     <width>151</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>Creditos</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Cargarpartida">
+  <widget class="QPushButton" name="Jugador">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>480</y>
-     <width>181</width>
-     <height>51</height>
+     <x>280</x>
+     <y>350</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Cargar Partida</string>
+    <string>Un solo jugador</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>330</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>8514oem</family>
+    </font>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>MODO DE JUEGO:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Registro">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>270</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Registro</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Inicarsesion">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>270</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Iniciar sesión</string>
    </property>
   </widget>
  </widget>

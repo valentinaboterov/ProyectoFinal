@@ -69,7 +69,7 @@
     <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>BIENVENID@ </string>
+    <string>BIENVENID@(S) </string>
    </property>
   </widget>
   <widget class="QPushButton" name="Cargar">

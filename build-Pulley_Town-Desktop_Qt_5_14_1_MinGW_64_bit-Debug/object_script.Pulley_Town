@@ -2,6 +2,7 @@ creditos.o
 main.o
 modojuego.o
 niveles.o
+pendulo.o
 registro.o
 widget.o
 qrc_Imagenes.o

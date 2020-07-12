@@ -162,7 +162,7 @@ public:
 #if QT_CONFIG(whatsthis)
         Modojuego_2->setWhatsThis(QCoreApplication::translate("Modojuego", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)
-        Modojuego_2->setText(QCoreApplication::translate("Modojuego", "BIENVENID@ ", nullptr));
+        Modojuego_2->setText(QCoreApplication::translate("Modojuego", "BIENVENID@(S) ", nullptr));
 #if QT_CONFIG(whatsthis)
         Cargar->setWhatsThis(QCoreApplication::translate("Modojuego", "<html><head/><body><p align=\"center\">CARGAR PARTIDA</p><p align=\"center\">ANTERIOR</p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)

@@ -12,6 +12,7 @@ using namespace std;
 #include<QObject>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include"pendulo.h"
 #include <QKeyEvent>
 
 
@@ -32,6 +33,7 @@ public:
 
 private:
     Ui::Niveles *ui;
+    Pendulo *pendulo;
     float x,y,ancho,alto;
     int modojuego,dificultad;
 };

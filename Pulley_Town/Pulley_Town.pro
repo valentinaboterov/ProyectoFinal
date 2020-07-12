@@ -20,6 +20,7 @@ SOURCES += \
     main.cpp \
     modojuego.cpp \
     niveles.cpp \
+    pendulo.cpp \
     registro.cpp \
     widget.cpp
 
@@ -27,6 +28,7 @@ HEADERS += \
     creditos.h \
     modojuego.h \
     niveles.h \
+    pendulo.h \
     registro.h \
     widget.h
 

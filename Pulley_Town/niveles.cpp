@@ -23,6 +23,9 @@ Niveles::Niveles(QWidget *parent) :
         escena->setBackgroundBrush(QPixmap(":/Imagenes/nivel2.jpeg"));
         //En la interfaz se agrega graphicsView y se pone la escena creada
         ui->graphicsView->setScene(escena);
+        pendulo=new Pendulo(100,100);
+        escena->addItem(pendulo);
+        pendulo->setPos(100,100);
     }
     if(dificultad==0 && modojuego==1){ //Novato,multijugador
 

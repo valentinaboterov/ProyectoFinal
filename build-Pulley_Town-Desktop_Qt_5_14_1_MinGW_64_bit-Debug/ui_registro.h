@@ -34,11 +34,11 @@ public:
     {
         if (Registro->objectName().isEmpty())
             Registro->setObjectName(QString::fromUtf8("Registro"));
-        Registro->resize(400, 148);
+        Registro->resize(400, 151);
         Registro->setMaximumSize(QSize(400, 300));
         Nombre = new QLabel(Registro);
         Nombre->setObjectName(QString::fromUtf8("Nombre"));
-        Nombre->setGeometry(QRect(10, 20, 181, 20));
+        Nombre->setGeometry(QRect(10, 40, 181, 20));
         QFont font;
         font.setFamily(QString::fromUtf8("8514oem"));
         font.setPointSize(5);
@@ -46,32 +46,34 @@ public:
         Nombre->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         lineEdit = new QLineEdit(Registro);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(200, 20, 171, 21));
+        lineEdit->setGeometry(QRect(200, 40, 171, 21));
         lineEdit_2 = new QLineEdit(Registro);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(200, 50, 171, 21));
+        lineEdit_2->setGeometry(QRect(200, 80, 171, 21));
         Clave = new QLabel(Registro);
         Clave->setObjectName(QString::fromUtf8("Clave"));
-        Clave->setGeometry(QRect(70, 50, 111, 20));
+        Clave->setGeometry(QRect(70, 70, 111, 20));
         QFont font1;
         font1.setFamily(QString::fromUtf8("8514oem"));
         Clave->setFont(font1);
         Clave->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_3 = new QLabel(Registro);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(0, 0, 400, 300));
+        label_3->setGeometry(QRect(0, 0, 400, 151));
         label_3->setMaximumSize(QSize(400, 300));
         label_3->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/Fondoregistro.jpg")));
         label_3->setScaledContents(true);
         Entrar = new QPushButton(Registro);
         Entrar->setObjectName(QString::fromUtf8("Entrar"));
-        Entrar->setGeometry(QRect(150, 80, 80, 22));
+        Entrar->setGeometry(QRect(150, 110, 80, 22));
         label = new QLabel(Registro);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(160, 120, 47, 14));
         Mensaje = new QLabel(Registro);
         Mensaje->setObjectName(QString::fromUtf8("Mensaje"));
-        Mensaje->setGeometry(QRect(170, 120, 47, 14));
+        Mensaje->setGeometry(QRect(140, 10, 121, 16));
+        Mensaje->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"font: 8pt \"8514oem\";"));
         label_3->raise();
         Nombre->raise();
         lineEdit->raise();

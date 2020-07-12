@@ -50,16 +50,16 @@
   <widget class="QLabel" name="Modojuego_2">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>160</y>
-     <width>131</width>
-     <height>20</height>
+     <x>450</x>
+     <y>240</y>
+     <width>241</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>8514oem</family>
-     <pointsize>10</pointsize>
+     <pointsize>15</pointsize>
     </font>
    </property>
    <property name="whatsThis">
@@ -75,10 +75,10 @@
   <widget class="QPushButton" name="Cargar">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>240</y>
-     <width>281</width>
-     <height>51</height>
+     <x>240</x>
+     <y>510</y>
+     <width>121</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -86,21 +86,21 @@
      <family>8514oem</family>
      <weight>75</weight>
      <bold>true</bold>
-     <underline>true</underline>
+     <underline>false</underline>
     </font>
    </property>
    <property name="whatsThis">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;CARGAR PARTIDA&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;ANTERIOR&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="text">
-    <string>CARGAR PARTIDA ANTERIOR</string>
+    <string>CARGAR</string>
    </property>
   </widget>
   <widget class="QLabel" name="Dficultad">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>340</y>
+     <x>660</x>
+     <y>500</y>
      <width>141</width>
      <height>21</height>
     </rect>
@@ -112,75 +112,30 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(0, 0, 0);</string>
+    <string notr="true">
+
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>DIFICULTAD:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Novato">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>370</y>
-     <width>141</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Novato</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="Aprendiz">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>410</y>
-     <width>141</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Aprendiz</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="Experto">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>450</y>
-     <width>141</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Experto</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="Mensaje">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>160</y>
-     <width>231</width>
+     <x>330</x>
+     <y>310</y>
+     <width>401</width>
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Mensaje</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>310</y>
-     <width>47</width>
-     <height>14</height>
-    </rect>
    </property>
    <property name="text">
     <string/>
@@ -189,8 +144,8 @@
   <widget class="QPushButton" name="Empezar">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>500</y>
+     <x>880</x>
+     <y>510</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -207,51 +162,10 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>320</y>
-     <width>131</width>
+     <x>390</x>
+     <y>510</y>
+     <width>251</width>
      <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>8514oem</family>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>JUEGO NUEVO:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>300</y>
-     <width>31</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>8514oem</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>o</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>210</y>
-     <width>91</width>
-     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -262,23 +176,157 @@
      <underline>true</underline>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+color: rgb(255, 255, 255);</string>
+   </property>
    <property name="text">
-    <string>Deseas:</string>
+    <string>NUEVA PARTIDA:</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="novato">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>520</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>8514oem</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Novato</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="Aprendiz">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>520</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>8514oem</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Aprendiz</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="Experto">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>520</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>8514oem</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Experto</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>510</y>
+     <width>231</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>8514oem</family>
+     <weight>75</weight>
+     <bold>true</bold>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>PARTIDA ANTERIOR:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Mensaje1">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>370</y>
+     <width>411</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>8514oem</family>
+     <pointsize>8</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 8pt &quot;8514oem&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Mensaje2">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>410</y>
+     <width>411</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 8pt &quot;8514oem&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <zorder>label</zorder>
   <zorder>Modojuego_2</zorder>
   <zorder>Dficultad</zorder>
-  <zorder>Novato</zorder>
-  <zorder>Aprendiz</zorder>
-  <zorder>Experto</zorder>
   <zorder>Mensaje</zorder>
-  <zorder>label_2</zorder>
   <zorder>Empezar</zorder>
   <zorder>label_3</zorder>
   <zorder>Cargar</zorder>
+  <zorder>novato</zorder>
+  <zorder>Aprendiz</zorder>
+  <zorder>Experto</zorder>
   <zorder>label_4</zorder>
-  <zorder>label_5</zorder>
+  <zorder>Mensaje1</zorder>
+  <zorder>Mensaje2</zorder>
  </widget>
  <resources>
   <include location="Imagenes.qrc"/>

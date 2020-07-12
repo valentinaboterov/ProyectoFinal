@@ -5,11 +5,9 @@
 #include<string>
 #include"modojuego.h"
 
-
-namespace Ui {
-class Registro;
-}
 using namespace std;
+
+namespace Ui {class Registro;}
 class Registro : public QWidget
 {
     Q_OBJECT
@@ -17,17 +15,17 @@ class Registro : public QWidget
 public:
     explicit Registro(QWidget *parent = nullptr);
     ~Registro();
-    void tipo(int modo,int usu);
-    void validacion();
+    void validacion(int _modojuego,int _tipojugador);
 
 private slots:
     void on_Entrar_clicked();
 
 private:
     Ui::Registro *ui;
-    int modojuego,usuario;
+    int modojuego,tipojugador;
+    int cont=0;
     Modojuego modo;
-    string nombre,clave;
+    string nombre1,clave1,nombre2,clave2;
 };
 
 #endif // REGISTRO_H

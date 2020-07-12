@@ -492,7 +492,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Imagenes.cpp
 qrc_Imagenes.cpp: ../Pulley_Town/Imagenes.qrc \
 		C:/Qt/5.14.1/mingw73_64/bin/rcc.exe \
+		../Pulley_Town/Imagenes/nivel2.jpeg \
 		../Pulley_Town/Imagenes/Creditos.jpeg \
+		../Pulley_Town/Imagenes/Polea.png \
 		../Pulley_Town/Imagenes/Inicio.png \
 		../Pulley_Town/Imagenes/Modojuego.jpeg \
 		../Pulley_Town/Imagenes/Fondoregistro.jpg
@@ -722,6 +724,25 @@ moc_modojuego.cpp: ../Pulley_Town/modojuego.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
 		../Pulley_Town/niveles.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\modojuego.h -o moc_modojuego.cpp
@@ -831,6 +852,25 @@ moc_niveles.cpp: ../Pulley_Town/niveles.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\niveles.h -o moc_niveles.cpp
@@ -940,6 +980,27 @@ moc_registro.cpp: ../Pulley_Town/registro.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
+		../Pulley_Town/modojuego.h \
+		../Pulley_Town/niveles.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\registro.h -o moc_registro.cpp
@@ -1050,6 +1111,27 @@ moc_widget.cpp: ../Pulley_Town/widget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
 		../Pulley_Town/registro.h \
+		../Pulley_Town/modojuego.h \
+		../Pulley_Town/niveles.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		../Pulley_Town/creditos.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
@@ -1319,12 +1401,32 @@ main.o: ../Pulley_Town/main.cpp ../Pulley_Town/widget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
 		../Pulley_Town/registro.h \
+		../Pulley_Town/modojuego.h \
+		../Pulley_Town/niveles.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		../Pulley_Town/creditos.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ..\Pulley_Town\main.cpp
@@ -1435,22 +1537,41 @@ modojuego.o: ../Pulley_Town/modojuego.cpp ../Pulley_Town/modojuego.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
 		../Pulley_Town/niveles.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		ui_modojuego.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLabel \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QRadioButton \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qradiobutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o modojuego.o ..\Pulley_Town\modojuego.cpp
 
 niveles.o: ../Pulley_Town/niveles.cpp ../Pulley_Town/niveles.h \
@@ -1558,13 +1679,31 @@ niveles.o: ../Pulley_Town/niveles.cpp ../Pulley_Town/niveles.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		ui_niveles.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o niveles.o ..\Pulley_Town\niveles.cpp
@@ -1674,24 +1813,45 @@ registro.o: ../Pulley_Town/registro.cpp ../Pulley_Town/registro.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
+		../Pulley_Town/modojuego.h \
+		../Pulley_Town/niveles.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		ui_registro.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLabel \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLineEdit \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextcursor.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextformat.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registro.o ..\Pulley_Town\registro.cpp
 
 widget.o: ../Pulley_Town/widget.cpp ../Pulley_Town/widget.h \
@@ -1800,6 +1960,27 @@ widget.o: ../Pulley_Town/widget.cpp ../Pulley_Town/widget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
 		../Pulley_Town/registro.h \
+		../Pulley_Town/modojuego.h \
+		../Pulley_Town/niveles.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsItem \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QRectF \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QDesktopWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QDebug \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QObject \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsScene \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/QKeyEvent \
 		../Pulley_Town/creditos.h \
 		ui_widget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
@@ -1807,12 +1988,10 @@ widget.o: ../Pulley_Town/widget.cpp ../Pulley_Town/widget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qeventloop.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLabel \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractbutton.h \

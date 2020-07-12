@@ -21,10 +21,7 @@ class Ui_Widget
 {
 public:
     QLabel *label;
-    QPushButton *Multi;
     QPushButton *Creditos;
-    QPushButton *Jugador;
-    QLabel *label_2;
     QPushButton *Registro;
     QPushButton *Inicarsesion;
 
@@ -42,28 +39,15 @@ public:
         label->setAutoFillBackground(false);
         label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/Inicio.png")));
         label->setScaledContents(true);
-        Multi = new QPushButton(Widget);
-        Multi->setObjectName(QString::fromUtf8("Multi"));
-        Multi->setGeometry(QRect(560, 360, 131, 31));
         Creditos = new QPushButton(Widget);
         Creditos->setObjectName(QString::fromUtf8("Creditos"));
-        Creditos->setGeometry(QRect(420, 510, 151, 31));
-        Jugador = new QPushButton(Widget);
-        Jugador->setObjectName(QString::fromUtf8("Jugador"));
-        Jugador->setGeometry(QRect(280, 350, 131, 31));
-        label_2 = new QLabel(Widget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(420, 330, 171, 20));
-        QFont font;
-        font.setFamily(QString::fromUtf8("8514oem"));
-        label_2->setFont(font);
-        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        Creditos->setGeometry(QRect(690, 510, 151, 31));
         Registro = new QPushButton(Widget);
         Registro->setObjectName(QString::fromUtf8("Registro"));
-        Registro->setGeometry(QRect(370, 270, 101, 31));
+        Registro->setGeometry(QRect(110, 500, 141, 41));
         Inicarsesion = new QPushButton(Widget);
         Inicarsesion->setObjectName(QString::fromUtf8("Inicarsesion"));
-        Inicarsesion->setGeometry(QRect(510, 270, 111, 31));
+        Inicarsesion->setGeometry(QRect(300, 500, 131, 41));
 
         retranslateUi(Widget);
 
@@ -74,13 +58,7 @@ public:
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
         label->setText(QString());
-        Multi->setText(QCoreApplication::translate("Widget", "Multijugador", nullptr));
         Creditos->setText(QCoreApplication::translate("Widget", "Creditos", nullptr));
-        Jugador->setText(QCoreApplication::translate("Widget", "Un solo jugador", nullptr));
-#if QT_CONFIG(whatsthis)
-        label_2->setWhatsThis(QCoreApplication::translate("Widget", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
-#endif // QT_CONFIG(whatsthis)
-        label_2->setText(QCoreApplication::translate("Widget", "MODO DE JUEGO:", nullptr));
         Registro->setText(QCoreApplication::translate("Widget", "Registro", nullptr));
         Inicarsesion->setText(QCoreApplication::translate("Widget", "Iniciar sesi\303\263n", nullptr));
     } // retranslateUi

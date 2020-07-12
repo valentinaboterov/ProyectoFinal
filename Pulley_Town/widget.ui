@@ -50,23 +50,10 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="Multi">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>360</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Multijugador</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="Creditos">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>690</x>
      <y>510</y>
      <width>151</width>
      <height>31</height>
@@ -76,50 +63,13 @@
     <string>Creditos</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Jugador">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>350</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Un solo jugador</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>330</y>
-     <width>171</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>8514oem</family>
-    </font>
-   </property>
-   <property name="whatsThis">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>MODO DE JUEGO:</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="Registro">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>270</y>
-     <width>101</width>
-     <height>31</height>
+     <x>110</x>
+     <y>500</y>
+     <width>141</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -129,10 +79,10 @@
   <widget class="QPushButton" name="Inicarsesion">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>270</y>
-     <width>111</width>
-     <height>31</height>
+     <x>300</x>
+     <y>500</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">

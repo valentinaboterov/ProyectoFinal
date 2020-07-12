@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +19,18 @@ QT_BEGIN_NAMESPACE
 class Ui_Niveles
 {
 public:
+    QGraphicsView *graphicsView;
 
     void setupUi(QWidget *Niveles)
     {
         if (Niveles->objectName().isEmpty())
             Niveles->setObjectName(QString::fromUtf8("Niveles"));
-        Niveles->resize(400, 300);
+        Niveles->resize(828, 441);
+        Niveles->setMaximumSize(QSize(828, 441));
+        graphicsView = new QGraphicsView(Niveles);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        graphicsView->setGeometry(QRect(0, 0, 828, 441));
+        graphicsView->setMaximumSize(QSize(828, 441));
 
         retranslateUi(Niveles);
 

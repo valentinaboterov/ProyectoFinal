@@ -1,6 +1,6 @@
 #ifndef MODOJUEGO_H
 #define MODOJUEGO_H
-
+using namespace std;
 #include <QWidget>
 #include"niveles.h"
 
@@ -16,24 +16,20 @@ class Modojuego : public QWidget
 public:
     explicit Modojuego(QWidget *parent = nullptr);
     ~Modojuego();
+    void Nombre(string _usuario1,string _usuario2,int _tipousuario);
 
 private slots:
-    void on_Jugador_clicked();
-
-    void on_Multijugador_clicked();
-
-    void on_Novato_clicked();
-
-    void on_Aprendiz_clicked();
-
-    void on_Experto_clicked();
 
     void on_Empezar_clicked();
 
+    void on_Cargar_clicked();
+
 private:
     Ui::Modojuego *ui;
-    int modo;
+    int modo,tipousuario;
+    string usuario1,usuario2;
     Niveles *nivel;
+    void MensajesInterfaz();
 };
 
 #endif // MODOJUEGO_H

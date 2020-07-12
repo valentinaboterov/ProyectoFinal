@@ -7,6 +7,7 @@ Registro::Registro(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Registro");
+
 }
 
 Registro::~Registro()
@@ -14,29 +15,38 @@ Registro::~Registro()
     delete ui;
 }
 
-void Registro::tipo(int modo,int usu)
-{
-    modojuego=modo;
-    usuario=usu;
-}
 
-void Registro::validacion()
+void Registro::validacion(int _modojuego,int _tipojugador)
 {
+        tipojugador=_tipojugador;
+        modojuego=_modojuego;
         for(int i=0;i<=modojuego;i++){
             this->show();
-            if(usuario==0){ //Usuario nuevo
+            if(tipojugador==0){ //Usuario nuevo
                 //Solo se agrega al final del documento.
+                modo.Nombre(nombre1,"",tipojugador);    //CUANDO SE VALIDE EL USUARIO
                 //this->close();
                 modo.show();
             }else{  //Usuario antiguo
                 //Se valida la cuenta
+                modo.Nombre(nombre1,nombre2,tipojugador);
                 //this->close();
+                modo.show();
             }
         }
 }
 
 void Registro::on_Entrar_clicked()
 {
-    nombre=ui->Nombre->text().toStdString();
-    clave=ui->Clave->text().toStdString();
+    if(cont==0){
+        nombre1=ui->Nombre->text().toStdString();
+        clave1=ui->Clave->text().toStdString();
+        this->close();
+        cont+=1;
+    }else{
+        nombre2=ui->Nombre->text().toStdString();
+        clave2=ui->Clave->text().toStdString();
+        this->close();
+        cont=0;
+    }
 }

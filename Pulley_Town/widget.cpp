@@ -15,31 +15,32 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::on_Jugador_clicked()
-{
-    registro.tipo(0,tipo);
-    registro.validacion();
-    this->close();
-}
-
-void Widget::on_Multi_clicked()
-{
-    registro.tipo(1,tipo);
-    registro.validacion();
-    this->close();
-}
-
-void Widget::on_Creditos_clicked()
-{
-    creditos.show();
-}
 
 void Widget::on_Registro_clicked()
 {
-    tipo=0;
+    registro.validacion(0,0);
+    this->close();
 }
 
 void Widget::on_Inicarsesion_clicked()
 {
-    tipo=1;
+     QMessageBox msgBox;
+     msgBox.setText(" ¿ Quieres jugar acompañado ? ");
+     msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+     msgBox.setDefaultButton(QMessageBox::No);
+     msgBox.setWindowTitle("MODO DE JUEGO");
+     int elegido = msgBox.exec();
+     switch (elegido) {
+        case QMessageBox::Yes:
+            registro.validacion(1,1);   //Multijugador
+            break;
+        case QMessageBox::No:
+            registro.validacion(0,1);       //Un jugador
+            break;
+      }
+    this->close();
+}
+void Widget::on_Creditos_clicked()
+{
+    creditos.show();
 }

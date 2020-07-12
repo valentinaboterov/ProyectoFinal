@@ -2,8 +2,10 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include<QMessageBox>
 #include"registro.h"
 #include"creditos.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -16,23 +18,20 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    int tipo=0; //Registro nuevo por defecto
 
 private slots:
-    void on_Jugador_clicked();
-
-    void on_Multi_clicked();
-
-    void on_Creditos_clicked();
-
-    void on_Registro_clicked();
+   void on_Registro_clicked();
 
     void on_Inicarsesion_clicked();
+
+    void on_Creditos_clicked();
 
 private:
     Ui::Widget *ui;
     Registro registro;
     Creditos creditos;
-    int tipo=0; //Registro nuevo por defecto
+
 
 };
 #endif // WIDGET_H

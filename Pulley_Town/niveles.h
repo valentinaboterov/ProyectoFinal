@@ -3,7 +3,6 @@
 
 using namespace std;
 #include <QWidget>
-#include <QWidget>
 #include <QPainter>
 #include <QGraphicsItem>
 #include <QRectF>
@@ -12,9 +11,11 @@ using namespace std;
 #include<QObject>
 #include <QGraphicsView>
 #include <QGraphicsScene>
-#include"pendulo.h"
+#include<QTimer>
 #include <QKeyEvent>
-
+#include"pendulo.h"
+#include"personaje.h"
+#include"pesos.h"
 
 
 namespace Ui {
@@ -33,9 +34,15 @@ public:
 
 private:
     Ui::Niveles *ui;
+    QTimer *timer;
     Pendulo *pendulo;
+    Personaje *personaje;
+    Pesos *pesos;
     float x,y,ancho,alto;
     int modojuego,dificultad;
+    void keyPressEvent(QKeyEvent * evento);
+private slots:
+    void actualizar();
 };
 
 #endif // NIVELES_H

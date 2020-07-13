@@ -5,23 +5,15 @@
 #include <QGraphicsItem>
 #include <QGraphicsScene>
 #include<math.h>
-#include <stdlib.h>
-#include <time.h>
+#include<QTimer>
 
 class Pendulo:public QGraphicsItem
 {
 private:
-    float theta;
-    float w;
-    float ao;
-    float X;
-    float Y;
-    float L;
-    float R;
-    float escala;//se crea una escala
-    int x0,y0;
+    int posA[2],posB[2],R;
+    float longitud,theta,a,w,rad=M_PI/180,t,theta0;
 public:
-    Pendulo(int _x,int _y);
+    Pendulo(int _x,int _y,float _longitud,float _theta);
     float getx();
     float gety();
     float getR();
@@ -29,6 +21,8 @@ public:
     void actualizar();
     QRectF boundingRect() const;    //necesario definirla, devuelve el rectangulo que encierra el objeto
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); //define como se pintara el objeto
+
+
 };
 
 #endif // PENDULO_H

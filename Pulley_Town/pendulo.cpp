@@ -1,43 +1,44 @@
 #include "pendulo.h"
 
-Pendulo::Pendulo(int _x,int _y) : escala(1)
+Pendulo::Pendulo(int _x, int _y, float _longitud, float _theta)
 {
-    x0=_x;y0=_y;
-    setPos(_x, _y);
-    srand(time(NULL));//todo aleatorio
-    theta =(45+(rand()%45))*(3.14/360);//se pone el angulo
-    w= 10+rand()%191;//la velocidad angular
-    L = 100;//longitud
-    R = 5+(rand()%16);//radio
-    X = L*sin(theta);//posicion en x
-    Y = -L*cos(theta);//posicion en y
-    ao = w/L;//aceleracion angular
+    posA[0]=_x;
+    posA[1]=_y;
+    longitud=_longitud;
+    theta=_theta;
+    theta0=_theta;
+    R=10;
+    w=sqrt(9.8/longitud);
+    t=0;
+    posB[0]=posA[0]+longitud*sin(theta*rad);
+    posB[1]=posA[1]+longitud*cos(theta*rad);
 }
 QRectF Pendulo::boundingRect() const
 {
-        return QRectF(-10*escala*R,-10*escala*R,20*escala*R,20*escala*R);
+        return QRectF(posB[0],posB[1],20*R,20*R);
 }
 
 void Pendulo::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     painter->setBrush(Qt::black);        //asigna el color
-    painter->drawLine(0,0,-1*x(),-1*y()); //dibuja la cuerda
-    painter->drawEllipse(-10,-10, 2*R,2*R);    //dibuja una elipse encerrada en la boundingRect
+    painter->drawLine(posA[0],posA[1],posB[0],posB[1]); //dibuja la cuerda
+    painter->drawEllipse(posB[0],posB[1], 2*R,2*R);    //dibuja una elipse encerrada en la boundingRect
 }
 void Pendulo::actualizar(){//actualiza posiciones y aceleracion y angulo
-    theta = theta +(ao*0.01);
-    X= L*sin(theta);
-    Y= -L*cos(theta);
-    ao -= (9.8)*sin(theta)*0.01;
-    w=w+(ao*0.1);
-    setPos(X,Y);// actualiza posiciones en la interfaz
+    t+=16;
+    theta=theta0*cos(w*(t/10000.0));
+    posB[0]=posA[0]+longitud*sin(theta*rad);
+    posB[1]=posA[1]+longitud*cos(theta*rad);
+    setPos(posB[0],posB[1]);
 }
+
+
 float Pendulo::getx(){//retorna pos x
-    return X;
+    return posA[0];
 }
 
 float Pendulo::gety(){//retorna pos y
-    return Y;
+    return posA[1];
 }
 
 float Pendulo::getR(){//retorna el radio
@@ -45,5 +46,5 @@ float Pendulo::getR(){//retorna el radio
 }
 
 float Pendulo::getL(){//retorna el largo
-    return L;
+    return longitud;
 }

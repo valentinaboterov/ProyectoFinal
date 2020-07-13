@@ -3,11 +3,14 @@ main.o
 modojuego.o
 niveles.o
 pendulo.o
+personaje.o
+pesos.o
 registro.o
 widget.o
 qrc_Imagenes.o
 moc_creditos.o
 moc_modojuego.o
 moc_niveles.o
+moc_personaje.o
 moc_registro.o
 moc_widget.o

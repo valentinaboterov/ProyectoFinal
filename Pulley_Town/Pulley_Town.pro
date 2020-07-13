@@ -21,6 +21,8 @@ SOURCES += \
     modojuego.cpp \
     niveles.cpp \
     pendulo.cpp \
+    personaje.cpp \
+    pesos.cpp \
     registro.cpp \
     widget.cpp
 
@@ -29,6 +31,8 @@ HEADERS += \
     modojuego.h \
     niveles.h \
     pendulo.h \
+    personaje.h \
+    pesos.h \
     registro.h \
     widget.h
 
@@ -46,3 +50,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Imagenes.qrc
+
+DISTFILES += \
+    Imagenes/c_izqu.jpeg

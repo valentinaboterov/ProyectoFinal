@@ -5,6 +5,7 @@
         <file>Imagenes/Modojuego.jpeg</file>
         <file>Imagenes/Fondoregistro.jpg</file>
         <file>Imagenes/nivel2.jpeg</file>
-        <file>Imagenes/Polea.png</file>
+        <file>Imagenes/c_izqu.png</file>
+        <file>Imagenes/bolsa.png</file>
     </qresource>
 </RCC>

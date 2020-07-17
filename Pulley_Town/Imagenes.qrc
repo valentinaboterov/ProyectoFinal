@@ -1,11 +1,12 @@
 <RCC>
     <qresource prefix="/">
-        <file>Imagenes/Inicio.png</file>
         <file>Imagenes/Creditos.jpeg</file>
         <file>Imagenes/Modojuego.jpeg</file>
         <file>Imagenes/Fondoregistro.jpg</file>
         <file>Imagenes/c_izqu.png</file>
         <file>Imagenes/bolsa.png</file>
         <file>Imagenes/j1_inicio.png</file>
+        <file>Imagenes/Fondonivel.jpeg</file>
+        <file>Imagenes/Fondo inicio.jpeg</file>
     </qresource>
 </RCC>

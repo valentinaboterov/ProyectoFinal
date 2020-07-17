@@ -34,8 +34,9 @@ Niveles::Niveles(QWidget *parent) :
         personaje->setPos(35,75);
         pesos=new Pesos(180,80);
         escena->addItem(pesos);
+        escena->setBackgroundBrush(QPixmap(":/Imagenes/Fondonivel.jpeg"));
         nivel();
-        //Imagen de fondo para la escena
+
     if(dificultad==0 && modojuego==0){ //Novato,un solo jugador
 
 
@@ -108,8 +109,8 @@ void Niveles::nivel(){
     pared12=new Paredes(60,10,-100,-340); escena->addItem(pared12);
     pared13=new Paredes(200,10,-90,-420); escena->addItem(pared13);
     pared14=new Paredes(200,10,-90,-430); escena->addItem(pared14);
-    pared15=new Paredes(10,150,-200,-430); escena->addItem(pared15);
-    pared16=new Paredes(10,150,-210,-430); escena->addItem(pared16);
+    pared15=new Paredes(10,130,-200,-440); escena->addItem(pared15);
+    pared16=new Paredes(10,130,-210,-440); escena->addItem(pared16);
     pared17=new Paredes(80,10,-360,-500); escena->addItem(pared17);
     pared18=new Paredes(80,10,-360,-510); escena->addItem(pared18);
     pared19=new Paredes(10,200,-270,-220); escena->addItem(pared19);
@@ -124,8 +125,8 @@ void Niveles::nivel(){
     pared28=new Paredes(10,80,-590,-40); escena->addItem(pared28);
     pared29=new Paredes(70,10,-580,-120); escena->addItem(pared29);
     pared30=new Paredes(70,10,-580,-130); escena->addItem(pared30);
-    pared31=new Paredes(10,150,-430,-120); escena->addItem(pared31);
-    pared32=new Paredes(10,150,-440,-120); escena->addItem(pared32);
+    pared31=new Paredes(10,90,-430,-140); escena->addItem(pared31);
+    pared32=new Paredes(10,90,-440,-140); escena->addItem(pared32);
     pared33=new Paredes(120,10,-640,-210); escena->addItem(pared33);
     pared34=new Paredes(120,10,-640,-220); escena->addItem(pared34);
     pared35=new Paredes(130,10,-430,-270); escena->addItem(pared35);
@@ -146,14 +147,14 @@ void Niveles::nivel(){
     pared50=new Paredes(70,10,-290,-330); escena->addItem(pared50);
     pared51=new Paredes(140,10,-620,-540); escena->addItem(pared51);
     pared52=new Paredes(140,10,-620,-550); escena->addItem(pared52);
-    pared53=new Paredes(10,80,-680,-550); escena->addItem(pared53);
-    pared54=new Paredes(10,80,-690,-550); escena->addItem(pared54);
+    pared53=new Paredes(10,70,-680,-560); escena->addItem(pared53);
+    pared54=new Paredes(10,70,-690,-560); escena->addItem(pared54);
     pared55=new Paredes(10,70,-440,-640); escena->addItem(pared55);
     pared56=new Paredes(10,70,-450,-640); escena->addItem(pared56);
     pared57=new Paredes(10,70,-620,-470); escena->addItem(pared57);
     pared58=new Paredes(10,70,-630,-470); escena->addItem(pared58);
-    pared59=new Paredes(10,80,-80,-640); escena->addItem(pared59);
-    pared60=new Paredes(10,80,-90,-640); escena->addItem(pared60);
+    pared59=new Paredes(10,70,-80,-640); escena->addItem(pared59);
+    pared60=new Paredes(10,70,-90,-640); escena->addItem(pared60);
     pared61=new Paredes(410,10,-40,-560); escena->addItem(pared61);
     pared62=new Paredes(410,10,-40,-570); escena->addItem(pared62);
     pared63=new Paredes(10,60,-160,-580); escena->addItem(pared63);
@@ -162,6 +163,6 @@ void Niveles::nivel(){
     pared66=new Paredes(50,10,-620,-480); escena->addItem(pared66);
     pared67=new Paredes(10,180,-670,-310); escena->addItem(pared67);
     pared68=new Paredes(10,180,-680,-310); escena->addItem(pared68);
-    pared69=new Paredes(10,200,-540,-520); escena->addItem(pared69);
-    pared70=new Paredes(10,200,-550,-520); escena->addItem(pared70);
+    pared69=new Paredes(10,190,-540,-520); escena->addItem(pared69);
+    pared70=new Paredes(10,190,-550,-520); escena->addItem(pared70);
 }

@@ -510,11 +510,12 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Imagenes.cpp
 qrc_Imagenes.cpp: ../Pulley_Town/Imagenes.qrc \
 		C:/Qt/5.14.1/mingw73_64/bin/rcc.exe \
+		../Pulley_Town/Imagenes/Fondonivel.jpeg \
+		../Pulley_Town/Imagenes/Fondo\ inicio.jpeg \
 		../Pulley_Town/Imagenes/bolsa.png \
 		../Pulley_Town/Imagenes/j1_inicio.png \
 		../Pulley_Town/Imagenes/Creditos.jpeg \
 		../Pulley_Town/Imagenes/c_izqu.png \
-		../Pulley_Town/Imagenes/Inicio.png \
 		../Pulley_Town/Imagenes/Modojuego.jpeg \
 		../Pulley_Town/Imagenes/Fondoregistro.jpg
 	C:\Qt\5.14.1\mingw73_64\bin\rcc.exe -name Imagenes ..\Pulley_Town\Imagenes.qrc -o qrc_Imagenes.cpp
@@ -1893,7 +1894,11 @@ niveles.o: ../Pulley_Town/niveles.cpp ../Pulley_Town/niveles.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qeventloop.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLCDNumber \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlcdnumber.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o niveles.o ..\Pulley_Town\niveles.cpp
 
 paredes.o: ../Pulley_Town/paredes.cpp ../Pulley_Town/paredes.h \

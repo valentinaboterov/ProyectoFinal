@@ -20,7 +20,7 @@ QRectF Pendulo::boundingRect() const
 
 void Pendulo::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::black);        //asigna el color
+    painter->setBrush(Qt::white);        //asigna el color
     painter->drawLine(posA[0],posA[1],posB[0],posB[1]); //dibuja la cuerda
     painter->drawEllipse(posB[0],posB[1], 2*R,2*R);    //dibuja una elipse encerrada en la boundingRect
 }

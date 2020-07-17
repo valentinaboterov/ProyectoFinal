@@ -29,25 +29,25 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(500, 300);
-        Widget->setMaximumSize(QSize(600, 400));
+        Widget->resize(500, 400);
+        Widget->setMaximumSize(QSize(500, 400));
         Widget->setAutoFillBackground(false);
         label = new QLabel(Widget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 0, 500, 300));
-        label->setMaximumSize(QSize(600, 400));
+        label->setGeometry(QRect(0, 0, 500, 400));
+        label->setMaximumSize(QSize(500, 400));
         label->setAutoFillBackground(false);
-        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/Inicio.png")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/Fondo inicio.jpeg")));
         label->setScaledContents(true);
         Creditos = new QPushButton(Widget);
         Creditos->setObjectName(QString::fromUtf8("Creditos"));
-        Creditos->setGeometry(QRect(360, 240, 100, 40));
+        Creditos->setGeometry(QRect(390, 320, 100, 40));
         Registro = new QPushButton(Widget);
         Registro->setObjectName(QString::fromUtf8("Registro"));
-        Registro->setGeometry(QRect(210, 240, 100, 40));
+        Registro->setGeometry(QRect(190, 320, 121, 40));
         Inicarsesion = new QPushButton(Widget);
         Inicarsesion->setObjectName(QString::fromUtf8("Inicarsesion"));
-        Inicarsesion->setGeometry(QRect(40, 240, 100, 40));
+        Inicarsesion->setGeometry(QRect(50, 320, 121, 40));
         QWidget::setTabOrder(Inicarsesion, Creditos);
         QWidget::setTabOrder(Creditos, Registro);
 

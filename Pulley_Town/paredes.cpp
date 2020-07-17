@@ -17,6 +17,6 @@ QRectF Paredes::boundingRect() const
 //Pinta un rectangulo rojo.
 void Paredes::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::black);
+    painter->setBrush(Qt::white);
     painter->drawRect(boundingRect());
 }

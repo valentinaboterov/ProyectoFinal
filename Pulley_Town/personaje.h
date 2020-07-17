@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QPixmap>
 #include <QPainter>
+#include<math.h>
 
 
 class Personaje:public QObject,public QGraphicsItem
@@ -16,14 +17,15 @@ public:
     explicit Personaje(QObject *parent = nullptr);
     QTimer *timer;      //Variable para lograr que el pacman se vea comiendo
     QPixmap *pixmap;
-    float filas,columnas;
-    float ancho;
-    float alto;
+    float filas,columnas,ancho,alto;
+    float t,vx,vy;
     //Movimiento
     void Up();
     void Down();
     void Left();
     void Rigth();
+    int getx();
+    int gety();
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 

@@ -4,6 +4,7 @@ using namespace std;
 #include <QWidget>
 #include"niveles.h"
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Modojuego;
@@ -28,8 +29,8 @@ private:
     Ui::Modojuego *ui;
     int modo,tipousuario;
     string usuario1,usuario2;
-    Niveles *nivel;
     void MensajesInterfaz();
+    Niveles *nivel=new Niveles();
 };
 
 #endif // MODOJUEGO_H

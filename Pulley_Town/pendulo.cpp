@@ -15,7 +15,7 @@ Pendulo::Pendulo(int _x, int _y, float _longitud, float _theta)
 }
 QRectF Pendulo::boundingRect() const
 {
-        return QRectF(posB[0],posB[1],20*R,20*R);
+        return QRectF(posB[0],posB[1],50*R,50*R);
 }
 
 void Pendulo::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -25,11 +25,11 @@ void Pendulo::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
     painter->drawEllipse(posB[0],posB[1], 2*R,2*R);    //dibuja una elipse encerrada en la boundingRect
 }
 void Pendulo::actualizar(){//actualiza posiciones y aceleracion y angulo
-    t+=16;
-    theta=theta0*cos(w*(t/10000.0));
+    t+=30;
+    theta=theta0*cos(w*(t/1000.0));
     posB[0]=posA[0]+longitud*sin(theta*rad);
     posB[1]=posA[1]+longitud*cos(theta*rad);
-    setPos(posB[0],posB[1]);
+    this->update(posA[0],posA[1],posB[0],posB[1]);
 }
 
 

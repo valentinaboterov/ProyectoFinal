@@ -2,6 +2,7 @@ creditos.o
 main.o
 modojuego.o
 niveles.o
+paredes.o
 pendulo.o
 personaje.o
 pesos.o

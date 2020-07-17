@@ -8,7 +8,6 @@ Modojuego::Modojuego(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Modo de juego");
     modo=0; //Un jugador por defecto
-    nivel=new Niveles;
 }
 
 Modojuego::~Modojuego()

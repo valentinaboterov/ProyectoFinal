@@ -20,6 +20,7 @@ SOURCES += \
     main.cpp \
     modojuego.cpp \
     niveles.cpp \
+    paredes.cpp \
     pendulo.cpp \
     personaje.cpp \
     pesos.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     creditos.h \
     modojuego.h \
     niveles.h \
+    paredes.h \
     pendulo.h \
     personaje.h \
     pesos.h \

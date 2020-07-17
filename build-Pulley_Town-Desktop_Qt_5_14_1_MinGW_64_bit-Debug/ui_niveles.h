@@ -12,6 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -20,17 +22,28 @@ class Ui_Niveles
 {
 public:
     QGraphicsView *graphicsView;
+    QLCDNumber *lcdNumber;
+    QLabel *label;
 
     void setupUi(QWidget *Niveles)
     {
         if (Niveles->objectName().isEmpty())
             Niveles->setObjectName(QString::fromUtf8("Niveles"));
-        Niveles->resize(828, 441);
-        Niveles->setMaximumSize(QSize(828, 441));
+        Niveles->setWindowModality(Qt::NonModal);
+        Niveles->resize(800, 800);
+        Niveles->setMaximumSize(QSize(800, 800));
         graphicsView = new QGraphicsView(Niveles);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(0, 0, 828, 441));
-        graphicsView->setMaximumSize(QSize(828, 441));
+        graphicsView->setGeometry(QRect(0, 50, 800, 750));
+        graphicsView->setMaximumSize(QSize(800, 800));
+        graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        lcdNumber = new QLCDNumber(Niveles);
+        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
+        lcdNumber->setGeometry(QRect(90, 10, 91, 31));
+        label = new QLabel(Niveles);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(10, 20, 61, 16));
 
         retranslateUi(Niveles);
 
@@ -40,6 +53,7 @@ public:
     void retranslateUi(QWidget *Niveles)
     {
         Niveles->setWindowTitle(QCoreApplication::translate("Niveles", "Form", nullptr));
+        label->setText(QCoreApplication::translate("Niveles", "TIEMPO", nullptr));
     } // retranslateUi
 
 };

@@ -24,7 +24,9 @@ SOURCES += \
     pendulo.cpp \
     personaje.cpp \
     pesos.cpp \
+    polea.cpp \
     registro.cpp \
+    resorte.cpp \
     widget.cpp
 
 HEADERS += \
@@ -35,13 +37,16 @@ HEADERS += \
     pendulo.h \
     personaje.h \
     pesos.h \
+    polea.h \
     registro.h \
+    resorte.h \
     widget.h
 
 FORMS += \
     creditos.ui \
     modojuego.ui \
     niveles.ui \
+    polea.ui \
     registro.ui \
     widget.ui
 

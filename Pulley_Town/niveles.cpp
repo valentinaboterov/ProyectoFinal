@@ -21,6 +21,8 @@ Niveles::Niveles(QWidget *parent) :
         ui->graphicsView->resize(ancho,alto);
         pendulo1=new Pendulo(40,150,30,80);
         escena->addItem(pendulo1);
+        resorte1=new Resorte(200,200,10,1);
+        escena->addItem(resorte1);
         pendulo2=new Pendulo(700,50,40,60);
         escena->addItem(pendulo2);
         pendulo3=new Pendulo(690,270,20,80);
@@ -74,6 +76,7 @@ void Niveles::actualizar(){
     pendulo2->actualizar();
     pendulo3->actualizar();
     pendulo4->actualizar();
+    resorte1->actualizar();
 }
 void Niveles::keyPressEvent(QKeyEvent *evento){
     if(evento->key()==Qt::Key_A){

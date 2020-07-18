@@ -7,6 +7,7 @@ pendulo.o
 personaje.o
 pesos.o
 registro.o
+resorte.o
 widget.o
 qrc_Imagenes.o
 moc_creditos.o

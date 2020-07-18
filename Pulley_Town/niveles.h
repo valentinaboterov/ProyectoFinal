@@ -16,6 +16,7 @@
 #include"personaje.h"
 #include"pesos.h"
 #include"paredes.h"
+#include"resorte.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -37,6 +38,7 @@ public:
 private:
     Ui::Niveles *ui;    QTimer *timer;
     Pendulo *pendulo1;Pendulo *pendulo2;Pendulo *pendulo3;Pendulo *pendulo4;
+    Resorte *resorte1;
     Personaje *personaje;
     Pesos *pesos;
     float x,y,ancho,alto;

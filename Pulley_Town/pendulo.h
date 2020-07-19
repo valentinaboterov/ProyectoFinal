@@ -21,8 +21,6 @@ public:
     void actualizar();
     QRectF boundingRect() const;    //necesario definirla, devuelve el rectangulo que encierra el objeto
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); //define como se pintara el objeto
-
-
 };
 
 #endif // PENDULO_H

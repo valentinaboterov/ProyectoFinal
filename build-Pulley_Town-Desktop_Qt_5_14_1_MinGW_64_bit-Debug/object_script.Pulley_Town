@@ -6,6 +6,9 @@ paredes.o
 pendulo.o
 personaje.o
 pesos.o
+polea.o
+polea_ventana.o
+puente.o
 registro.o
 resorte.o
 widget.o
@@ -14,5 +17,7 @@ moc_creditos.o
 moc_modojuego.o
 moc_niveles.o
 moc_personaje.o
+moc_polea.o
+moc_polea_ventana.o
 moc_registro.o
 moc_widget.o

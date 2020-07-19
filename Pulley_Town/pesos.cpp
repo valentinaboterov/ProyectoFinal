@@ -7,9 +7,9 @@ extern Niveles *nivel;
 Pesos::Pesos(int x,int y)
 {
     setPos(x,y);
-    ancho=20;
-    alto=26;
-    pixmap = new QPixmap(":/Imagenes/bolsa.png");
+    ancho=30;
+    alto=32;
+    pixmap = new QPixmap(":/Imagenes/peso.png");
 }
 //Funciones propias de QT:
 //Generar cuadrados para poner imagen.

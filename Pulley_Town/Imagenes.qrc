@@ -3,10 +3,16 @@
         <file>Imagenes/Creditos.jpeg</file>
         <file>Imagenes/Modojuego.jpeg</file>
         <file>Imagenes/Fondoregistro.jpg</file>
-        <file>Imagenes/c_izqu.png</file>
-        <file>Imagenes/bolsa.png</file>
         <file>Imagenes/j1_inicio.png</file>
         <file>Imagenes/Fondonivel.jpeg</file>
         <file>Imagenes/Fondo inicio.jpeg</file>
+        <file>Imagenes/c_saltarderecha.png</file>
+        <file>Imagenes/c_saltarizquierda.png</file>
+        <file>Imagenes/c_derecha.png</file>
+        <file>Imagenes/c_izquierda.png</file>
+        <file>Imagenes/polea.png</file>
+        <file>Imagenes/fondopolea.jpg</file>
+        <file>Imagenes/puente.png</file>
+        <file>Imagenes/peso.png</file>
     </qresource>
 </RCC>

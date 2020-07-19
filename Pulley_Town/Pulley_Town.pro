@@ -25,6 +25,8 @@ SOURCES += \
     personaje.cpp \
     pesos.cpp \
     polea.cpp \
+    polea_ventana.cpp \
+    puente.cpp \
     registro.cpp \
     resorte.cpp \
     widget.cpp
@@ -38,6 +40,8 @@ HEADERS += \
     personaje.h \
     pesos.h \
     polea.h \
+    polea_ventana.h \
+    puente.h \
     registro.h \
     resorte.h \
     widget.h
@@ -46,7 +50,7 @@ FORMS += \
     creditos.ui \
     modojuego.ui \
     niveles.ui \
-    polea.ui \
+    polea_ventana.ui \
     registro.ui \
     widget.ui
 

@@ -7,14 +7,14 @@ Personaje::Personaje(QObject *parent) : QObject(parent)
     columnas=0;
     pixmap = new QPixmap(":/Imagenes/j1_inicio.png");
     //Dimensiones de cada imagen.
-    ancho = 60;
-    alto  = 80;
-    vx=10;
-    vy=10;
-    posx=345;
-    posy=500;
+    ancho = 50;
+    alto  = 70;
+    vx=3.53;
+    vy=3.53;
+    posx=35;
+    posy=75;
     t=0;
-    //timer->start(100);
+    timer->start(100);
     //Se conecta el tiempo y el slot de actualizar la foto.
     connect(timer,&QTimer::timeout,this,&Personaje::Actualizacion);
 
@@ -22,8 +22,8 @@ Personaje::Personaje(QObject *parent) : QObject(parent)
 //Actualiza las fotos:
 void Personaje::Actualizacion()
 {
-    columnas +=80;
-    if(columnas >=320)
+    columnas +=56;
+    if(columnas >=220)
     {
         columnas=0;
     }
@@ -33,14 +33,8 @@ void Personaje::Actualizacion()
 //Movimiento
 void Personaje::Up()    //Arriba
 {
-    for(int i=0;i<20;i++){
-        t+=16;
-        posx=posx+vx*t;
-        posy=posy+vy*t+4.9*pow(t,2);
-        this->update();
-        setPos(posx,posy);
-    }
-
+    posy-=10;
+    setPos(posx,posy);
 }
 
 void Personaje::Down() //Abajo
@@ -51,7 +45,7 @@ void Personaje::Down() //Abajo
 
 void Personaje::Left()  //Izquierda
 {
-    pixmap->load(":/Imagenes/c_izqu.png");
+    pixmap->load(":/Imagenes/c_izquierda.png");
     posx -= 10;
     this->update();
     setPos(posx,posy);
@@ -59,7 +53,8 @@ void Personaje::Left()  //Izquierda
 
 void Personaje::Rigth() //Derecha
 {
-    posx += 10;
+    pixmap->load(":/Imagenes/c_derecha.png");
+    posx+=10;
     setPos(posx,posy);
 }
 

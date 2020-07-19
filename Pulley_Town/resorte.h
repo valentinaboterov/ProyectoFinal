@@ -12,7 +12,7 @@
 class Resorte:public QGraphicsItem
 {
 private:
-    int posA[2],posB[2],posC[2],posD[2],posE[2],R,x0,y0;
+    int pos[2],posA[2],posB[2],posC[2],posD[2],posE[2],R,x0,y0;
     float longitud,k,w,t,m;
 public:
     Resorte(int _x,int _y,float _w,float _amplitud);

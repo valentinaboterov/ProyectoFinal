@@ -15,7 +15,7 @@ Pendulo::Pendulo(int _x, int _y, float _longitud, float _theta)
 }
 QRectF Pendulo::boundingRect() const
 {
-        return QRectF(posB[0],posB[1],50*R,50*R);
+        return QRectF(posB[0],posB[1],100*R,100*R);
 }
 
 void Pendulo::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

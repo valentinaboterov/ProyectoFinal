@@ -24,6 +24,7 @@ public:
     void Down();
     void Left();
     void Rigth();
+    void puente();
     int getx();
     int gety();
     QRectF boundingRect() const;

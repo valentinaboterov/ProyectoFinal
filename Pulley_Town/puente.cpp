@@ -5,7 +5,7 @@ Puente::Puente(int _x,int _y)
     x=_x;
     y=_y;
     pixmap=new QPixmap(":/Imagenes/puente.png");
-    ancho=30;
+    ancho=46;
     alto=20;
 }
 QRectF Puente::boundingRect() const

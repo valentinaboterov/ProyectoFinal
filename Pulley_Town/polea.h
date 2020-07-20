@@ -8,6 +8,7 @@
 #include<math.h>
 
 
+
 class Polea : public QObject,public QGraphicsItem
 {
     Q_OBJECT
@@ -15,6 +16,10 @@ public:
     Polea(int _x,int _y,int _masa1,int _nivel);
     void Comparacion();
     QGraphicsScene *escena;
+    int getx1();
+    int gety1();
+    int getx2();
+    int gety2();
 private:
     QPixmap *pixmap;
     int nivel,x,y;

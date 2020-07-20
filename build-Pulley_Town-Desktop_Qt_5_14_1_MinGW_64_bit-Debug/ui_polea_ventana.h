@@ -94,7 +94,7 @@ public:
         label_3->setFont(font2);
         paquetes = new QLabel(Polea_ventana);
         paquetes->setObjectName(QString::fromUtf8("paquetes"));
-        paquetes->setGeometry(QRect(650, 80, 61, 31));
+        paquetes->setGeometry(QRect(660, 90, 51, 21));
         QFont font3;
         font3.setFamily(QString::fromUtf8("8514oem"));
         font3.setPointSize(15);

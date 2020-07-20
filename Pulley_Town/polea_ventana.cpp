@@ -32,6 +32,16 @@ void Polea_ventana::valores(int _masa2, int _nivel)
     ui->paquetes->setText(texto);
 }
 
+int Polea_ventana::cerrar()
+{
+    if(polea->getx1()< polea->getx2() && polea->gety1()<polea->gety2()){
+        return 0;
+    }
+    else{
+        return 1;
+    }
+}
+
 void Polea_ventana::actualizar()
 {
     polea->Comparacion();

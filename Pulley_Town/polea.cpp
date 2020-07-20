@@ -32,17 +32,33 @@ Polea::Polea(int _x,int _y,int _masa1,int _nivel)
 void Polea::Comparacion()
 {
     if(t1<t2){        //No es sufiente peso.
-            posA[3]-=150;
-            posB[3]+=150;
+            posA[3]-=100;
+            posB[3]+=100;
             this->update(posA[2],posA[3],posB[2],posB[3]);
     }
     if(t1>t2){       //Sufiente peso
-            posA[3]+=150;
-            posB[3]-=150;
+            posA[3]+=100;
+            posB[3]-=100;
             this->update(posA[2],posA[3],posB[2],posB[3]);
     }
 }
 
+int Polea::getx1()
+{
+    return posA[2];
+}
+int Polea::getx2()
+{
+    return posB[2];
+}
+int Polea::gety1()
+{
+    return posA[3];
+}
+int Polea::gety2()
+{
+    return posB[3];
+}
 
 QRectF Polea::boundingRect() const
 {

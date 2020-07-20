@@ -17,13 +17,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     creditos.cpp \
+    ganador.cpp \
     main.cpp \
     modojuego.cpp \
     niveles.cpp \
     paredes.cpp \
     pendulo.cpp \
+    perdedor.cpp \
     personaje.cpp \
     pesos.cpp \
+    plataforma.cpp \
     polea.cpp \
     polea_ventana.cpp \
     puente.cpp \
@@ -33,12 +36,15 @@ SOURCES += \
 
 HEADERS += \
     creditos.h \
+    ganador.h \
     modojuego.h \
     niveles.h \
     paredes.h \
     pendulo.h \
+    perdedor.h \
     personaje.h \
     pesos.h \
+    plataforma.h \
     polea.h \
     polea_ventana.h \
     puente.h \
@@ -48,8 +54,10 @@ HEADERS += \
 
 FORMS += \
     creditos.ui \
+    ganador.ui \
     modojuego.ui \
     niveles.ui \
+    perdedor.ui \
     polea_ventana.ui \
     registro.ui \
     widget.ui
@@ -63,4 +71,5 @@ RESOURCES += \
     Imagenes.qrc
 
 DISTFILES += \
-    Imagenes/c_izqu.jpeg
+    Imagenes/c_izqu.jpeg \
+    Imagenes/station.png

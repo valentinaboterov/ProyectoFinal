@@ -1,11 +1,14 @@
 creditos.o
+ganador.o
 main.o
 modojuego.o
 niveles.o
 paredes.o
 pendulo.o
+perdedor.o
 personaje.o
 pesos.o
+plataforma.o
 polea.o
 polea_ventana.o
 puente.o
@@ -14,8 +17,10 @@ resorte.o
 widget.o
 qrc_Imagenes.o
 moc_creditos.o
+moc_ganador.o
 moc_modojuego.o
 moc_niveles.o
+moc_perdedor.o
 moc_personaje.o
 moc_polea.o
 moc_polea_ventana.o

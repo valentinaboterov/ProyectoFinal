@@ -15,12 +15,13 @@ Pendulo::Pendulo(int _x, int _y, float _longitud, float _theta)
 }
 QRectF Pendulo::boundingRect() const
 {
-        return QRectF(posB[0],posB[1],100*R,100*R);
+        return QRectF(posB[0],posB[1],2*R,2*R);
 }
 
 void Pendulo::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     painter->setBrush(Qt::white);        //asigna el color
+    painter->setPen(Qt::white);
     painter->drawLine(posA[0],posA[1],posB[0],posB[1]); //dibuja la cuerda
     painter->drawEllipse(posB[0],posB[1], 2*R,2*R);    //dibuja una elipse encerrada en la boundingRect
 }

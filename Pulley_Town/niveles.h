@@ -17,6 +17,9 @@
 #include"resorte.h"
 #include"polea_ventana.h"
 #include"puente.h"
+#include"plataforma.h"
+#include"perdedor.h"
+#include"ganador.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -34,7 +37,9 @@ public:
     void Definicion(int nivel,int modo);
     QGraphicsScene *escena;
     void nivel();
+    int tiempo,paquetes,kilos=10;
     QList<Pendulo *> pendulos;
+    plataforma *final;
     QList<Polea *> poleas;
     QList<Pesos *> pesos;
     QList<Resorte *> resortes;
@@ -43,9 +48,14 @@ public:
     QList<Paredes *> v_izquierda;
     QList<Paredes *> v_derecha;
     QList<Puente *> puentes;
+    QList<Pesos *> cambiar(QList<Pesos*> lista,int pos);
 private:
-    Ui::Niveles *ui;    QTimer *timer;
+    Ui::Niveles *ui;
+    QTimer *timer;
+    QTimer *timer1;
     void cada_nivel();
+    Perdedor *perdedor;
+    Ganador *ganador;
     Personaje *personajea;
     Polea_ventana *polea;
     float x,y,ancho,alto;
@@ -54,6 +64,7 @@ private:
     void Colisiones(Personaje *personajea);
 private slots:
     void actualizar();
+    void actualizar_tiempo();
 };
 
 #endif // NIVELES_H

@@ -13,9 +13,9 @@ class Resorte:public QGraphicsItem
 {
 private:
     int pos[2],posA[2],posB[2],posC[2],posD[2],posE[2],R,x0,y0;
-    float longitud,k,w,t,m;
+    float longitud,k,w,t,m,amplitud;
 public:
-    Resorte(int _x,int _y,float _w,float _amplitud);
+    Resorte(int _x,int _y,float _m,float _k,float _amplitud);
     float getx();
     float gety();
     float getR();

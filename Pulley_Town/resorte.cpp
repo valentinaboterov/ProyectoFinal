@@ -1,6 +1,6 @@
 #include "resorte.h"
 //RECIBE LA MAXIMA ELONGACION DON QUIERO QUE ESTE +40 en x
-Resorte::Resorte(int _x, int _y,float _m, float _k)
+Resorte::Resorte(int _x,int _y,float _m,float _k,float _amplitud)
 {
     x0=_x;
     y0=_y;
@@ -11,6 +11,7 @@ Resorte::Resorte(int _x, int _y,float _m, float _k)
     w=sqrt(k/m);
     R=10;
     t=0;
+    amplitud=_amplitud;
     posE[0]=x0;
     posE[1]=y0;
     posD[0]=posE[0]-10;
@@ -26,7 +27,7 @@ Resorte::Resorte(int _x, int _y,float _m, float _k)
 }
 QRectF Resorte::boundingRect() const
 {
-        return QRectF(posE[0],posE[1]-10,50*R,50*R);
+        return QRectF(posE[0],posE[1]-10,20,20);
 }
 
 void Resorte::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -41,7 +42,7 @@ void Resorte::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
    }
 void Resorte::actualizar(){//actualiza posiciones y aceleracion y angulo
     t+=0.001;
-    posE[0]=x0+20*sin(w*t);
+    posE[0]=x0+amplitud*sin(w*t);
     posD[0]=posE[0]-10;
     posC[0]=posD[0]-10;
     posB[0]=posC[0]-10;

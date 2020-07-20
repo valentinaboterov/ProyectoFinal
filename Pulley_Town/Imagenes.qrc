@@ -14,5 +14,9 @@
         <file>Imagenes/fondopolea.jpg</file>
         <file>Imagenes/puente.png</file>
         <file>Imagenes/peso.png</file>
+        <file>Imagenes/station.png</file>
+        <file>Imagenes/perdedor.jpeg</file>
+        <file>Imagenes/fondonivel1.png</file>
+        <file>Imagenes/ganador.jpeg</file>
     </qresource>
 </RCC>

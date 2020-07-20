@@ -58,6 +58,11 @@ void Personaje::Rigth() //Derecha
     setPos(posx,posy);
 }
 
+void Personaje::puente()
+{
+        posx+=46;
+}
+
 int Personaje::getx()
 {
     return posx;

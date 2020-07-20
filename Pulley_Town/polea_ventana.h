@@ -10,6 +10,7 @@
 #include <QGraphicsScene>
 #include"polea.h"
 
+
 namespace Ui {
 class Polea_ventana;
 }
@@ -23,6 +24,8 @@ public:
     ~Polea_ventana();
      QGraphicsScene *escena;
      void valores(int _masa2,int _nivel);
+     int cerrar();
+
 private:
     Ui::Polea_ventana *ui;
     Polea *polea;

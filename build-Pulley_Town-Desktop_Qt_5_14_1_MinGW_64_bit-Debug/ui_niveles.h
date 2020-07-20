@@ -22,8 +22,10 @@ class Ui_Niveles
 {
 public:
     QGraphicsView *graphicsView;
-    QLCDNumber *lcdNumber;
+    QLCDNumber *tiempo;
     QLabel *label;
+    QLabel *label_2;
+    QLCDNumber *paquetes;
 
     void setupUi(QWidget *Niveles)
     {
@@ -38,12 +40,18 @@ public:
         graphicsView->setMaximumSize(QSize(800, 800));
         graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        lcdNumber = new QLCDNumber(Niveles);
-        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
-        lcdNumber->setGeometry(QRect(90, 10, 91, 31));
+        tiempo = new QLCDNumber(Niveles);
+        tiempo->setObjectName(QString::fromUtf8("tiempo"));
+        tiempo->setGeometry(QRect(90, 10, 91, 31));
         label = new QLabel(Niveles);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, 20, 61, 16));
+        label_2 = new QLabel(Niveles);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(210, 20, 71, 16));
+        paquetes = new QLCDNumber(Niveles);
+        paquetes->setObjectName(QString::fromUtf8("paquetes"));
+        paquetes->setGeometry(QRect(290, 12, 91, 31));
 
         retranslateUi(Niveles);
 
@@ -54,6 +62,7 @@ public:
     {
         Niveles->setWindowTitle(QCoreApplication::translate("Niveles", "Form", nullptr));
         label->setText(QCoreApplication::translate("Niveles", "TIEMPO", nullptr));
+        label_2->setText(QCoreApplication::translate("Niveles", "PAQUETES:", nullptr));
     } // retranslateUi
 
 };

@@ -37,11 +37,11 @@ public:
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(0, 0, 440, 600));
         label->setMaximumSize(QSize(440, 600));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/ganador.jpeg")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/fondoganador.jpeg")));
         label->setScaledContents(true);
         pushButton = new QPushButton(Ganador);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(60, 410, 121, 41));
+        pushButton->setGeometry(QRect(60, 420, 121, 41));
         QFont font;
         font.setFamily(QString::fromUtf8("8514oem"));
         font.setBold(true);
@@ -49,17 +49,22 @@ public:
         pushButton->setFont(font);
         pushButton_2 = new QPushButton(Ganador);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(260, 410, 121, 41));
+        pushButton_2->setGeometry(QRect(270, 420, 121, 41));
         pushButton_2->setFont(font);
         label_2 = new QLabel(Ganador);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(140, 350, 181, 16));
         label_2->setFont(font);
-        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
         label_3 = new QLabel(Ganador);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(160, 380, 191, 16));
-        label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label_3->setGeometry(QRect(130, 370, 201, 21));
+        QFont font1;
+        font1.setBold(true);
+        font1.setWeight(75);
+        label_3->setFont(font1);
+        label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 85, 0);\n"
+"background-color: rgb(255, 255, 255);"));
 
         retranslateUi(Ganador);
 

@@ -22,7 +22,6 @@ class Ui_Modojuego
 {
 public:
     QLabel *label;
-    QLabel *Modojuego_2;
     QPushButton *Cargar;
     QLabel *Dficultad;
     QLabel *Mensaje;
@@ -39,105 +38,101 @@ public:
     {
         if (Modojuego->objectName().isEmpty())
             Modojuego->setObjectName(QString::fromUtf8("Modojuego"));
-        Modojuego->resize(1000, 562);
-        Modojuego->setMaximumSize(QSize(1000, 570));
+        Modojuego->resize(800, 841);
+        Modojuego->setMaximumSize(QSize(800, 841));
         label = new QLabel(Modojuego);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 0, 1000, 562));
-        label->setMaximumSize(QSize(1000, 562));
+        label->setGeometry(QRect(0, 20, 800, 841));
+        label->setMaximumSize(QSize(800, 841));
         label->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/Modojuego.jpeg")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/fondomodojuego.png")));
         label->setScaledContents(true);
-        Modojuego_2 = new QLabel(Modojuego);
-        Modojuego_2->setObjectName(QString::fromUtf8("Modojuego_2"));
-        Modojuego_2->setGeometry(QRect(340, 230, 241, 91));
-        QFont font;
-        font.setFamily(QString::fromUtf8("8514oem"));
-        font.setPointSize(15);
-        Modojuego_2->setFont(font);
-        Modojuego_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         Cargar = new QPushButton(Modojuego);
         Cargar->setObjectName(QString::fromUtf8("Cargar"));
-        Cargar->setGeometry(QRect(240, 490, 121, 31));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("8514oem"));
-        font1.setBold(true);
-        font1.setUnderline(false);
-        font1.setWeight(75);
-        Cargar->setFont(font1);
+        Cargar->setGeometry(QRect(40, 770, 121, 31));
+        QFont font;
+        font.setFamily(QString::fromUtf8("8514oem"));
+        font.setBold(true);
+        font.setUnderline(false);
+        font.setWeight(75);
+        Cargar->setFont(font);
         Dficultad = new QLabel(Modojuego);
         Dficultad->setObjectName(QString::fromUtf8("Dficultad"));
-        Dficultad->setGeometry(QRect(660, 480, 141, 21));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("8514oem"));
-        font2.setPointSize(10);
-        Dficultad->setFont(font2);
-        Dficultad->setStyleSheet(QString::fromUtf8("\n"
-"\n"
-"color: rgb(255, 255, 255);"));
+        Dficultad->setGeometry(QRect(330, 800, 111, 21));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("8514oem"));
+        font1.setPointSize(10);
+        Dficultad->setFont(font1);
+        Dficultad->setStyleSheet(QString::fromUtf8("background-color: rgb(194, 194, 194);\n"
+"color: rgb(170, 0, 255);"));
         Mensaje = new QLabel(Modojuego);
         Mensaje->setObjectName(QString::fromUtf8("Mensaje"));
-        Mensaje->setGeometry(QRect(330, 310, 401, 20));
-        QFont font3;
-        font3.setPointSize(10);
-        Mensaje->setFont(font3);
-        Mensaje->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        Mensaje->setGeometry(QRect(220, 480, 401, 20));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("8514oem"));
+        font2.setPointSize(8);
+        font2.setBold(false);
+        font2.setItalic(false);
+        font2.setWeight(9);
+        Mensaje->setFont(font2);
+        Mensaje->setStyleSheet(QString::fromUtf8("color: rgb(170, 0, 127);\n"
+"font: 75 8pt \"8514oem\";\n"
+"background-color: rgb(232, 232, 232);"));
         Empezar = new QPushButton(Modojuego);
         Empezar->setObjectName(QString::fromUtf8("Empezar"));
-        Empezar->setGeometry(QRect(870, 490, 91, 31));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("8514oem"));
-        Empezar->setFont(font4);
+        Empezar->setGeometry(QRect(590, 740, 161, 71));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("8514oem"));
+        Empezar->setFont(font3);
         label_3 = new QLabel(Modojuego);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(380, 490, 251, 20));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("8514oem"));
-        font5.setBold(true);
-        font5.setUnderline(true);
-        font5.setWeight(75);
-        label_3->setFont(font5);
-        label_3->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(255, 255, 255);"));
+        label_3->setGeometry(QRect(300, 730, 151, 20));
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("8514oem"));
+        font4.setBold(true);
+        font4.setUnderline(true);
+        font4.setWeight(75);
+        label_3->setFont(font4);
+        label_3->setStyleSheet(QString::fromUtf8("background-color: rgb(194, 194, 194);\n"
+"color: rgb(170, 0, 255);"));
         novato = new QRadioButton(Modojuego);
         novato->setObjectName(QString::fromUtf8("novato"));
-        novato->setGeometry(QRect(560, 500, 101, 20));
-        novato->setFont(font4);
-        novato->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        novato->setGeometry(QRect(220, 760, 91, 20));
+        novato->setFont(font3);
+        novato->setStyleSheet(QString::fromUtf8("background-color: rgb(194, 194, 194);\n"
+"color: rgb(255, 0, 127);"));
         Aprendiz = new QRadioButton(Modojuego);
         Aprendiz->setObjectName(QString::fromUtf8("Aprendiz"));
-        Aprendiz->setGeometry(QRect(650, 500, 121, 20));
-        Aprendiz->setFont(font4);
-        Aprendiz->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        Aprendiz->setGeometry(QRect(320, 760, 111, 20));
+        Aprendiz->setFont(font3);
+        Aprendiz->setStyleSheet(QString::fromUtf8("background-color: rgb(194, 194, 194);\n"
+"color: rgb(255, 0, 127);"));
         Experto = new QRadioButton(Modojuego);
         Experto->setObjectName(QString::fromUtf8("Experto"));
-        Experto->setGeometry(QRect(760, 500, 111, 20));
-        Experto->setFont(font4);
-        Experto->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        Experto->setGeometry(QRect(450, 760, 101, 21));
+        Experto->setFont(font3);
+        Experto->setStyleSheet(QString::fromUtf8("background-color: rgb(194, 194, 194);\n"
+"color: rgb(255, 0, 127);"));
         label_4 = new QLabel(Modojuego);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(20, 490, 231, 20));
-        label_4->setFont(font5);
-        label_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label_4->setGeometry(QRect(10, 730, 191, 20));
+        label_4->setFont(font4);
+        label_4->setStyleSheet(QString::fromUtf8("background-color: rgb(194, 194, 194);\n"
+"color: rgb(170, 0, 255);"));
         Mensaje1 = new QLabel(Modojuego);
         Mensaje1->setObjectName(QString::fromUtf8("Mensaje1"));
-        Mensaje1->setGeometry(QRect(340, 370, 411, 20));
-        QFont font6;
-        font6.setFamily(QString::fromUtf8("8514oem"));
-        font6.setPointSize(8);
-        font6.setBold(false);
-        font6.setItalic(false);
-        font6.setWeight(50);
-        Mensaje1->setFont(font6);
-        Mensaje1->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"font: 8pt \"8514oem\";"));
+        Mensaje1->setGeometry(QRect(240, 510, 371, 20));
+        Mensaje1->setFont(font2);
+        Mensaje1->setStyleSheet(QString::fromUtf8("color: rgb(170, 0, 127);\n"
+"background-color: rgb(232, 232, 232);\n"
+"font: 75 8pt \"8514oem\";"));
         Mensaje2 = new QLabel(Modojuego);
         Mensaje2->setObjectName(QString::fromUtf8("Mensaje2"));
-        Mensaje2->setGeometry(QRect(330, 410, 411, 20));
-        Mensaje2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"font: 8pt \"8514oem\";"));
+        Mensaje2->setGeometry(QRect(240, 540, 371, 20));
+        Mensaje2->setStyleSheet(QString::fromUtf8("color: rgb(170, 0, 127);\n"
+"font: 75 8pt \"8514oem\";\n"
+"background-color: rgb(232, 232, 232);"));
         label->raise();
-        Modojuego_2->raise();
         Dficultad->raise();
         Mensaje->raise();
         Empezar->raise();
@@ -160,14 +155,10 @@ public:
         Modojuego->setWindowTitle(QCoreApplication::translate("Modojuego", "Form", nullptr));
         label->setText(QString());
 #if QT_CONFIG(whatsthis)
-        Modojuego_2->setWhatsThis(QCoreApplication::translate("Modojuego", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
-#endif // QT_CONFIG(whatsthis)
-        Modojuego_2->setText(QCoreApplication::translate("Modojuego", "BIENVENID@(S) ", nullptr));
-#if QT_CONFIG(whatsthis)
         Cargar->setWhatsThis(QCoreApplication::translate("Modojuego", "<html><head/><body><p align=\"center\">CARGAR PARTIDA</p><p align=\"center\">ANTERIOR</p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)
         Cargar->setText(QCoreApplication::translate("Modojuego", "CARGAR", nullptr));
-        Dficultad->setText(QCoreApplication::translate("Modojuego", "DIFICULTAD:", nullptr));
+        Dficultad->setText(QCoreApplication::translate("Modojuego", "DIFICULTAD", nullptr));
         Mensaje->setText(QString());
         Empezar->setText(QCoreApplication::translate("Modojuego", "EMPEZAR", nullptr));
         label_3->setText(QCoreApplication::translate("Modojuego", "NUEVA PARTIDA:", nullptr));

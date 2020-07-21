@@ -12,14 +12,12 @@
 class Resorte:public QGraphicsItem
 {
 private:
-    int pos[2],posA[2],posB[2],posC[2],posD[2],posE[2],R,x0,y0;
-    float longitud,k,w,t,m,amplitud;
+    int pos[2],posA[2],modo,x0,y0;
+    float k,w,t,m,amplitud;
 public:
-    Resorte(int _x,int _y,float _m,float _k,float _amplitud);
+    Resorte(int _x,int _y,float _m,float _k,float _amplitud,int _modo);
     float getx();
     float gety();
-    float getR();
-    float getL();
     void actualizar();
     QRectF boundingRect() const;    //necesario definirla, devuelve el rectangulo que encierra el objeto
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); //define como se pintara el objeto

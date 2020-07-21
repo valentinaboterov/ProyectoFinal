@@ -18,7 +18,7 @@ public:
     explicit Modojuego(QWidget *parent = nullptr);
     ~Modojuego();
     void Nombre(string _usuario1,string _usuario2,int _tipousuario);
-
+    void Modo(int _modo);
 private slots:
 
     void on_Empezar_clicked();

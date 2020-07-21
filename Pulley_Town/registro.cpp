@@ -25,12 +25,12 @@ void Registro::validacion(int _modojuego,int _tipojugador)
             if(tipojugador==0){ //Usuario nuevo
                 //Solo se agrega al final del documento.
                 modo.Nombre(nombre1,"",tipojugador);    //CUANDO SE VALIDE EL USUARIO
-                //this->close();
+                this->close();
                 modo.show();
             }else{  //Usuario antiguo
                 //Se valida la cuenta
                 modo.Nombre(nombre1,nombre2,tipojugador);
-                //this->close();
+                this->close();
                 modo.show();
             }
         }

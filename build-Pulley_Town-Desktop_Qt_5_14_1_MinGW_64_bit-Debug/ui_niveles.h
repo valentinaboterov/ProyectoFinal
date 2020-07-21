@@ -34,6 +34,8 @@ public:
         Niveles->setWindowModality(Qt::NonModal);
         Niveles->resize(800, 800);
         Niveles->setMaximumSize(QSize(800, 800));
+        Niveles->setAutoFillBackground(false);
+        Niveles->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
         graphicsView = new QGraphicsView(Niveles);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(0, 50, 800, 750));
@@ -42,16 +44,20 @@ public:
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         tiempo = new QLCDNumber(Niveles);
         tiempo->setObjectName(QString::fromUtf8("tiempo"));
-        tiempo->setGeometry(QRect(90, 10, 91, 31));
+        tiempo->setGeometry(QRect(50, 10, 51, 31));
         label = new QLabel(Niveles);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(10, 20, 61, 16));
+        label->setGeometry(QRect(20, 10, 31, 31));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/reloj .png")));
+        label->setScaledContents(true);
         label_2 = new QLabel(Niveles);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(210, 20, 71, 16));
+        label_2->setGeometry(QRect(120, 10, 31, 31));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/peso.png")));
+        label_2->setScaledContents(true);
         paquetes = new QLCDNumber(Niveles);
         paquetes->setObjectName(QString::fromUtf8("paquetes"));
-        paquetes->setGeometry(QRect(290, 12, 91, 31));
+        paquetes->setGeometry(QRect(160, 10, 51, 31));
 
         retranslateUi(Niveles);
 
@@ -61,8 +67,8 @@ public:
     void retranslateUi(QWidget *Niveles)
     {
         Niveles->setWindowTitle(QCoreApplication::translate("Niveles", "Form", nullptr));
-        label->setText(QCoreApplication::translate("Niveles", "TIEMPO", nullptr));
-        label_2->setText(QCoreApplication::translate("Niveles", "PAQUETES:", nullptr));
+        label->setText(QString());
+        label_2->setText(QString());
     } // retranslateUi
 
 };

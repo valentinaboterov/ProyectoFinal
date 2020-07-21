@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>562</height>
+    <width>800</width>
+    <height>841</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1000</width>
-    <height>570</height>
+    <width>800</width>
+    <height>841</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -23,15 +23,15 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
-     <width>1000</width>
-     <height>562</height>
+     <y>20</y>
+     <width>800</width>
+     <height>841</height>
     </rect>
    </property>
    <property name="maximumSize">
     <size>
-     <width>1000</width>
-     <height>562</height>
+     <width>800</width>
+     <height>841</height>
     </size>
    </property>
    <property name="styleSheet">
@@ -41,42 +41,17 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="Imagenes.qrc">:/Imagenes/Modojuego.jpeg</pixmap>
+    <pixmap resource="Imagenes.qrc">:/Imagenes/fondomodojuego.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="Modojuego_2">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>230</y>
-     <width>241</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>8514oem</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="whatsThis">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>BIENVENID@(S) </string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="Cargar">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>490</y>
+     <x>40</x>
+     <y>770</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -99,9 +74,9 @@
   <widget class="QLabel" name="Dficultad">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>480</y>
-     <width>141</width>
+     <x>330</x>
+     <y>800</y>
+     <width>111</width>
      <height>21</height>
     </rect>
    </property>
@@ -112,30 +87,35 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">
-
-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(194, 194, 194);
+color: rgb(170, 0, 255);</string>
    </property>
    <property name="text">
-    <string>DIFICULTAD:</string>
+    <string>DIFICULTAD</string>
    </property>
   </widget>
   <widget class="QLabel" name="Mensaje">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>310</y>
+     <x>220</x>
+     <y>480</y>
      <width>401</width>
      <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <family>8514oem</family>
+     <pointsize>8</pointsize>
+     <weight>9</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(170, 0, 127);
+font: 75 8pt &quot;8514oem&quot;;
+background-color: rgb(232, 232, 232);</string>
    </property>
    <property name="text">
     <string/>
@@ -144,10 +124,10 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="Empezar">
    <property name="geometry">
     <rect>
-     <x>870</x>
-     <y>490</y>
-     <width>91</width>
-     <height>31</height>
+     <x>590</x>
+     <y>740</y>
+     <width>161</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
@@ -162,9 +142,9 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>490</y>
-     <width>251</width>
+     <x>300</x>
+     <y>730</y>
+     <width>151</width>
      <height>20</height>
     </rect>
    </property>
@@ -177,8 +157,8 @@ color: rgb(255, 255, 255);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">
-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(194, 194, 194);
+color: rgb(170, 0, 255);</string>
    </property>
    <property name="text">
     <string>NUEVA PARTIDA:</string>
@@ -187,9 +167,9 @@ color: rgb(255, 255, 255);</string>
   <widget class="QRadioButton" name="novato">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>500</y>
-     <width>101</width>
+     <x>220</x>
+     <y>760</y>
+     <width>91</width>
      <height>20</height>
     </rect>
    </property>
@@ -199,7 +179,8 @@ color: rgb(255, 255, 255);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(194, 194, 194);
+color: rgb(255, 0, 127);</string>
    </property>
    <property name="text">
     <string>Novato</string>
@@ -208,29 +189,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QRadioButton" name="Aprendiz">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>500</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>8514oem</family>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Aprendiz</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="Experto">
-   <property name="geometry">
-    <rect>
-     <x>760</x>
-     <y>500</y>
+     <x>320</x>
+     <y>760</y>
      <width>111</width>
      <height>20</height>
     </rect>
@@ -241,7 +201,30 @@ color: rgb(255, 255, 255);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(194, 194, 194);
+color: rgb(255, 0, 127);</string>
+   </property>
+   <property name="text">
+    <string>Aprendiz</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="Experto">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>760</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>8514oem</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(194, 194, 194);
+color: rgb(255, 0, 127);</string>
    </property>
    <property name="text">
     <string>Experto</string>
@@ -250,9 +233,9 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>490</y>
-     <width>231</width>
+     <x>10</x>
+     <y>730</y>
+     <width>191</width>
      <height>20</height>
     </rect>
    </property>
@@ -265,7 +248,8 @@ color: rgb(255, 255, 255);</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(194, 194, 194);
+color: rgb(170, 0, 255);</string>
    </property>
    <property name="text">
     <string>PARTIDA ANTERIOR:</string>
@@ -274,9 +258,9 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="Mensaje1">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>370</y>
-     <width>411</width>
+     <x>240</x>
+     <y>510</y>
+     <width>371</width>
      <height>20</height>
     </rect>
    </property>
@@ -284,14 +268,15 @@ color: rgb(255, 255, 255);</string>
     <font>
      <family>8514oem</family>
      <pointsize>8</pointsize>
-     <weight>50</weight>
+     <weight>9</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
-font: 8pt &quot;8514oem&quot;;</string>
+    <string notr="true">color: rgb(170, 0, 127);
+background-color: rgb(232, 232, 232);
+font: 75 8pt &quot;8514oem&quot;;</string>
    </property>
    <property name="text">
     <string/>
@@ -300,22 +285,22 @@ font: 8pt &quot;8514oem&quot;;</string>
   <widget class="QLabel" name="Mensaje2">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>410</y>
-     <width>411</width>
+     <x>240</x>
+     <y>540</y>
+     <width>371</width>
      <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
-font: 8pt &quot;8514oem&quot;;</string>
+    <string notr="true">color: rgb(170, 0, 127);
+font: 75 8pt &quot;8514oem&quot;;
+background-color: rgb(232, 232, 232);</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
   <zorder>label</zorder>
-  <zorder>Modojuego_2</zorder>
   <zorder>Dficultad</zorder>
   <zorder>Mensaje</zorder>
   <zorder>Empezar</zorder>

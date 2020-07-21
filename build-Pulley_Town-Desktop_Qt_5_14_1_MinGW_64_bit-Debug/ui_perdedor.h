@@ -37,11 +37,11 @@ public:
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(0, -10, 400, 600));
         label->setMaximumSize(QSize(400, 600));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/perdedor.jpeg")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/Imagenes/fondoperdedor.jpeg")));
         label->setScaledContents(true);
         pushButton = new QPushButton(Perdedor);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(50, 520, 131, 51));
+        pushButton->setGeometry(QRect(20, 470, 131, 51));
         QFont font;
         font.setFamily(QString::fromUtf8("8514oem"));
         font.setBold(true);
@@ -49,27 +49,28 @@ public:
         pushButton->setFont(font);
         pushButton_2 = new QPushButton(Perdedor);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(250, 520, 131, 51));
+        pushButton_2->setGeometry(QRect(250, 470, 131, 51));
         pushButton_2->setFont(font);
         label_2 = new QLabel(Perdedor);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(60, 490, 311, 20));
+        label_2->setGeometry(QRect(50, 420, 311, 20));
         QFont font1;
         font1.setFamily(QString::fromUtf8("8514oem"));
         font1.setBold(true);
         font1.setUnderline(true);
         font1.setWeight(75);
         label_2->setFont(font1);
-        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(85, 255, 0);"));
         mensaje = new QLabel(Perdedor);
         mensaje->setObjectName(QString::fromUtf8("mensaje"));
-        mensaje->setGeometry(QRect(160, 430, 101, 20));
+        mensaje->setGeometry(QRect(140, 370, 101, 20));
         mensaje->setFont(font);
-        mensaje->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        mensaje->setStyleSheet(QString::fromUtf8("color: rgb(85, 255, 0);"));
         mensaje1 = new QLabel(Perdedor);
         mensaje1->setObjectName(QString::fromUtf8("mensaje1"));
-        mensaje1->setGeometry(QRect(100, 460, 211, 20));
-        mensaje1->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        mensaje1->setGeometry(QRect(100, 390, 211, 20));
+        mensaje1->setStyleSheet(QString::fromUtf8("color: rgb(85, 255, 0);\n"
+"font: 75 8pt \"MS Shell Dlg 2\";"));
 
         retranslateUi(Perdedor);
 

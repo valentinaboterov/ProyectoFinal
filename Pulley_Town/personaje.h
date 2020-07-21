@@ -18,13 +18,15 @@ public:
     QTimer *timer;      //Variable para lograr que el pacman se vea comiendo
     QPixmap *pixmap;
     float filas,columnas,ancho,alto;
-    float t,vx,vy;
+    float t,v,a,miu,normal;
     //Movimiento
     void Up();
     void Down();
     void Left();
     void Rigth();
     void puente();
+    void friccion_izquierda();
+    void friccion_derecha();
     int getx();
     int gety();
     QRectF boundingRect() const;

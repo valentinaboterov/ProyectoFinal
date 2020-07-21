@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     creditos.cpp \
+    friccion.cpp \
     ganador.cpp \
     main.cpp \
     modojuego.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
 
 HEADERS += \
     creditos.h \
+    friccion.h \
     ganador.h \
     modojuego.h \
     niveles.h \

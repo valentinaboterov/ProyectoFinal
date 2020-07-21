@@ -20,6 +20,7 @@
 #include"plataforma.h"
 #include"perdedor.h"
 #include"ganador.h"
+#include"friccion.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -34,8 +35,11 @@ class Niveles : public QWidget
 public:
     explicit Niveles(QWidget *parent = nullptr);
     ~Niveles();
-    void Definicion(int nivel,int modo);
+    void Definicion(int _nivel,int modo);
     QGraphicsScene *escena;
+
+private:
+    Ui::Niveles *ui;
     void nivel();
     int tiempo,paquetes,kilos=10;
     QList<Pendulo *> pendulos;
@@ -49,8 +53,10 @@ public:
     QList<Paredes *> v_derecha;
     QList<Puente *> puentes;
     QList<Pesos *> cambiar(QList<Pesos*> lista,int pos);
-private:
-    Ui::Niveles *ui;
+    Friccion *friccion1;
+    Friccion *friccion2;
+    Friccion *friccion3;
+    Friccion *friccion4;
     QTimer *timer;
     QTimer *timer1;
     void cada_nivel();

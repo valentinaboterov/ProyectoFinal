@@ -7,7 +7,6 @@ Modojuego::Modojuego(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Modo de juego");
-    modo=0; //Un jugador por defecto
 }
 
 Modojuego::~Modojuego()
@@ -23,9 +22,23 @@ void Modojuego::Nombre(string _usuario1,string _usuario2,int _tipousuario)
     MensajesInterfaz();
 }
 
+void Modojuego::Modo(int _modo)
+{
+    modo=_modo;
+}
+
 
 void Modojuego::on_Empezar_clicked()
 {
+    if(ui->novato->isChecked()){
+        nivel->Definicion(0,modo);
+    }
+    if(ui->Aprendiz->isChecked()){
+        nivel->Definicion(1,modo);
+    }
+    if(ui->Experto->isChecked()){
+        nivel->Definicion(2,modo);
+    }
     nivel->show();
     this->close();
 }
@@ -44,10 +57,12 @@ void Modojuego::MensajesInterfaz()
         ui->Mensaje->setText(texto);
     }
     if(tipousuario==0){  //Usuario nuevo
-        ui->Mensaje1->setText("Elige la dificultad que deseas");
-        ui->Mensaje2->setText("      y luego empezar");
+        ui->Mensaje1->setText("   ELIGE LA DIFICULTAD QUE DESEAS");
+        ui->Mensaje2->setText("         Y OPRIME EMPEZAR");
     }else{  //Usuario atiguo
-        ui->Mensaje1->setText("Puedes elegir si deseas recuperar una");
-        ui->Mensaje2->setText("partida anterior o empezar una nueva:");
+        ui->Mensaje1->setText("PUEDES ELEGIR SI DESEAS RECUPERAR UNA");
+        ui->Mensaje2->setText(" PARTIDA ANTERIOR O EMPEZAR UNA NUEVA.");
     }
 }
+
+

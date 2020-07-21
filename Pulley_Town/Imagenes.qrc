@@ -1,22 +1,24 @@
 <RCC>
     <qresource prefix="/">
         <file>Imagenes/Creditos.jpeg</file>
-        <file>Imagenes/Modojuego.jpeg</file>
         <file>Imagenes/Fondoregistro.jpg</file>
-        <file>Imagenes/j1_inicio.png</file>
         <file>Imagenes/Fondonivel.jpeg</file>
-        <file>Imagenes/Fondo inicio.jpeg</file>
-        <file>Imagenes/c_saltarderecha.png</file>
-        <file>Imagenes/c_saltarizquierda.png</file>
-        <file>Imagenes/c_derecha.png</file>
-        <file>Imagenes/c_izquierda.png</file>
         <file>Imagenes/polea.png</file>
         <file>Imagenes/fondopolea.jpg</file>
         <file>Imagenes/puente.png</file>
         <file>Imagenes/peso.png</file>
         <file>Imagenes/station.png</file>
-        <file>Imagenes/perdedor.jpeg</file>
         <file>Imagenes/fondonivel1.png</file>
-        <file>Imagenes/ganador.jpeg</file>
+        <file>Imagenes/fondoganador.jpeg</file>
+        <file>Imagenes/fondoinicio.jpeg</file>
+        <file>Imagenes/fondoperdedor.jpeg</file>
+        <file>Imagenes/fondomodojuego.png</file>
+        <file>Imagenes/abajo.png</file>
+        <file>Imagenes/arriba.png</file>
+        <file>Imagenes/derecha.png</file>
+        <file>Imagenes/izquierda.png</file>
+        <file>Imagenes/quieto.png</file>
+        <file>Imagenes/reloj .png</file>
+        <file>Imagenes/charco.png</file>
     </qresource>
 </RCC>

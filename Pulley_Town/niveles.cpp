@@ -19,13 +19,13 @@ Niveles::Niveles(QWidget *parent) :
     timer1=new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
     connect(timer1,SIGNAL(timeout()),this,SLOT(actualizar_tiempo()));   
-    /*pendulos.clear();
+    pendulos.clear();
     resortes.clear();
     pesos.clear();
     v_derecha.clear();
     v_izquierda.clear();
     h_arriba.clear();
-    h_abajo.clear();*/
+    h_abajo.clear();
 }
 
 Niveles::~Niveles()
@@ -227,7 +227,7 @@ void Niveles::cada_nivel()
         resortes.push_back(new Resorte(350,380,10,1500,30,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(570,420,10,1000,30,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(70,400,10,1000,20,0)); escena->addItem(resortes.back());
-        resortes.push_back(new Resorte(720,260,10,1000,20,1)); escena->addItem(resortes.back());
+        pendulos.push_back(new Pendulo(730,240,30,80)); escena->addItem(pendulos.back());
         friccion1=new Friccion(300,490); escena->addItem(friccion1);
         friccion2=new Friccion(300,50); escena->addItem(friccion2);
 
@@ -253,17 +253,17 @@ void Niveles::cada_nivel()
         pendulos.push_back(new Pendulo(200,150,30,50)); escena->addItem(pendulos.back());
         pendulos.push_back(new Pendulo(200,150,30,50)); escena->addItem(pendulos.back());
         pendulos.push_back(new Pendulo(540,65,50,60)); escena->addItem(pendulos.back());
+        pendulos.push_back(new Pendulo(730,260,30,80)); escena->addItem(pendulos.back());
+        pendulos.push_back(new Pendulo(500,290,30,80)); escena->addItem(pendulos.back());
         puentes.push_back(new Puente(415,520)); escena->addItem(puentes.back());
         puentes.push_back(new Puente(295,200)); escena->addItem(puentes.back());
-        resortes.push_back(new Resorte(510,170,10,1000,60,0)); escena->addItem(resortes.back());
+        resortes.push_back(new Resorte(510,200,10,1000,60,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(80,510,10,1000,30,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(350,380,10,1500,30,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(570,420,10,1000,30,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(70,400,10,1000,20,0)); escena->addItem(resortes.back());
-        resortes.push_back(new Resorte(720,260,10,1000,20,1)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(190,620,10,1000,50,1)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(720,70,10,1000,30,1)); escena->addItem(resortes.back());
-        resortes.push_back(new Resorte(500,320,10,1000,30,1)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(200,320,10,1000,20,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(240,90,10,1000,20,0)); escena->addItem(resortes.back());
         friccion1=new Friccion(300,490); escena->addItem(friccion1);

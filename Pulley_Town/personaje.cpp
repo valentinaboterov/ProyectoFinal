@@ -13,8 +13,8 @@ Personaje::Personaje(QObject *parent) : QObject(parent)
     a=5;
     posx=35;
     posy=75;
-    miu=0.1;
-    normal=150;
+    miu=0.2;
+    normal=120;
     t=0.5;
     timer->start(1000);
     //Se conecta el tiempo y el slot de actualizar la foto.
@@ -70,14 +70,14 @@ void Personaje::puente()
 void Personaje::friccion_derecha()
 {
     pixmap->load(":/Imagenes/derecha.png");
-    posx=posx+v*t+a/2*pow(t,2)-miu*normal;
+    posx=posx+(v-20)*t+a/2*pow(t,2);
     setPos(posx,posy);
 }
 
 void Personaje::friccion_izquierda()
 {
     pixmap->load(":/Imagenes/izquierda.png");
-    posx=posx-v*t-a/2*pow(t,2)+miu*normal;
+    posx=posx+(v-20)*t-a/2*pow(t,2);
     setPos(posx,posy);
 }
 

@@ -18,7 +18,7 @@ Widget::~Widget()
 
 void Widget::on_Registro_clicked()
 {
-    registro.validacion(0,0);
+    registro.Registrar(0,0);
     modojuego.Modo(0);
     this->close();
 }
@@ -33,11 +33,11 @@ void Widget::on_Inicarsesion_clicked()
      int elegido = msgBox.exec();
      switch (elegido) {
         case QMessageBox::Yes:
-            registro.validacion(1,1);   //Multijugador
+            registro.Registrar(1,1);   //Multijugador
             modojuego.Modo(1);
             break;
         case QMessageBox::No:
-            registro.validacion(0,1);       //Un jugador
+            registro.Registrar(0,1);       //Un jugador
             modojuego.Modo(0);
             break;
       }

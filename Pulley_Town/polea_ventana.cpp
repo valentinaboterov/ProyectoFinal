@@ -6,6 +6,7 @@ Polea_ventana::Polea_ventana(QWidget *parent) :
     ui(new Ui::Polea_ventana)
 {
     ui->setupUi(this);
+    setWindowTitle("Polea");
     x =0 ;
     y =0;
     ancho = 600;

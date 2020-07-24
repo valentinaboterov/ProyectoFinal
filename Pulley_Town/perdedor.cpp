@@ -6,6 +6,7 @@ Perdedor::Perdedor(QWidget *parent) :
     ui(new Ui::Perdedor)
 {
     ui->setupUi(this);
+    setWindowTitle("Perdedor");
 }
 
 Perdedor::~Perdedor()

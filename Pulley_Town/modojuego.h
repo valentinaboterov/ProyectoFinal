@@ -17,7 +17,7 @@ class Modojuego : public QWidget
 public:
     explicit Modojuego(QWidget *parent = nullptr);
     ~Modojuego();
-    void Nombre(string _usuario1,string _usuario2,int _tipousuario);
+    void Nombre(string _usuario1,int _tipousuario,int _veces);
     void Modo(int _modo);
 private slots:
 
@@ -27,7 +27,8 @@ private slots:
 
 private:
     Ui::Modojuego *ui;
-    int modo,tipousuario;
+    int modo,tipousuario,cont;
+    string espacios="";
     string usuario1,usuario2;
     void MensajesInterfaz();
     Niveles *nivel=new Niveles();

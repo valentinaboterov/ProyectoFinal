@@ -6,6 +6,7 @@ Niveles::Niveles(QWidget *parent) :
     ui(new Ui::Niveles)
 {
     ui->setupUi(this);
+    setWindowTitle("Juego");
     paquetes=0;
     ui->paquetes->display(paquetes);
     //Obtiene el tamaño del ordenador donde se ejecuta el código.
@@ -13,12 +14,19 @@ Niveles::Niveles(QWidget *parent) :
     y =0;
     ancho = 800;
     alto  = 750;
+    pausa=0;
     perdedor=new Perdedor();
     ganador=new Ganador();
     timer=new QTimer(this);
     timer1=new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
-    connect(timer1,SIGNAL(timeout()),this,SLOT(actualizar_tiempo()));   
+    connect(timer1,SIGNAL(timeout()),this,SLOT(actualizar_tiempo()));
+    ui->pausa->setIcon(QPixmap(":/Imagenes/boton_pausa.png"));
+    ui->pausa->setIconSize(QSize(50,40));
+    ui->Guardar->setIcon(QPixmap(":Imagenes/boton_guardar.png"));
+    ui->Guardar->setIconSize(QSize(50,40));
+    ui->Salir->setIcon(QPixmap(":/Imagenes/boton_salir.png"));
+    ui->Salir->setIconSize(QSize(50,40));
     pendulos.clear();
     resortes.clear();
     pesos.clear();
@@ -67,6 +75,31 @@ void Niveles::actualizar_tiempo()
         perdedor->show();
     }
 }
+
+void Niveles::on_pausa_clicked()
+{
+    if(pausa==0){
+        timer1->stop();
+        timer->stop();
+        ui->pausa->setIcon(QPixmap(":/Imagenes/boton_play.png"));
+        pausa=1;
+    }else{
+        timer->start();
+        timer->start();
+        ui->pausa->setIcon(QPixmap(":/Imagenes/boton_pausa.png"));
+        pausa=0;
+    }
+}
+void Niveles::on_Guardar_clicked()
+{
+ //GUARDAR PARTIDA
+}
+
+void Niveles::on_Salir_clicked()
+{
+    this->close();
+}
+
 void Niveles::keyPressEvent(QKeyEvent *evento){
     if(evento->key()==Qt::Key_A && personajea->collidesWithItem(friccion1)){
         personajea->friccion_izquierda();
@@ -362,3 +395,6 @@ void Niveles::nivel(){
     v_izquierda.push_back(new Paredes(10,160,-540,-550)); escena->addItem(v_izquierda.back());
     v_derecha.push_back(new Paredes(10,160,-550,-550)); escena->addItem(v_derecha.back());
 }
+
+
+

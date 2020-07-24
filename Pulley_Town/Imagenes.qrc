@@ -20,5 +20,9 @@
         <file>Imagenes/quieto.png</file>
         <file>Imagenes/reloj .png</file>
         <file>Imagenes/charco.png</file>
+        <file>Imagenes/boton_pausa.png</file>
+        <file>Imagenes/boton_play.png</file>
+        <file>Imagenes/boton_salir.png</file>
+        <file>Imagenes/boton_guardar.png</file>
     </qresource>
 </RCC>

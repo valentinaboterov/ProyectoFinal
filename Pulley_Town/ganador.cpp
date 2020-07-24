@@ -6,6 +6,7 @@ Ganador::Ganador(QWidget *parent) :
     ui(new Ui::Ganador)
 {
     ui->setupUi(this);
+    setWindowTitle("Ganador");
 }
 
 Ganador::~Ganador()

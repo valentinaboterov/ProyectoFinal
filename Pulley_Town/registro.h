@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include<string>
+#include<fstream>
+#include<iostream>
 #include"modojuego.h"
 
 using namespace std;
@@ -15,15 +17,17 @@ class Registro : public QWidget
 public:
     explicit Registro(QWidget *parent = nullptr);
     ~Registro();
-    void validacion(int _modojuego,int _tipojugador);
-
+    bool validacion(string _usuario,string _clave);
+    void Registrar(int _modojuego,int _tipojugador);
 private slots:
     void on_Entrar_clicked();
 
 private:
     Ui::Registro *ui;
     int modojuego,tipojugador;
-    int cont=0;
+    int cont=0,cantidad;
+    string linea="";
+    string Buscar(string _linea,int romper);
     Modojuego modo;
     string nombre1,clave1,nombre2,clave2;
 };

@@ -2,14 +2,16 @@
 #define NIVELES_H
 
 #include <QWidget>
+#include <QKeyEvent>
 #include <QGraphicsItem>
 #include <QRectF>
 #include <QDesktopWidget>
 #include<QObject>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include<QMessageBox>
+#include<QPixmap>
 #include<QTimer>
-#include <QKeyEvent>
 #include"pendulo.h"
 #include"personaje.h"
 #include"pesos.h"
@@ -37,7 +39,9 @@ public:
     ~Niveles();
     void Definicion(int _nivel,int modo);
     QGraphicsScene *escena;
-
+    void Reanudar();
+    void Guardar();
+    void Salir();
 private:
     Ui::Niveles *ui;
     void nivel();
@@ -59,18 +63,23 @@ private:
     Friccion *friccion4;
     QTimer *timer;
     QTimer *timer1;
+    int modojuego,dificultad,pausa;
+    QList<Pesos *> Eliminados;
     void cada_nivel();
     Perdedor *perdedor;
     Ganador *ganador;
     Personaje *personajea;
     Polea_ventana *polea;
     float x,y,ancho,alto;
-    int modojuego,dificultad;
     void keyPressEvent(QKeyEvent * evento);
     void Colisiones(Personaje *personajea);
+
 private slots:
     void actualizar();
     void actualizar_tiempo();
+    void on_pausa_clicked();
+    void on_Guardar_clicked();
+    void on_Salir_clicked();
 };
 
 #endif // NIVELES_H

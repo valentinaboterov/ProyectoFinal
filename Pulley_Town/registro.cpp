@@ -7,7 +7,7 @@ Registro::Registro(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Registro");
-
+    cont=0;
 }
 
 Registro::~Registro()
@@ -16,37 +16,138 @@ Registro::~Registro()
 }
 
 
-void Registro::validacion(int _modojuego,int _tipojugador)
+bool Registro::validacion(string _usuario,string _clave)
 {
-        tipojugador=_tipojugador;
-        modojuego=_modojuego;
-        for(int i=0;i<=modojuego;i++){
-            this->show();
-            if(tipojugador==0){ //Usuario nuevo
-                //Solo se agrega al final del documento.
-                modo.Nombre(nombre1,"",tipojugador);    //CUANDO SE VALIDE EL USUARIO
-                this->close();
-                modo.show();
-            }else{  //Usuario antiguo
-                //Se valida la cuenta
-                modo.Nombre(nombre1,nombre2,tipojugador);
-                this->close();
-                modo.show();
+    char linea[400];
+    bool ban1=true,ban2=true,acceso=false;
+    string usuario,clave;
+    ui->jugador->setText("JUGADOR 1");
+    if(tipojugador==0){ //Usuario nuevo, se agrega al final del documento
+        ifstream base("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Usuarios.txt");  //Abre el archivo
+        int lonu=_usuario.length();
+        while(!base.eof()){
+            base.getline(linea,sizeof (linea)); //Accede a cada linea del archivo.
+            usuario=Buscar(linea,1);  //Usuario de la linea
+            for(int i=0;i<lonu;i++){        //Compara el usuario de la linea con el ingresado
+               if(usuario[i]!=_usuario[i]){  //Si son diferentes la bandera 1 es falsa.
+                   ban1=false;
+                   break;
+               }
+            }if(ban1==true){ //Si encuentra el usario debe registrar otro.
+               acceso= true;
+            }if(acceso==true){
+               ui->label->setText("Usuario ya registrado.");
+               return false;
+            }
+            if(usuario==""){
+                break;
+            }
+            ban1=true;
+        }
+        base.close();
+        if(acceso==false){      //No existe el usuario
+            ofstream outfile;      //Abre archivo de salida.
+            int lon=_clave.length();
+            if(lon!=4){   //Clave ingresada mas de 4 numeros.
+                 ui->label->setText("La clave debe ser de 4 digitos");
+                 return false;
+            }else{
+                outfile.open("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Usuarios.txt",std::fstream::app);  //Lo abre como archivo de salida y escribe al final(app).
+                 if(!outfile.is_open()){          //Si no abrio exitosamente se acaba el programa.
+                       exit(1);
+                 }
+                 outfile<<_usuario<<"/"<<_clave<<"/"<<endl;
+                 outfile.close();
+                 return true;
+            }
+         }
+    }else{      //Usuario antiguo,Se valida la cuenta
+        ifstream base("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Usuarios.txt");  //Abre el archivo
+        int lonu=_usuario.length(),lonc=_clave.length();
+        while(!base.eof()){
+            base.getline(linea,sizeof (linea)); //Accede a cada linea del archivo.
+                usuario=Buscar(linea,1);  //Usuario de la linea
+                clave=Buscar(linea,2);    //Clave de la linea
+                for(int i=0;i<lonu;i++){        //Compara el usuario de la linea con el ingresado
+                    if(usuario[i]!=_usuario[i]){  //Si son diferentes la bandera 1 es falsa.
+                        ban1=false;
+                        break;
+                    }
+                }for(int i=0;i<lonc;i++){  //Compara la clave de la linea con la ingresada.
+                    if(clave[i]!=_clave[i]){  //Si son diferentes bandera 2 falsa.
+                        ban2=false;
+                        break;
+                    }
+                }if(ban1==true&&ban2==true){ //Si el usuario y clave ingresados son iguales a la linea
+                    acceso=true;
+                }if(acceso==true){      //El acceso es correcto.
+                    return true;
+                }
+                if(usuario==""){
+                    break;
+                }
+            ban1=true;ban2=true;
+       }if(acceso==false){
+            ui->label->setText("Clave o usuario incorrecto.");
+            return false;
+        }
+    }acceso=false;
+}
+
+void Registro::Registrar(int _modojuego, int _tipojugador)
+{
+    ui->jugador->setText("JUGADOR 1");
+    modojuego=_modojuego;
+    tipojugador=_tipojugador;
+    this->show();
+
+}
+
+//Busca los valores de CC,Clave y saldo en una linea codificada y retorna un string dependiendo de romper.
+string Registro::Buscar(string _linea,int romper){
+    //Inicializacion de variables.
+    //cant:Cantidad e elementos para el subplot,cont:acceder a diferentes valores, pos:Saber donde inicia cada valor.
+    int longitud=_linea.length(),cont=0,cant=0,pos=0;
+    string s1="",s2="";
+    for(int i=0;i<longitud;i++){
+        cant+=1;
+        if(_linea[i]=='/'){   //Busca la separación de datos en la base.
+            cont+=1;
+            if(cont==1){ //Hasta este valor de i esta el usuario.
+                s1=_linea.substr(0,cant-1);  //usario.
+                pos=i+1;        //incremeta la posicion 1 unidad para empezar la clave.
+                cant=0;
+            }if(cont==2){
+                s2=_linea.substr(pos,cant-1);    //clave
             }
         }
-}
+    }
+    if(romper==1){return s1;}
+    if(romper>=2){return s2;}
+};
 
 void Registro::on_Entrar_clicked()
 {
-    if(cont==0){
-        nombre1=ui->Nombre->text().toStdString();
-        clave1=ui->Clave->text().toStdString();
-        this->close();
+        nombre1=ui->lineEdit->text().toStdString();
+        clave1=ui->lineEdit_2->text().toStdString();
+        ui->label->setText("");
+        if(validacion(nombre1,clave1)==true){
+            if(modojuego!=0 && cont>0){   //MULTIJUGADOR Y SEGUNDO REGISTRO
+                modo.Nombre(nombre1,tipojugador,1);
+                modo.show();
+                this->close();
+            }else if(modojuego==0){ //UN SOLO JUGADOR
+                modo.Nombre(nombre1,tipojugador,0);
+                modo.show();
+                this->close();
+            }else{      //CONT==0, primer registro multijugador
+                modo.Nombre(nombre1,tipojugador,0);
+                this->close();
+                ui->jugador->setText("JUGADOR 2");
+                ui->lineEdit->setText("");
+                ui->lineEdit_2->setText("");
+                this->show();
+            }
+        }
         cont+=1;
-    }else{
-        nombre2=ui->Nombre->text().toStdString();
-        clave2=ui->Clave->text().toStdString();
-        this->close();
-        cont=0;
-    }
 }

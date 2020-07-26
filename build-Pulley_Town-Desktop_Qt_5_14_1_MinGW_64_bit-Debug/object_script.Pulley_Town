@@ -1,3 +1,4 @@
+cargar.o
 creditos.o
 friccion.o
 ganador.o
@@ -17,6 +18,7 @@ registro.o
 resorte.o
 widget.o
 qrc_Imagenes.o
+moc_cargar.o
 moc_creditos.o
 moc_ganador.o
 moc_modojuego.o

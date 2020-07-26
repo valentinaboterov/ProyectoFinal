@@ -300,6 +300,24 @@ background-color: rgb(232, 232, 232);</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="partida">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>600</y>
+     <width>401</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(170, 0, 0);
+font: 75 8pt &quot;8514oem&quot;;
+background-color: rgb(232, 232, 232);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>Dficultad</zorder>
   <zorder>Mensaje</zorder>
@@ -312,6 +330,7 @@ background-color: rgb(232, 232, 232);</string>
   <zorder>label_4</zorder>
   <zorder>Mensaje1</zorder>
   <zorder>Mensaje2</zorder>
+  <zorder>partida</zorder>
  </widget>
  <resources>
   <include location="Imagenes.qrc"/>

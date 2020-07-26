@@ -100,6 +100,36 @@ void Niveles::on_pausa_clicked()
 void Niveles::on_Guardar_clicked()
 {
  //GUARDAR PARTIDA
+    timer->stop();
+    timer1->stop();
+    if(modojuego==1){
+        QMessageBox msgBox;
+        msgBox.setText("No se permite guardar partidas en modo multijugador. ");
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        msgBox.setWindowTitle("GUARDAR");
+        msgBox.setIconPixmap(QPixmap(":/Imagenes/boton_guardar.png"));
+        int elegido = msgBox.exec();
+        switch (elegido) {
+           case QMessageBox::Ok:
+               this->close();
+               break;
+         }
+    }else{
+        sobreescribir(nombre1);
+        QMessageBox msgBox;
+        msgBox.setText("     Partida guardada. ");
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        msgBox.setWindowTitle("GUARDAR");
+        msgBox.setIconPixmap(QPixmap(":/Imagenes/boton_guardar.png"));
+        int elegido = msgBox.exec();
+        switch (elegido) {
+           case QMessageBox::Ok:
+               this->close();
+               break;
+         }
+    }
 }
 
 void Niveles::on_Salir_clicked()
@@ -107,6 +137,87 @@ void Niveles::on_Salir_clicked()
     this->close();
 }
 
+string Niveles::Buscar(string linea, int romper){
+    //Inicializacion de variables.
+    //cant:Cantidad e elementos para el subplot,cont:acceder a diferentes valores, pos:Saber donde inicia cada valor.
+    int lon=linea.length(),cont=0,cant=0,pos=0;
+    string s1="",s2="";
+    for(int i=0;i<lon;i++){
+        cant+=1;
+        if(linea[i]=='/'){   //Busca la separación de datos en la base.
+            cont+=1;
+            if(cont==1){ //Hasta este valor de i esta el usuario.
+               s1=linea.substr(0,cant-1);  //usario.
+                pos=i+1;        //incremeta la posicion 1 unidad para empezar la clave.
+                cant=0;
+            }
+        }
+    }
+
+    if(romper==1){return s1;}
+}
+
+void Niveles::sobreescribir(string usuario){
+    //Inicializacion de variables.
+    string nombre="",nivel="",pesos="",posx="",posy="";
+    char linea[200];
+    string linea1="",aux="";
+    bool bandera=false,terminar=true;
+    int cont=0;
+    ifstream original("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Partidas.txt");  //Abre archivo para leer
+    ofstream temp("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/temporal.txt"); //Copia para modificar saldo.
+    if(!original || !temp){         //Mira si se logró abrir los archivos exitosamente.
+        cout<<"Error al abrir el archivo"<<endl;
+        exit(2);
+    }
+    while(!original.eof()){  //Recorre todo el archivo linea a linea y lo guarda en variable linea.
+        original.getline(linea,sizeof (linea));
+        linea1=linea;  //Lo convierte a string.
+        for(int i=0;i<3;i++){
+            if(linea1[i]=='/n'){//Si la linea a leer esta en blanco ya termino el archivo.
+                cont+=1;
+            }if(cont>1){
+                terminar=false;  //Vuelve la bandera falsa para romper el ciclo.
+                break;
+            }
+        }
+        if(terminar==false){
+            break;
+        }
+        if(Buscar(linea1,1)!=usuario){
+            bandera=false;
+        }else{
+            bandera=true;
+            }
+        if(bandera==true){  //Esta es el usuario que necesitamos
+            if(usuario==""){  //Esta leyendo linea vacía, rompe el ciclo.
+                break;
+            }else{
+            aux=std::to_string(dificultad)+'/'+"PESOS"+'/'+std::to_string(personajea->getx())+'/'+std::to_string(personajea->gety())+"/"+std::to_string(tiempo);  //Variable para modificador el saldo.
+            temp<<nombre1<<"/";
+            temp<<endl<<aux<<endl;    //Cambia la linea deseada en el archivo temporal.
+            }
+        }else{
+            temp<<linea1<<endl;  //Si no es la cedula guarda la misma linea en el archivo temporal.
+        }
+    }
+    original.close();temp.close();  //Cierra archivos
+    llenararchivo();
+}
+
+void Niveles::llenararchivo(){
+    char linea[200];
+    string linea1="";
+    ifstream temp("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/temporal.txt");  //Abre archivo para leer
+    ofstream sudo("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Partidas.txt");  //Archivo final con informacion actualizada.
+    while(!temp.eof()){  //Hasta que llegue al final del archivo
+        temp.getline(linea,sizeof (linea));     //Toma linea a linea
+        linea1=linea;
+        sudo<<linea1<<endl;     //Lo lleva a al archivo final.
+    }
+    temp.close();sudo.close();//Cierra archivos.
+
+}
 void Niveles::keyPressEvent(QKeyEvent *evento){
     if(evento->key()==Qt::Key_A){
                 personajea->Left();
@@ -195,6 +306,7 @@ void Niveles::Colisiones(Personaje *personaje1)
         for(int i=0;i<pesos.size();i++){
             if(personaje1->collidesWithItem(pesos.at(i))){
                 escena->removeItem(pesos.at(i));
+                bolsas=std::to_string(i)+",";
                 pesos=cambiar(pesos,i);
                 paquetes+=1;
                 ui->paquetes->display(paquetes);
@@ -267,6 +379,7 @@ void Niveles::cada_nivel()
 {
     paquetes=0;
     paquetes1=0;
+    bolsas="";
     ui->paquetes->display(paquetes);
     ui->paquetes1->display(paquetes1);
     personajea=new Personaje(0);

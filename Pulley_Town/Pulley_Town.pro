@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cargar.cpp \
     creditos.cpp \
     friccion.cpp \
     ganador.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
+    cargar.h \
     creditos.h \
     friccion.h \
     ganador.h \
@@ -55,6 +57,7 @@ HEADERS += \
     widget.h
 
 FORMS += \
+    cargar.ui \
     creditos.ui \
     ganador.ui \
     modojuego.ui \
@@ -73,5 +76,8 @@ RESOURCES += \
     Imagenes.qrc
 
 DISTFILES += \
+    Archivos/Partidas.txt \
+    Archivos/Usuarios.txt \
+    Archivos/temporal.txt \
     Imagenes/c_izqu.jpeg \
     Imagenes/station.png

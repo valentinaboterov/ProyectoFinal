@@ -37,6 +37,7 @@ void Modojuego::Modo(int _modo)
 
 void Modojuego::on_Empezar_clicked()
 {
+    ui->partida->setText("");
     if(ui->novato->isChecked()){
         nivel->Definicion(0,modo);
         if(modo==0){
@@ -67,7 +68,13 @@ void Modojuego::on_Empezar_clicked()
 
 void Modojuego::on_Cargar_clicked()
 {
+    if(tipousuario==0){
+        ui->partida->setText("  NO TIENES PARTIDAS GUARDADAS!");
+    }if(modo==1){
+        ui->partida->setText("NO ES PERMITIDO EN MULTIJUGADOR!");
+    }if(modo==0 && tipousuario==1){
 
+    }
 }
 
 void Modojuego::MensajesInterfaz()

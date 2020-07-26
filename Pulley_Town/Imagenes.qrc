@@ -31,5 +31,6 @@
         <file>Imagenes/quieto1.png</file>
         <file>Imagenes/pared.jpg</file>
         <file>Imagenes/fondonivel.jpg</file>
+        <file>Archivos.qrc</file>
     </qresource>
 </RCC>

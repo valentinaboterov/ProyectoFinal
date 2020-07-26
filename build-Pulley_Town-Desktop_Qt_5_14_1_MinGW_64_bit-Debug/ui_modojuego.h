@@ -33,6 +33,7 @@ public:
     QLabel *label_4;
     QLabel *Mensaje1;
     QLabel *Mensaje2;
+    QLabel *partida;
 
     void setupUi(QWidget *Modojuego)
     {
@@ -132,6 +133,12 @@ public:
         Mensaje2->setStyleSheet(QString::fromUtf8("color: rgb(170, 0, 127);\n"
 "font: 75 8pt \"8514oem\";\n"
 "background-color: rgb(232, 232, 232);"));
+        partida = new QLabel(Modojuego);
+        partida->setObjectName(QString::fromUtf8("partida"));
+        partida->setGeometry(QRect(220, 600, 401, 31));
+        partida->setStyleSheet(QString::fromUtf8("color: rgb(170, 0, 0);\n"
+"font: 75 8pt \"8514oem\";\n"
+"background-color: rgb(232, 232, 232);"));
         label->raise();
         Dficultad->raise();
         Mensaje->raise();
@@ -144,6 +151,7 @@ public:
         label_4->raise();
         Mensaje1->raise();
         Mensaje2->raise();
+        partida->raise();
 
         retranslateUi(Modojuego);
 
@@ -168,6 +176,7 @@ public:
         label_4->setText(QCoreApplication::translate("Modojuego", "PARTIDA ANTERIOR:", nullptr));
         Mensaje1->setText(QString());
         Mensaje2->setText(QString());
+        partida->setText(QString());
     } // retranslateUi
 
 };

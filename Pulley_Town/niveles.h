@@ -11,6 +11,9 @@
 #include <QGraphicsScene>
 #include<QPixmap>
 #include<QTimer>
+#include<QMessageBox>
+#include<iostream>
+#include<fstream>
 #include"pendulo.h"
 #include"personaje.h"
 #include"pesos.h"
@@ -38,11 +41,18 @@ public:
     void Definicion(int _nivel,int modo);
     void Nombres(string _nombre1,string _nombre2);
     QGraphicsScene *escena;
+    void Cargar(int _nivel,string _bolsas,int _posx,int _posy,int tiempo);
 private:
     Ui::Niveles *ui;
     void nivel();
     int tiempo,paquetes,paquetes1,kilos=10;
-    string nombre1,nombre2;
+    string nombre1,nombre2,bolsas="";
+    float x,y,ancho,alto;
+    Perdedor *perdedor;
+    Ganador *ganador;
+    Personaje *personajea;
+    Personaje *personajeb;
+    Polea_ventana *polea;
     QList<Pendulo *> pendulos;
     plataforma *final;
     QList<Polea *> poleas;
@@ -53,20 +63,17 @@ private:
     QList<Paredes *> v_izquierda;
     QList<Paredes *> v_derecha;
     QList<Puente *> puentes;
-    QList<Pesos *> cambiar(QList<Pesos*> lista,int pos);
     QTimer *timer;
     QTimer *timer1;
     int modojuego,dificultad,pausa;
     QList<Pesos *> Eliminados;
+    QList<Pesos *> cambiar(QList<Pesos*> lista,int pos);
     void cada_nivel();
-    Perdedor *perdedor;
-    Ganador *ganador;
-    Personaje *personajea;
-    Personaje *personajeb;
-    Polea_ventana *polea;
-    float x,y,ancho,alto;
     void keyPressEvent(QKeyEvent * evento);
     void Colisiones(Personaje *personajea);
+    string Buscar(string linea,int romper);
+    void sobreescribir(string usuario);
+    void llenararchivo();
 
 private slots:
     void actualizar();

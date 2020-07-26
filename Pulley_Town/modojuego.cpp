@@ -39,12 +39,28 @@ void Modojuego::on_Empezar_clicked()
 {
     if(ui->novato->isChecked()){
         nivel->Definicion(0,modo);
+        if(modo==0){
+            nivel->Nombres(usuario1,"");
+        }else{
+            nivel->Nombres(usuario1,usuario2);
+        }
+
     }
     if(ui->Aprendiz->isChecked()){
         nivel->Definicion(1,modo);
+        if(modo==0){
+            nivel->Nombres(usuario1,"");
+        }else{
+            nivel->Nombres(usuario1,usuario2);
+        }
     }
     if(ui->Experto->isChecked()){
         nivel->Definicion(2,modo);
+        if(modo==0){
+            nivel->Nombres(usuario1,"");
+        }else{
+            nivel->Nombres(usuario1,usuario2);
+        }
     }
     nivel->show();
 }

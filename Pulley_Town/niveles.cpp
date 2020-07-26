@@ -8,13 +8,14 @@ Niveles::Niveles(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Juego");
     paquetes=0;
+    paquetes1=0;
     ui->paquetes->display(paquetes);
-    //Obtiene el tamaño del ordenador donde se ejecuta el código.
     x =0 ;
     y =0;
     ancho = 800;
     alto  = 750;
     pausa=0;
+    dificultad=0; //Nivel 1 por defecto.
     perdedor=new Perdedor();
     ganador=new Ganador();
     timer=new QTimer(this);
@@ -47,13 +48,19 @@ void Niveles::Definicion(int _nivel, int modo)
     escena->setBackgroundBrush(QPixmap(":/Imagenes/fondonivel1.png"));
     ui->graphicsView->setScene(escena);
     ui->graphicsView->resize(ancho,alto);
-    final=new plataforma(35,700);
+    final=new plataforma(35,680);
     escena->addItem(final);
     dificultad=_nivel;
     modojuego=modo;
     nivel();
     cada_nivel();
     timer->start(10);
+}
+
+void Niveles::Nombres(string _nombre1, string _nombre2)
+{
+    nombre1=_nombre1;
+    nombre2=_nombre2;
 }
 
 void Niveles::actualizar(){
@@ -101,16 +108,6 @@ void Niveles::on_Salir_clicked()
 }
 
 void Niveles::keyPressEvent(QKeyEvent *evento){
-    if(evento->key()==Qt::Key_A && personajea->collidesWithItem(friccion1)){
-        personajea->friccion_izquierda();
-    } if(evento->key()==Qt::Key_D&&personajea->collidesWithItem(friccion1)){
-        personajea->friccion_derecha();
-    }
-    if(evento->key()==Qt::Key_A && personajea->collidesWithItem(friccion2)){
-        personajea->friccion_izquierda();
-    } if(evento->key()==Qt::Key_D && personajea->collidesWithItem(friccion2)){
-        personajea->friccion_derecha();
-    }
     if(evento->key()==Qt::Key_A){
                 personajea->Left();
                 Colisiones(personajea);
@@ -127,6 +124,23 @@ void Niveles::keyPressEvent(QKeyEvent *evento){
     else if(evento->key()==Qt::Key_S){
                 personajea->Down();
                 Colisiones(personajea);
+    }
+    if(evento->key()==Qt::Key_J){
+                personajeb->Left();
+                Colisiones(personajeb);
+
+    }
+    else if(evento->key()==Qt::Key_L){
+                personajeb->Rigth();
+                Colisiones(personajeb);
+    }
+    else if(evento->key()==Qt::Key_I){
+                personajeb->Up();
+                Colisiones(personajeb);
+    }
+    else if(evento->key()==Qt::Key_K){
+                personajeb->Down();
+                Colisiones(personajeb);
     }
 }
 
@@ -153,24 +167,48 @@ void Niveles::Colisiones(Personaje *personaje1)
     for(int i=0;i<pendulos.size();i++){
         if(personaje1->collidesWithItem(pendulos.at(i))){
             //PIERDE
+            this->close();
+            if(personaje1==personajea){
+                perdedor->Nombre(nombre1);
+            }else{
+                perdedor->Nombre(nombre2);
+            }
             perdedor->Causa(0);
             perdedor->show();
         }
     }
+
     for(int i=0;i<resortes.size();i++){
         if(personaje1->collidesWithItem(resortes.at(i))){
             //PIERDE
+            this->close();
+            if(personaje1==personajea){
+                perdedor->Nombre(nombre1);
+            }else{
+                perdedor->Nombre(nombre2);
+            }
             perdedor->Causa(1);
             perdedor->show();
         }
     }
-    for(int i=0;i<pesos.size();i++){
-        if(personaje1->collidesWithItem(pesos.at(i))){
-            escena->removeItem(pesos.at(i));
-            pesos=cambiar(pesos,i);
-            paquetes+=1;
-            ui->paquetes->display(paquetes);
-        }
+    if(personaje1==personajea){
+        for(int i=0;i<pesos.size();i++){
+            if(personaje1->collidesWithItem(pesos.at(i))){
+                escena->removeItem(pesos.at(i));
+                pesos=cambiar(pesos,i);
+                paquetes+=1;
+                ui->paquetes->display(paquetes);
+            }
+         }
+    }if(personaje1==personajeb){
+            for(int i=0;i<pesos.size();i++){
+                if(personaje1->collidesWithItem(pesos.at(i))){
+                    escena->removeItem(pesos.at(i));
+                    pesos=cambiar(pesos,i);
+                    paquetes1+=1;
+                    ui->paquetes1->display(paquetes);
+                }
+            }
     }
     for(int i=0;i<puentes.size();i++){
         if(personaje1->collidesWithItem(puentes.at(i))){
@@ -180,15 +218,34 @@ void Niveles::Colisiones(Personaje *personaje1)
     if(personaje1->collidesWithItem(final)){
         this->close();
         polea=new Polea_ventana();
-        polea->valores(paquetes*kilos,dificultad);
-        polea->show();
-        int i=polea->cerrar();
-        if(i==0){
-            polea->close();
-            perdedor->Causa(3);
-            perdedor->show();
-        }else{      //GANADOR
-            ganador->show();
+        if(personaje1==personajea){
+            polea->valores(paquetes*kilos,dificultad);
+            polea->show();
+            int i=polea->cerrar();
+            this->close();
+            if(i==0){
+                polea->close();
+                perdedor->Causa(3);
+                perdedor->Nombre(nombre1);
+                perdedor->show();
+            }else{      //GANADOR
+                ganador->Nombre(nombre1);
+                ganador->show();
+            }
+        }if(personaje1==personajeb){
+            polea->valores(paquetes1*kilos,dificultad);
+            polea->show();
+            this->close();
+            int i=polea->cerrar();
+            if(i==0){
+                polea->close();
+                perdedor->Causa(3);
+                perdedor->Nombre(nombre2);
+                perdedor->show();
+            }else{      //GANADOR
+                ganador->Nombre(nombre2);
+                ganador->show();
+            }
         }
     }
 }
@@ -208,11 +265,17 @@ QList<Pesos *> Niveles::cambiar(QList<Pesos *> lista, int pos)
 
 void Niveles::cada_nivel()
 {
-    personajea=new Personaje();
+    paquetes=0;
+    paquetes1=0;
+    ui->paquetes->display(paquetes);
+    ui->paquetes1->display(paquetes1);
+    personajea=new Personaje(0);
     escena->addItem(personajea);
     personajea->setFlag(QGraphicsItem::ItemIsFocusable);
     personajea->setFocus();
     personajea->setPos(35,75);
+    QString texto = QString::fromStdString(nombre1);
+    ui->jugador1->setText(texto);
     if(dificultad==0){      //Novato un jugador
         tiempo=100000;
         ui->tiempo->display(tiempo/1000);
@@ -234,6 +297,15 @@ void Niveles::cada_nivel()
             resortes.push_back(new Resorte(70,510,10,1000,10,0)); escena->addItem(resortes.back());
             resortes.push_back(new Resorte(350,380,10,1500,30,0)); escena->addItem(resortes.back());
             resortes.push_back(new Resorte(540,420,10,1000,30,0)); escena->addItem(resortes.back());
+        if(modojuego==1){
+            personajeb=new Personaje(1);
+            escena->addItem(personajeb);
+            personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
+            personajeb->setFocus();
+            personajeb->setPos(35,80);
+            texto = QString::fromStdString(nombre2);
+            ui->jugador2->setText(texto);
+        }
     }
     if(dificultad==1){  //Aprendiz un jugador
         tiempo=90000;
@@ -261,9 +333,15 @@ void Niveles::cada_nivel()
         resortes.push_back(new Resorte(570,420,10,1000,30,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(70,400,10,1000,20,0)); escena->addItem(resortes.back());
         pendulos.push_back(new Pendulo(730,240,30,80)); escena->addItem(pendulos.back());
-        friccion1=new Friccion(300,490); escena->addItem(friccion1);
-        friccion2=new Friccion(300,50); escena->addItem(friccion2);
-
+        if(modojuego==1){
+            personajeb=new Personaje(1);
+            escena->addItem(personajeb);
+            personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
+            personajeb->setFocus();
+            personajeb->setPos(35,80);
+            texto = QString::fromStdString(nombre2);
+            ui->jugador2->setText(texto);
+        }
     }
     if(dificultad==2){    //Experto un jugador
         tiempo=120000;
@@ -299,10 +377,15 @@ void Niveles::cada_nivel()
         resortes.push_back(new Resorte(720,70,10,1000,30,1)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(200,320,10,1000,20,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(240,90,10,1000,20,0)); escena->addItem(resortes.back());
-        friccion1=new Friccion(300,490); escena->addItem(friccion1);
-        friccion2=new Friccion(300,50); escena->addItem(friccion2);
-        friccion3=new Friccion(160,360); escena->addItem(friccion3);
-        friccion4=new Friccion(650,650); escena->addItem(friccion4);
+        if(modojuego==1){
+            personajeb=new Personaje(1);
+            escena->addItem(personajeb);
+            personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
+            personajeb->setFocus();
+            personajeb->setPos(70,75);
+            texto = QString::fromStdString(nombre2);
+            ui->jugador2->setText(texto);
+        }
     }
     timer1->start(100);
 }
@@ -324,8 +407,6 @@ void Niveles::nivel(){
     v_derecha.push_back(new Paredes(10,210,-170,-130)); escena->addItem(v_derecha.back());
 
 
-    h_arriba.push_back(new Paredes(40,10,-120,-320));escena->addItem(h_arriba.back());
-    h_abajo.push_back(new Paredes(40,10,-120,-330));escena->addItem(h_abajo.back());
     h_arriba.push_back(new Paredes(140,10,-150,-440)); escena->addItem(h_arriba.back());
     h_abajo.push_back(new Paredes(140,10,-150,-450)); escena->addItem(h_abajo.back());
     v_izquierda.push_back(new Paredes(10,110,-200,-460)); escena->addItem(v_izquierda.back());

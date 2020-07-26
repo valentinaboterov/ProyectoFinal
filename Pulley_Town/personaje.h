@@ -14,11 +14,12 @@ class Personaje:public QObject,public QGraphicsItem
     Q_OBJECT
     int posx, posy;
 public:
-    explicit Personaje(QObject *parent = nullptr);
+    Personaje(int _tipo);
     QTimer *timer;      //Variable para lograr que el pacman se vea comiendo
     QPixmap *pixmap;
     float filas,columnas,ancho,alto;
     float t,v,a,miu,normal;
+    int tipo;
     //Movimiento
     void Up();
     void Down();

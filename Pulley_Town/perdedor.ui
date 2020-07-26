@@ -44,11 +44,11 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="cerrar">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>470</y>
+     <x>140</x>
+     <y>500</y>
      <width>131</width>
      <height>51</height>
     </rect>
@@ -61,35 +61,15 @@
     </font>
    </property>
    <property name="text">
-    <string>SI</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>470</y>
-     <width>131</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>8514oem</family>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>NO</string>
+    <string>CERRAR</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>420</y>
-     <width>311</width>
+     <x>100</x>
+     <y>450</y>
+     <width>231</width>
      <height>20</height>
     </rect>
    </property>
@@ -102,30 +82,35 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(85, 255, 0);</string>
+    <string notr="true">color: rgb(255, 0, 127);
+background-color: rgb(214, 214, 214);</string>
    </property>
    <property name="text">
-    <string>Deseas volver a intentarlo?</string>
+    <string>VUELVE A INTENTARLO!</string>
    </property>
   </widget>
   <widget class="QLabel" name="mensaje">
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>370</y>
-     <width>101</width>
+     <y>420</y>
+     <width>131</width>
      <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>8514oem</family>
-     <weight>75</weight>
-     <bold>true</bold>
+     <pointsize>8</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(85, 255, 0);</string>
+    <string notr="true">color: rgb(255, 0, 127);
+font: 8pt &quot;8514oem&quot;;
+background-color: rgb(214, 214, 214);</string>
    </property>
    <property name="text">
     <string/>
@@ -136,13 +121,33 @@
     <rect>
      <x>100</x>
      <y>390</y>
-     <width>211</width>
+     <width>241</width>
      <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(85, 255, 0);
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
+    <string notr="true">color: rgb(255, 0, 127);
+font: 8pt &quot;8514oem&quot;;
+background-color: rgb(214, 214, 214);
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="nombre">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>360</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 127);
+background-color: rgb(214, 214, 214);
+font: 8pt &quot;8514oem&quot;;</string>
    </property>
    <property name="text">
     <string/>

@@ -21,7 +21,9 @@ bool Registro::validacion(string _usuario,string _clave)
     char linea[400];
     bool ban1=true,ban2=true,acceso=false;
     string usuario,clave;
-    ui->jugador->setText("JUGADOR 1");
+    ui->label->setText("");
+    ui->lineEdit->setText("");
+    ui->lineEdit_2->setText("");
     if(tipojugador==0){ //Usuario nuevo, se agrega al final del documento
         ifstream base("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Usuarios.txt");  //Abre el archivo
         int lonu=_usuario.length();
@@ -35,8 +37,12 @@ bool Registro::validacion(string _usuario,string _clave)
                }
             }if(ban1==true){ //Si encuentra el usario debe registrar otro.
                acceso= true;
+               ui->lineEdit->setText("");
+               ui->lineEdit_2->setText("");
             }if(acceso==true){
                ui->label->setText("Usuario ya registrado.");
+               ui->lineEdit->setText("");
+               ui->lineEdit_2->setText("");
                return false;
             }
             if(usuario==""){
@@ -50,6 +56,7 @@ bool Registro::validacion(string _usuario,string _clave)
             int lon=_clave.length();
             if(lon!=4){   //Clave ingresada mas de 4 numeros.
                  ui->label->setText("La clave debe ser de 4 digitos");
+                 ui->lineEdit_2->setText("");
                  return false;
             }else{
                 outfile.open("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Usuarios.txt",std::fstream::app);  //Lo abre como archivo de salida y escribe al final(app).
@@ -58,6 +65,8 @@ bool Registro::validacion(string _usuario,string _clave)
                  }
                  outfile<<_usuario<<"/"<<_clave<<"/"<<endl;
                  outfile.close();
+                 ui->lineEdit->setText("");
+                 ui->lineEdit_2->setText("");
                  return true;
             }
          }
@@ -82,6 +91,8 @@ bool Registro::validacion(string _usuario,string _clave)
                     acceso=true;
                 }if(acceso==true){      //El acceso es correcto.
                     return true;
+                    ui->lineEdit->setText("");
+                    ui->lineEdit_2->setText("");
                 }
                 if(usuario==""){
                     break;
@@ -89,8 +100,11 @@ bool Registro::validacion(string _usuario,string _clave)
             ban1=true;ban2=true;
        }if(acceso==false){
             ui->label->setText("Clave o usuario incorrecto.");
+            ui->lineEdit->setText("");
+            ui->lineEdit_2->setText("");
             return false;
         }
+        base.close();
     }acceso=false;
 }
 
@@ -100,7 +114,6 @@ void Registro::Registrar(int _modojuego, int _tipojugador)
     modojuego=_modojuego;
     tipojugador=_tipojugador;
     this->show();
-
 }
 
 //Busca los valores de CC,Clave y saldo en una linea codificada y retorna un string dependiendo de romper.
@@ -135,10 +148,12 @@ void Registro::on_Entrar_clicked()
             if(modojuego!=0 && cont>0){   //MULTIJUGADOR Y SEGUNDO REGISTRO
                 modo.Nombre(nombre1,tipojugador,1);
                 modo.show();
+                modo.Modo(modojuego);
                 this->close();
             }else if(modojuego==0){ //UN SOLO JUGADOR
                 modo.Nombre(nombre1,tipojugador,0);
                 modo.show();
+                modo.Modo(modojuego);
                 this->close();
             }else{      //CONT==0, primer registro multijugador
                 modo.Nombre(nombre1,tipojugador,0);
@@ -146,8 +161,8 @@ void Registro::on_Entrar_clicked()
                 ui->jugador->setText("JUGADOR 2");
                 ui->lineEdit->setText("");
                 ui->lineEdit_2->setText("");
+                cont+=1;
                 this->show();
             }
         }
-        cont+=1;
 }

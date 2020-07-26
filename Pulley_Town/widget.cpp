@@ -19,8 +19,7 @@ Widget::~Widget()
 void Widget::on_Registro_clicked()
 {
     registro.Registrar(0,0);
-    modojuego.Modo(0);
-    this->close();
+
 }
 
 void Widget::on_Inicarsesion_clicked()
@@ -34,14 +33,12 @@ void Widget::on_Inicarsesion_clicked()
      switch (elegido) {
         case QMessageBox::Yes:
             registro.Registrar(1,1);   //Multijugador
-            modojuego.Modo(1);
             break;
         case QMessageBox::No:
             registro.Registrar(0,1);       //Un jugador
-            modojuego.Modo(0);
             break;
       }
-    this->close();
+
 }
 void Widget::on_Creditos_clicked()
 {

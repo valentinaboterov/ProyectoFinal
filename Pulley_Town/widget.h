@@ -5,7 +5,6 @@
 #include<QMessageBox>
 #include"registro.h"
 #include"creditos.h"
-#include"modojuego.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -31,6 +30,5 @@ private:
     Ui::Widget *ui;
     Registro registro;
     Creditos creditos;
-    Modojuego modojuego;
 };
 #endif // WIDGET_H

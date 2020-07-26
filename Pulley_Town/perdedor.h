@@ -15,11 +15,11 @@ public:
     explicit Perdedor(QWidget *parent = nullptr);
     ~Perdedor();
     void Causa(int _mensaje);
+    void Nombre(string _nombre);
 
 private slots:
-    void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_cerrar_clicked();
 
 private:
     Ui::Perdedor *ui;

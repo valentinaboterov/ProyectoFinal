@@ -42,12 +42,14 @@ void Perdedor::Causa(int _mensaje)
     }
 }
 
-void Perdedor::on_pushButton_clicked()
+void Perdedor::Nombre(string _nombre)
 {
-
+    QString texto1= QString::fromStdString(_nombre);
+    ui->nombre->setText(texto1);
 }
 
-void Perdedor::on_pushButton_2_clicked()
-{
 
+void Perdedor::on_cerrar_clicked()
+{
+    this->close();
 }

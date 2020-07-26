@@ -24,5 +24,12 @@
         <file>Imagenes/boton_play.png</file>
         <file>Imagenes/boton_salir.png</file>
         <file>Imagenes/boton_guardar.png</file>
+        <file>Imagenes/abajo1.png</file>
+        <file>Imagenes/arriba1.png</file>
+        <file>Imagenes/derecha1.png</file>
+        <file>Imagenes/izquierda1.png</file>
+        <file>Imagenes/quieto1.png</file>
+        <file>Imagenes/pared.jpg</file>
+        <file>Imagenes/fondonivel.jpg</file>
     </qresource>
 </RCC>

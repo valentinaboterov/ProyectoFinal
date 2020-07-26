@@ -9,7 +9,6 @@
 #include<QObject>
 #include <QGraphicsView>
 #include <QGraphicsScene>
-#include<QMessageBox>
 #include<QPixmap>
 #include<QTimer>
 #include"pendulo.h"
@@ -22,7 +21,6 @@
 #include"plataforma.h"
 #include"perdedor.h"
 #include"ganador.h"
-#include"friccion.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -38,14 +36,13 @@ public:
     explicit Niveles(QWidget *parent = nullptr);
     ~Niveles();
     void Definicion(int _nivel,int modo);
+    void Nombres(string _nombre1,string _nombre2);
     QGraphicsScene *escena;
-    void Reanudar();
-    void Guardar();
-    void Salir();
 private:
     Ui::Niveles *ui;
     void nivel();
-    int tiempo,paquetes,kilos=10;
+    int tiempo,paquetes,paquetes1,kilos=10;
+    string nombre1,nombre2;
     QList<Pendulo *> pendulos;
     plataforma *final;
     QList<Polea *> poleas;
@@ -57,10 +54,6 @@ private:
     QList<Paredes *> v_derecha;
     QList<Puente *> puentes;
     QList<Pesos *> cambiar(QList<Pesos*> lista,int pos);
-    Friccion *friccion1;
-    Friccion *friccion2;
-    Friccion *friccion3;
-    Friccion *friccion4;
     QTimer *timer;
     QTimer *timer1;
     int modojuego,dificultad,pausa;
@@ -69,6 +62,7 @@ private:
     Perdedor *perdedor;
     Ganador *ganador;
     Personaje *personajea;
+    Personaje *personajeb;
     Polea_ventana *polea;
     float x,y,ancho,alto;
     void keyPressEvent(QKeyEvent * evento);

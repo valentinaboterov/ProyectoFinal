@@ -1,3 +1,6 @@
+/*
+Permite ver los creditos del juego.
+*/
 #ifndef CREDITOS_H
 #define CREDITOS_H
 

@@ -1,3 +1,4 @@
+
 #ifndef FRICCION_H
 #define FRICCION_H
 

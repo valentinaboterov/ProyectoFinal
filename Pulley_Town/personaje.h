@@ -1,3 +1,7 @@
+/*
+Genera los personajes y sus movimientos.
+*/
+
 #ifndef PERSONAJE_H
 #define PERSONAJE_H
 
@@ -15,7 +19,7 @@ class Personaje:public QObject,public QGraphicsItem
     int posx, posy;
 public:
     Personaje(int _tipo);
-    QTimer *timer;      //Variable para lograr que el pacman se vea comiendo
+    QTimer *timer;
     QPixmap *pixmap;
     float filas,columnas,ancho,alto;
     float t,v,a,miu,normal;
@@ -30,6 +34,7 @@ public:
     void friccion_derecha();
     int getx();
     int gety();
+    //Dibujar.
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
@@ -38,7 +43,6 @@ signals:
 public slots:
     //Actualiza las imagenes.
     void Actualizacion();
-
 };
 
 #endif // PERSONAJE_H

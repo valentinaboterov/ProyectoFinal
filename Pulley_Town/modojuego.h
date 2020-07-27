@@ -1,3 +1,6 @@
+/*
+Ventana de inicio, donde se selecciona el nivel, o cargar partidas.
+*/
 #ifndef MODOJUEGO_H
 #define MODOJUEGO_H
 using namespace std;
@@ -22,16 +25,16 @@ public:
     void Modo(int _modo);
 private slots:
 
-    void on_Empezar_clicked();
+    void on_Empezar_clicked();  //Empezar juego nuevo
 
-    void on_Cargar_clicked();
+    void on_Cargar_clicked();   //Cargar juego antiguo
 
 private:
     Ui::Modojuego *ui;
     int modo,tipousuario,cont;
     string espacios="";
     string usuario1,usuario2;
-    void MensajesInterfaz();
+    void MensajesInterfaz();        //Segun el modo muestra mensajes en pantalla.
     Niveles *nivel=new Niveles();
     Cargar *carga=new Cargar;
 };

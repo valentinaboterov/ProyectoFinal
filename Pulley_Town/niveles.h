@@ -1,3 +1,6 @@
+/*
+Ventana con el nivel según el caso.
+*/
 #ifndef NIVELES_H
 #define NIVELES_H
 
@@ -38,13 +41,13 @@ class Niveles : public QWidget
 public:
     explicit Niveles(QWidget *parent = nullptr);
     ~Niveles();
-    void Definicion(int _nivel,int modo);
+    void Definicion(int _nivel,int modo);   //Variables iniciales.
     void Nombres(string _nombre1,string _nombre2);
     QGraphicsScene *escena;
-    void Cargar(int _nivel,string _bolsas,int _posx,int _posy,int tiempo);
+    void Cargar(string _nivel,string _bolsas,string _posx,string _posy,string _tiempo);
+    void llenararchivo();
 private:
     Ui::Niveles *ui;
-    void nivel();
     int tiempo,paquetes,paquetes1,kilos=10;
     string nombre1,nombre2,bolsas="";
     float x,y,ancho,alto;
@@ -53,6 +56,7 @@ private:
     Personaje *personajea;
     Personaje *personajeb;
     Polea_ventana *polea;
+    //Listas para objetos.
     QList<Pendulo *> pendulos;
     plataforma *final;
     QList<Polea *> poleas;
@@ -63,21 +67,24 @@ private:
     QList<Paredes *> v_izquierda;
     QList<Paredes *> v_derecha;
     QList<Puente *> puentes;
+    //Timers.
     QTimer *timer;
     QTimer *timer1;
     int modojuego,dificultad,pausa;
-    QList<Pesos *> Eliminados;
     QList<Pesos *> cambiar(QList<Pesos*> lista,int pos);
+    //Funciones.
+    void nivel();
     void cada_nivel();
     void keyPressEvent(QKeyEvent * evento);
     void Colisiones(Personaje *personajea);
     string Buscar(string linea,int romper);
     void sobreescribir(string usuario);
-    void llenararchivo();
+
 
 private slots:
-    void actualizar();
-    void actualizar_tiempo();
+    void actualizar();  //Objetos
+    void actualizar_tiempo();       //Tiempo de juego
+    //Botones.
     void on_pausa_clicked();
     void on_Guardar_clicked();
     void on_Salir_clicked();

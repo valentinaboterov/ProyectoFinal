@@ -6,10 +6,12 @@ Niveles::Niveles(QWidget *parent) :
     ui(new Ui::Niveles)
 {
     ui->setupUi(this);
-    setWindowTitle("Juego");
-    paquetes=0;
-    paquetes1=0;
+    setWindowTitle("PULLEY TOWM");
+    //Inicializacion de variables.
+    paquetes=0;     //Paquetes jugador 1
+    paquetes1=0;        //Paquetes jugador 2
     ui->paquetes->display(paquetes);
+    //Pantalla
     x =0 ;
     y =0;
     ancho = 800;
@@ -18,8 +20,8 @@ Niveles::Niveles(QWidget *parent) :
     dificultad=0; //Nivel 1 por defecto.
     perdedor=new Perdedor();
     ganador=new Ganador();
-    timer=new QTimer(this);
-    timer1=new QTimer(this);
+    timer=new QTimer(this);     //Timer para objetos.
+    timer1=new QTimer(this);    //Timer para el tiempo de juego.
     connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
     connect(timer1,SIGNAL(timeout()),this,SLOT(actualizar_tiempo()));
     ui->pausa->setIcon(QPixmap(":/Imagenes/boton_pausa.png"));
@@ -28,6 +30,7 @@ Niveles::Niveles(QWidget *parent) :
     ui->Guardar->setIconSize(QSize(50,40));
     ui->Salir->setIcon(QPixmap(":/Imagenes/boton_salir.png"));
     ui->Salir->setIconSize(QSize(50,40));
+    //Limpieza de listas por reinicio de juego.
     pendulos.clear();
     resortes.clear();
     pesos.clear();
@@ -42,27 +45,57 @@ Niveles::~Niveles()
     delete ui;
 }
 
+//Variables iniciales para el nivel,creacion de la escena.
 void Niveles::Definicion(int _nivel, int modo)
 {
     escena=new QGraphicsScene(x,y,ancho,alto);
     escena->setBackgroundBrush(QPixmap(":/Imagenes/fondonivel1.png"));
     ui->graphicsView->setScene(escena);
     ui->graphicsView->resize(ancho,alto);
-    final=new plataforma(35,680);
+    final=new plataforma(35,680);   //Plataforma.
     escena->addItem(final);
-    dificultad=_nivel;
-    modojuego=modo;
-    nivel();
-    cada_nivel();
-    timer->start(10);
+    dificultad=_nivel;  //Determine que nivel se va a jugar
+    modojuego=modo; //Un jugador o 2 jugadores
+    nivel();    //Construye los muros del laberinto.
+    cada_nivel();   //Pone los objetos segun el nivel
+    timer->start(10);   //Empieza a actualizar los objetos
 }
 
+//Obtiene los nombre de los jugadores.
 void Niveles::Nombres(string _nombre1, string _nombre2)
 {
     nombre1=_nombre1;
     nombre2=_nombre2;
 }
 
+//Cuando se carga una partida anterior.
+void Niveles::Cargar(string _nivel, string _bolsas, string _posx, string _posy, string _tiempo)
+{
+    int cant=0,pos=0,paque;
+    //Inicia las variables y genera el nivel segun dificultad.
+    dificultad=stoi(_nivel);
+    modojuego=0;
+    nivel();
+    cada_nivel();
+    //Le da la nueva posicion al personaje y actualiza el tiempo
+    personajea->setPos(stoi(_posx),stoi(_posy));
+    tiempo=stoi(_tiempo);
+    //Elimina los pesos que ya fueron tomados
+    for(int i=0;i<_bolsas.length();i++){
+        cant+=1;
+        if(_bolsas[i]==','){
+            paque=stoi(_bolsas.substr(pos,cant));   //Toma el peso del string
+            cambiar(pesos,paque);   //Lo elimina de la lista
+            escena->removeItem(pesos[paque]);   //Remueve el item de la escena
+            paquetes+=1;    //Suma que se relecto un paquete.
+            pos=i+1;    //Reinicia variables para siguiente.
+            cant=0;
+        }
+    }
+    ui->paquetes->display(paquetes);    //Actualiza valor en el display.
+}
+
+//Actualiza los objetos en la escena.
 void Niveles::actualizar(){
     for(int i=0;i<pendulos.length();i++){
         pendulos.at(i)->actualizar();
@@ -72,10 +105,12 @@ void Niveles::actualizar(){
     }
 }
 
+//Actualiza el tiempo de juego.
 void Niveles::actualizar_tiempo()
 {
     tiempo-=100;
     ui->tiempo->display(tiempo/1000);
+    //Se acabo el tiempo y pierde.
     if(tiempo<1000){
         perdedor->Causa(2);
         this->close();
@@ -83,26 +118,32 @@ void Niveles::actualizar_tiempo()
     }
 }
 
+//Pausa o reanuda el juego.
 void Niveles::on_pausa_clicked()
 {
+    //Si se oprime un avez pausa el juego.
     if(pausa==0){
         timer1->stop();
         timer->stop();
+        //Cambia el icono.
         ui->pausa->setIcon(QPixmap(":/Imagenes/boton_play.png"));
+        //Actualiza la variable.
         pausa=1;
-    }else{
+    }else{  //Reanudar.
         timer->start();
         timer->start();
         ui->pausa->setIcon(QPixmap(":/Imagenes/boton_pausa.png"));
         pausa=0;
     }
 }
+
+//Guardar partida.
 void Niveles::on_Guardar_clicked()
-{
- //GUARDAR PARTIDA
+{   //Para los timers.
     timer->stop();
     timer1->stop();
-    if(modojuego==1){
+    //Solo se permite guardar partida con un solo jugador.
+    if(modojuego==1){   //Multijugador sale QMessageBox.
         QMessageBox msgBox;
         msgBox.setText("No se permite guardar partidas en modo multijugador. ");
         msgBox.setStandardButtons(QMessageBox::Ok);
@@ -115,7 +156,7 @@ void Niveles::on_Guardar_clicked()
                this->close();
                break;
          }
-    }else{
+    }else{  //Guarda la partida en un archivo de texto.
         sobreescribir(nombre1);
         QMessageBox msgBox;
         msgBox.setText("     Partida guardada. ");
@@ -132,11 +173,15 @@ void Niveles::on_Guardar_clicked()
     }
 }
 
+//Cierra la ventana y vuelve al inicio.
 void Niveles::on_Salir_clicked()
 {
     this->close();
 }
 
+//Sirve para manejar los archivos de texto, los cuales están organizados al
+//separarlos con "/" . Por tanto se busca la cantidad de separardores segun
+//el dato que se busca.
 string Niveles::Buscar(string linea, int romper){
     //Inicializacion de variables.
     //cant:Cantidad e elementos para el subplot,cont:acceder a diferentes valores, pos:Saber donde inicia cada valor.
@@ -148,8 +193,6 @@ string Niveles::Buscar(string linea, int romper){
             cont+=1;
             if(cont==1){ //Hasta este valor de i esta el usuario.
                s1=linea.substr(0,cant-1);  //usario.
-                pos=i+1;        //incremeta la posicion 1 unidad para empezar la clave.
-                cant=0;
             }
         }
     }
@@ -157,6 +200,7 @@ string Niveles::Buscar(string linea, int romper){
     if(romper==1){return s1;}
 }
 
+//Actualiza el archivo con la nueva partida guardada.
 void Niveles::sobreescribir(string usuario){
     //Inicializacion de variables.
     string nombre="",nivel="",pesos="",posx="",posy="";
@@ -198,13 +242,14 @@ void Niveles::sobreescribir(string usuario){
             temp<<endl<<aux<<endl;    //Cambia la linea deseada en el archivo temporal.
             }
         }else{
-            temp<<linea1<<endl;  //Si no es la cedula guarda la misma linea en el archivo temporal.
+            temp<<linea1<<endl;  //Si no es el usuario guarda la misma linea en el archivo temporal.
         }
     }
     original.close();temp.close();  //Cierra archivos
     llenararchivo();
 }
 
+//Intercambia archivo temporal por el original.
 void Niveles::llenararchivo(){
     char linea[200];
     string linea1="";
@@ -218,7 +263,10 @@ void Niveles::llenararchivo(){
     temp.close();sudo.close();//Cierra archivos.
 
 }
+
+//Movimiento de los personajes.
 void Niveles::keyPressEvent(QKeyEvent *evento){
+    //Un jugador.
     if(evento->key()==Qt::Key_A){
                 personajea->Left();
                 Colisiones(personajea);
@@ -236,6 +284,7 @@ void Niveles::keyPressEvent(QKeyEvent *evento){
                 personajea->Down();
                 Colisiones(personajea);
     }
+    if(modojuego==1){   //Multijugador
     if(evento->key()==Qt::Key_J){
                 personajeb->Left();
                 Colisiones(personajeb);
@@ -253,10 +302,13 @@ void Niveles::keyPressEvent(QKeyEvent *evento){
                 personajeb->Down();
                 Colisiones(personajeb);
     }
+    }
 }
 
+//Colisiones del personaje
 void Niveles::Colisiones(Personaje *personaje1)
 {
+    //Colisiona con muro , lo envia en la direccion contraria.
     for(int i=0;i<v_derecha.size();i++){
         if(personaje1->collidesWithItem(v_derecha.at(i))){
             personaje1->Rigth();
@@ -275,6 +327,7 @@ void Niveles::Colisiones(Personaje *personaje1)
             personaje1->Down();
         }
     }
+    //Colisiona con pendulo pierde
     for(int i=0;i<pendulos.size();i++){
         if(personaje1->collidesWithItem(pendulos.at(i))){
             //PIERDE
@@ -288,7 +341,7 @@ void Niveles::Colisiones(Personaje *personaje1)
             perdedor->show();
         }
     }
-
+    //Colisiona con resorte pierde
     for(int i=0;i<resortes.size();i++){
         if(personaje1->collidesWithItem(resortes.at(i))){
             //PIERDE
@@ -302,6 +355,7 @@ void Niveles::Colisiones(Personaje *personaje1)
             perdedor->show();
         }
     }
+    //Colisiona con pesos, elimina el peso de la escena y aumenta paquetes.
     if(personaje1==personajea){
         for(int i=0;i<pesos.size();i++){
             if(personaje1->collidesWithItem(pesos.at(i))){
@@ -322,11 +376,13 @@ void Niveles::Colisiones(Personaje *personaje1)
                 }
             }
     }
+    //Si colisiona con puente lo mueve posiciones a la derecha.
     for(int i=0;i<puentes.size();i++){
         if(personaje1->collidesWithItem(puentes.at(i))){
             personaje1->puente();
         }
     }
+    //Si colisiona con plataforma cierra la pantalla y abre la polea.
     if(personaje1->collidesWithItem(final)){
         this->close();
         polea=new Polea_ventana();
@@ -362,19 +418,19 @@ void Niveles::Colisiones(Personaje *personaje1)
     }
 }
 
+//Elimina los pesos de la lista.
 QList<Pesos *> Niveles::cambiar(QList<Pesos *> lista, int pos)
 {
-    QList<Pesos*> aux;
+    QList<Pesos*> aux;      //Lista auxiliar a retornar
     for(int i=0;i<lista.size();i++){
-        if(i!=pos){
+        if(i!=pos){ //Lo agrega a la lista auxiliar si no es el que se desea eliminar.
             aux.push_back(lista.at(i));
         }
     }
-    return aux;
+    return aux; //Retorna la lista.
 }
 
-
-
+//Genera cada nivel segun dificultad.
 void Niveles::cada_nivel()
 {
     paquetes=0;
@@ -382,11 +438,13 @@ void Niveles::cada_nivel()
     bolsas="";
     ui->paquetes->display(paquetes);
     ui->paquetes1->display(paquetes1);
+    //Se agrega a la escena el primer personaje.
     personajea=new Personaje(0);
     escena->addItem(personajea);
     personajea->setFlag(QGraphicsItem::ItemIsFocusable);
     personajea->setFocus();
     personajea->setPos(35,75);
+    //Se agrega el nombre del jugador
     QString texto = QString::fromStdString(nombre1);
     ui->jugador1->setText(texto);
     if(dificultad==0){      //Novato un jugador
@@ -410,7 +468,7 @@ void Niveles::cada_nivel()
             resortes.push_back(new Resorte(70,510,10,1000,10,0)); escena->addItem(resortes.back());
             resortes.push_back(new Resorte(350,380,10,1500,30,0)); escena->addItem(resortes.back());
             resortes.push_back(new Resorte(540,420,10,1000,30,0)); escena->addItem(resortes.back());
-        if(modojuego==1){
+        if(modojuego==1){   //Multijugador.
             personajeb=new Personaje(1);
             escena->addItem(personajeb);
             personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -446,7 +504,7 @@ void Niveles::cada_nivel()
         resortes.push_back(new Resorte(570,420,10,1000,30,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(70,400,10,1000,20,0)); escena->addItem(resortes.back());
         pendulos.push_back(new Pendulo(730,240,30,80)); escena->addItem(pendulos.back());
-        if(modojuego==1){
+        if(modojuego==1){   //Multijugador
             personajeb=new Personaje(1);
             escena->addItem(personajeb);
             personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -490,7 +548,7 @@ void Niveles::cada_nivel()
         resortes.push_back(new Resorte(720,70,10,1000,30,1)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(200,320,10,1000,20,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(240,90,10,1000,20,0)); escena->addItem(resortes.back());
-        if(modojuego==1){
+        if(modojuego==1){   //Multijugador.
             personajeb=new Personaje(1);
             escena->addItem(personajeb);
             personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -502,6 +560,8 @@ void Niveles::cada_nivel()
     }
     timer1->start(100);
 }
+
+//Genra paredes del laberinto
 void Niveles::nivel(){
     //Definicion nivel.
     //Esquinas:

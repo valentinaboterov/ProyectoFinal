@@ -1,3 +1,7 @@
+/*
+Dibuja el puente.
+*/
+
 #ifndef PUENTE_H
 #define PUENTE_H
 

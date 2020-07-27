@@ -1,3 +1,6 @@
+/*
+Genera la ventana para comparacion de la polea.
+*/
 #ifndef POLEA_VENTANA_H
 #define POLEA_VENTANA_H
 
@@ -23,8 +26,8 @@ public:
     explicit Polea_ventana(QWidget *parent = nullptr);
     ~Polea_ventana();
      QGraphicsScene *escena;
-     void valores(int _masa2,int _nivel);
-     int cerrar();
+     void valores(int _masa2,int _nivel);   //Recibe valores obtenidos en el nivel
+     int cerrar();  //Cierra la ventana.
 
 private:
     Ui::Polea_ventana *ui;
@@ -32,8 +35,8 @@ private:
     int masa2,nivel,paquetes;
     float x,y,ancho,alto;
 private slots:
-    void actualizar();
-    void on_Comparar_clicked();
+    void actualizar();  //Llama funcion para comparar pesos.
+    void on_Comparar_clicked(); //Boton para comparar
 };
 
 #endif // POLEA_VENTANA_H

@@ -1,3 +1,6 @@
+/*
+Ventana perdedor de juego.
+*/
 #ifndef PERDEDOR_H
 #define PERDEDOR_H
 using namespace std;
@@ -14,12 +17,12 @@ class Perdedor : public QWidget
 public:
     explicit Perdedor(QWidget *parent = nullptr);
     ~Perdedor();
-    void Causa(int _mensaje);
-    void Nombre(string _nombre);
+    void Causa(int _mensaje);   //Porque pierde.
+    void Nombre(string _nombre);    //Nombre usuario.
 
 private slots:
 
-    void on_cerrar_clicked();
+    void on_cerrar_clicked();   //Cierra ventana.
 
 private:
     Ui::Perdedor *ui;

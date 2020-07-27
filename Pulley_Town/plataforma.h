@@ -1,3 +1,7 @@
+/*
+Genra la plataforma final.
+*/
+
 #ifndef PLATAFORMA_H
 #define PLATAFORMA_H
 #include <QObject>

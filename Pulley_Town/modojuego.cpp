@@ -73,7 +73,8 @@ void Modojuego::on_Cargar_clicked()
     }if(modo==1){
         ui->partida->setText("NO ES PERMITIDO EN MULTIJUGADOR!");
     }if(modo==0 && tipousuario==1){
-
+           carga->Partida(usuario1);
+           carga->show();
     }
 }
 

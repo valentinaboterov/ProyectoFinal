@@ -579,6 +579,7 @@ qrc_Imagenes.cpp: ../Pulley_Town/Imagenes.qrc \
 		../Pulley_Town/Imagenes/fondoinicio.jpeg \
 		../Pulley_Town/Imagenes/izquierda1.png \
 		../Pulley_Town/Imagenes/fondomodojuego.png \
+		../Pulley_Town/Imagenes/fondo_carga.png \
 		../Pulley_Town/Imagenes/puente.png \
 		../Pulley_Town/Imagenes/quieto.png \
 		../Pulley_Town/Imagenes/Fondonivel.jpeg \
@@ -1072,6 +1073,7 @@ moc_modojuego.cpp: ../Pulley_Town/modojuego.h \
 		../Pulley_Town/plataforma.h \
 		../Pulley_Town/perdedor.h \
 		../Pulley_Town/ganador.h \
+		../Pulley_Town/cargar.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\modojuego.h -o moc_modojuego.cpp
@@ -1812,6 +1814,7 @@ moc_registro.cpp: ../Pulley_Town/registro.h \
 		../Pulley_Town/plataforma.h \
 		../Pulley_Town/perdedor.h \
 		../Pulley_Town/ganador.h \
+		../Pulley_Town/cargar.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\registro.h -o moc_registro.cpp
@@ -1960,6 +1963,7 @@ moc_widget.cpp: ../Pulley_Town/widget.h \
 		../Pulley_Town/plataforma.h \
 		../Pulley_Town/perdedor.h \
 		../Pulley_Town/ganador.h \
+		../Pulley_Town/cargar.h \
 		../Pulley_Town/creditos.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
@@ -2125,7 +2129,35 @@ cargar.o: ../Pulley_Town/cargar.cpp ../Pulley_Town/cargar.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
-		ui_cargar.h
+		ui_cargar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QListWidget \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlistwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlistview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvalidator.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qrubberband.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cargar.o ..\Pulley_Town\cargar.cpp
 
 creditos.o: ../Pulley_Town/creditos.cpp ../Pulley_Town/creditos.h \
@@ -2638,6 +2670,7 @@ main.o: ../Pulley_Town/main.cpp ../Pulley_Town/widget.h \
 		../Pulley_Town/plataforma.h \
 		../Pulley_Town/perdedor.h \
 		../Pulley_Town/ganador.h \
+		../Pulley_Town/cargar.h \
 		../Pulley_Town/creditos.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
@@ -2789,6 +2822,7 @@ modojuego.o: ../Pulley_Town/modojuego.cpp ../Pulley_Town/modojuego.h \
 		../Pulley_Town/plataforma.h \
 		../Pulley_Town/perdedor.h \
 		../Pulley_Town/ganador.h \
+		../Pulley_Town/cargar.h \
 		ui_modojuego.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
@@ -4134,6 +4168,7 @@ registro.o: ../Pulley_Town/registro.cpp ../Pulley_Town/registro.h \
 		../Pulley_Town/plataforma.h \
 		../Pulley_Town/perdedor.h \
 		../Pulley_Town/ganador.h \
+		../Pulley_Town/cargar.h \
 		ui_registro.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
@@ -4403,6 +4438,7 @@ widget.o: ../Pulley_Town/widget.cpp ../Pulley_Town/widget.h \
 		../Pulley_Town/plataforma.h \
 		../Pulley_Town/perdedor.h \
 		../Pulley_Town/ganador.h \
+		../Pulley_Town/cargar.h \
 		../Pulley_Town/creditos.h \
 		ui_widget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \

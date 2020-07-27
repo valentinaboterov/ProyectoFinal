@@ -1,3 +1,7 @@
+/*
+Dibuja los pesos que el usuario debe coger.
+*/
+
 #ifndef PESOS_H
 #define PESOS_H
 

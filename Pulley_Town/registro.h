@@ -1,3 +1,6 @@
+/*
+Validacion de ingreso de usuarios.(Registro e iniciar sesion)
+*/
 #ifndef REGISTRO_H
 #define REGISTRO_H
 

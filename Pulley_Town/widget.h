@@ -1,3 +1,7 @@
+/*
+Ventana principal.
+*/
+
 #ifndef WIDGET_H
 #define WIDGET_H
 
@@ -20,11 +24,12 @@ public:
     int tipo=0; //Registro nuevo por defecto
 
 private slots:
-   void on_Registro_clicked();
+    //Botones:
+   void on_Registro_clicked();  //Nuevo usuario.
 
-    void on_Inicarsesion_clicked();
+    void on_Inicarsesion_clicked(); //Usuario antiguo
 
-    void on_Creditos_clicked();
+    void on_Creditos_clicked(); //Ver creditos.
 
 private:
     Ui::Widget *ui;

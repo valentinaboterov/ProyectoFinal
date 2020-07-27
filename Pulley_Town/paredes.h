@@ -1,3 +1,7 @@
+/*
+Dibuja las paredes del laberinto.
+*/
+
 #ifndef PAREDES_H
 #define PAREDES_H
 

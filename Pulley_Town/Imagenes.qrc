@@ -32,5 +32,6 @@
         <file>Imagenes/pared.jpg</file>
         <file>Imagenes/fondonivel.jpg</file>
         <file>Archivos.qrc</file>
+        <file>Imagenes/fondo_carga.png</file>
     </qresource>
 </RCC>

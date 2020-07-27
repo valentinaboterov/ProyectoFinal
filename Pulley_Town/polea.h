@@ -1,3 +1,6 @@
+/*
+Dibuja la polea.
+*/
 #ifndef POLEA_H
 #define POLEA_H
 
@@ -14,8 +17,9 @@ class Polea : public QObject,public QGraphicsItem
     Q_OBJECT
 public:
     Polea(int _x,int _y,int _masa1,int _nivel);
-    void Comparacion();
+    void Comparacion(); //Compara peso fijo con el del usuario.
     QGraphicsScene *escena;
+    //Obtener valores.
     int getx1();
     int gety1();
     int getx2();

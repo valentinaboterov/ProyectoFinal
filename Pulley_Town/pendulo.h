@@ -1,3 +1,6 @@
+/*
+Genera el pendulo de los niveles.
+*/
 #ifndef PENDULO_H
 #define PENDULO_H
 

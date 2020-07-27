@@ -1,3 +1,6 @@
+/*
+Es la ventana que se ve cuando un jugador gana.
+*/
 #ifndef GANADOR_H
 #define GANADOR_H
 
@@ -15,10 +18,10 @@ class Ganador : public QWidget
 public:
     explicit Ganador(QWidget *parent = nullptr);
     ~Ganador();
-    void  Nombre(string _nombre);
+    void  Nombre(string _nombre);   //Recibe nombre de usuario.
 
 private slots:
-    void on_menu_clicked();
+    void on_menu_clicked(); //Volver a inicio.
 
 private:
     Ui::Ganador *ui;

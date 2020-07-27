@@ -73,6 +73,12 @@ void Niveles::Cargar(string _nivel, string _bolsas, string _posx, string _posy, 
 {
     int cant=0,pos=0,paque;
     //Inicia las variables y genera el nivel segun dificultad.
+    escena=new QGraphicsScene(x,y,ancho,alto);
+    escena->setBackgroundBrush(QPixmap(":/Imagenes/fondonivel1.png"));
+    ui->graphicsView->setScene(escena);
+    ui->graphicsView->resize(ancho,alto);
+    final=new plataforma(35,680);   //Plataforma.
+    escena->addItem(final);
     dificultad=stoi(_nivel);
     modojuego=0;
     nivel();
@@ -81,18 +87,21 @@ void Niveles::Cargar(string _nivel, string _bolsas, string _posx, string _posy, 
     personajea->setPos(stoi(_posx),stoi(_posy));
     tiempo=stoi(_tiempo);
     //Elimina los pesos que ya fueron tomados
-    for(int i=0;i<_bolsas.length();i++){
-        cant+=1;
-        if(_bolsas[i]==','){
-            paque=stoi(_bolsas.substr(pos,cant));   //Toma el peso del string
-            cambiar(pesos,paque);   //Lo elimina de la lista
-            escena->removeItem(pesos[paque]);   //Remueve el item de la escena
-            paquetes+=1;    //Suma que se relecto un paquete.
-            pos=i+1;    //Reinicia variables para siguiente.
-            cant=0;
+    if(_bolsas.length()>=1){
+        for(int i=0;i<_bolsas.length();i++){
+            cant+=1;
+            if(_bolsas[i]==','){
+                paque=stoi(_bolsas.substr(pos,cant));   //Toma el peso del string
+                cambiar(pesos,paque);   //Lo elimina de la lista
+                escena->removeItem(pesos[paque]);   //Remueve el item de la escena
+                paquetes+=1;    //Suma que se relecto un paquete.
+                pos=i+1;    //Reinicia variables para siguiente.
+                cant=0;
+            }
         }
     }
     ui->paquetes->display(paquetes);    //Actualiza valor en el display.
+    timer->start(10);   //Empieza a actualizar los objetos
 }
 
 //Actualiza los objetos en la escena.
@@ -237,7 +246,7 @@ void Niveles::sobreescribir(string usuario){
             if(usuario==""){  //Esta leyendo linea vacía, rompe el ciclo.
                 break;
             }else{
-            aux=std::to_string(dificultad)+'/'+"PESOS"+'/'+std::to_string(personajea->getx())+'/'+std::to_string(personajea->gety())+"/"+std::to_string(tiempo);  //Variable para modificador el saldo.
+            aux=std::to_string(dificultad)+'/'+bolsas+'/'+std::to_string(personajea->getx())+'/'+std::to_string(personajea->gety())+"/"+std::to_string(tiempo)+"/";  //Variable para modificador el saldo.
             temp<<nombre1<<"/";
             temp<<endl<<aux<<endl;    //Cambia la linea deseada en el archivo temporal.
             }

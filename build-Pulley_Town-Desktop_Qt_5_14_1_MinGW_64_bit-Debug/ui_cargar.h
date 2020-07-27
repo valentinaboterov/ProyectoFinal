@@ -51,7 +51,7 @@ public:
 "font: 8pt \"8514oem\";"));
         label_3 = new QLabel(Cargar);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(310, 590, 211, 16));
+        label_3->setGeometry(QRect(280, 590, 201, 21));
         label_3->setStyleSheet(QString::fromUtf8("color: rgb(0,0,0);\n"
 "background-color: rgb(223, 223, 223);\n"
 "font: 8pt \"8514oem\";"));
@@ -68,7 +68,7 @@ public:
 "text-decoration: underline;"));
         label_2 = new QLabel(Cargar);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(300, 350, 271, 16));
+        label_2->setGeometry(QRect(300, 350, 271, 31));
         label_2->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);\n"
 "font: 8pt \"8514oem\";"));
         lista = new QListWidget(Cargar);

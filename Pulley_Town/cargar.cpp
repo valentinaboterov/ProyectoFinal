@@ -49,7 +49,6 @@ void Cargar::Partida(string _nombre)
                   numero+=1;
                     texto = QString::fromStdString("Partida"+std::to_string(numero)+"--> Nivel: "+Buscar(linea1,1)+",tiempo restante: "+Buscar(linea1,5));
                     ui->lista->addItem(texto);
-
               }
          }
         if(Buscar(linea1,1)!=_nombre){
@@ -82,19 +81,19 @@ string Cargar::Buscar(string _linea, int romper)
                     pos=i+1;        //incremeta la posicion 1 unidad para empezar la clave.
                     cant=0;
                 }if(cont==2){
-                    s2=_linea.substr(0,cant-1);  //pesos
+                    s2=_linea.substr(pos,cant-1);  //pesos
                      pos=i+1;        //incremeta la posicion 1 unidad para empezar la clave.
                      cant=0;
                 }if(cont==3){
-                    s3=_linea.substr(0,cant-1);  //pesos
+                    s3=_linea.substr(pos,cant-1);  //pesos
                      pos=i+1;        //incremeta la posicion 1 unidad para empezar la clave.
                      cant=0;
                 }if(cont==4){
-                    s4=_linea.substr(0,cant-1);  //pesos
+                    s4=_linea.substr(pos,cant-1);  //pesos
                      pos=i+1;        //incremeta la posicion 1 unidad para empezar la clave.
                      cant=0;
                 }if(cont==5){
-                    s5=_linea.substr(0,cant-1);  //pesos
+                    s5=_linea.substr(pos,cant-1);  //pesos
                      pos=i+1;        //incremeta la posicion 1 unidad para empezar la clave.
                      cant=0;
                 }
@@ -105,6 +104,20 @@ string Cargar::Buscar(string _linea, int romper)
         if(romper==3){return s3;}
         if(romper==4){return s4;}
         if(romper==5){return s5;}
+}
+
+void Cargar::llenararchivo()
+{
+    char linea[200];
+    string linea1="";
+    ifstream temp("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/temporal.txt");  //Abre archivo para leer
+    ofstream sudo("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Partidas.txt");  //Archivo final con informacion actualizada.
+    while(!temp.eof()){  //Hasta que llegue al final del archivo
+        temp.getline(linea,sizeof (linea));     //Toma linea a linea
+        linea1=linea;
+        sudo<<linea1<<endl;     //Lo lleva a al archivo final.
+    }
+    temp.close();sudo.close();//Cierra archivos.
 }
 
 
@@ -120,7 +133,7 @@ void Cargar::on_pushButton_clicked()
             char linea[200];
             string linea1="",aux="";
             bool bandera=false,encontrar=false,terminar=true;
-            int cont=0;
+            int cont=0,contador=0;
             numero=0;
             ifstream original("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Partidas.txt");  //Abre archivo para leer
             ofstream temp("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/temporal.txt"); //Copia para modificar saldo.
@@ -133,8 +146,8 @@ void Cargar::on_pushButton_clicked()
                 linea1=linea;  //Lo convierte a string.
                 for(int i=0;i<3;i++){
                     if(linea1[i]=='/n'){//Si la linea a leer esta en blanco ya termino el archivo.
-                        cont+=1;
-                    }if(cont>1){
+                        contador+=1;
+                    }if(contador>1){
                         terminar=false;  //Vuelve la bandera falsa para romper el ciclo.
                         break;
                     }
@@ -151,9 +164,8 @@ void Cargar::on_pushButton_clicked()
                           t=Buscar(linea1,5);
                           niveles->Cargar(nivel,pesos,x,y,t);
                           encontrar=true;
-                      }else{
-                          cont+=1;
-                      }
+                          mostrar=true;
+                      }cont+=1;
                  }if(Buscar(linea1,1)!=nombre){
                     bandera=false;
                 }else{
@@ -165,10 +177,15 @@ void Cargar::on_pushButton_clicked()
                 if(encontrar==false){    //No es la linea
                     temp<<linea1<<endl;
                 }
-            }original.close();
+                encontrar=false;
+            }
+            original.close();
             temp.close();
         }
+    if(mostrar==true){
+        niveles->show();
     }
-    niveles->llenararchivo();
+    llenararchivo();
+    }
 }
 

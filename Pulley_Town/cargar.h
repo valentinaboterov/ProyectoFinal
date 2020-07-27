@@ -31,6 +31,7 @@ private:
     string nivel,pesos,x,y,t,nombre,bolsas;
     int numero,cargar=1; //Por defecto carga la primera partida.
     string Buscar(string _linea,int romper);
+    bool mostrar=false;
     void sobreescribir();
     void llenararchivo();
     Niveles *niveles=new Niveles();

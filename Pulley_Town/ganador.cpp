@@ -16,6 +16,8 @@ Ganador::~Ganador()
 
 void Ganador::Nombre(string _nombre)
 {
+    music->setMedia(QUrl("qrc:/Imagenes/aplausosfinal.mp3"));
+    music->play();
     nombre=_nombre;
     QString texto1= QString::fromStdString(nombre);
     ui->nombre->setText(texto1);

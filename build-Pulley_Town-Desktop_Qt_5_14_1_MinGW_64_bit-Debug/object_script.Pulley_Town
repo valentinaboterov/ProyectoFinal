@@ -1,5 +1,6 @@
 cargar.o
 creditos.o
+extra.o
 friccion.o
 ganador.o
 main.o
@@ -20,6 +21,7 @@ widget.o
 qrc_Imagenes.o
 moc_cargar.o
 moc_creditos.o
+moc_extra.o
 moc_ganador.o
 moc_modojuego.o
 moc_niveles.o

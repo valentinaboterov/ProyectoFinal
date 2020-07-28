@@ -9,6 +9,7 @@ Ventana principal.
 #include<QMessageBox>
 #include"registro.h"
 #include"creditos.h"
+#include"extra.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -31,9 +32,12 @@ private slots:
 
     void on_Creditos_clicked(); //Ver creditos.
 
+    void on_practicar_clicked();
+
 private:
     Ui::Widget *ui;
     Registro registro;
     Creditos creditos;
+    Extra *extra=new Extra;
 };
 #endif // WIDGET_H

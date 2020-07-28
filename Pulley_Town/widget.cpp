@@ -44,3 +44,9 @@ void Widget::on_Creditos_clicked()
 {
     creditos.show();
 }
+
+void Widget::on_practicar_clicked()
+{
+    extra->Mensaje();
+    extra->show();
+}

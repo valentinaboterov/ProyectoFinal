@@ -6,6 +6,7 @@ Es la ventana que se ve cuando un jugador gana.
 
 using namespace std;
 #include <QWidget>
+#include<QMediaPlayer>
 
 namespace Ui {
 class Ganador;
@@ -26,6 +27,7 @@ private slots:
 private:
     Ui::Ganador *ui;
     string nombre;
+    QMediaPlayer * music = new QMediaPlayer;
 };
 
 #endif // GANADOR_H

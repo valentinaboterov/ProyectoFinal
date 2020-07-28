@@ -18,11 +18,11 @@ class Personaje:public QObject,public QGraphicsItem
     Q_OBJECT
     int posx, posy;
 public:
-    Personaje(int _tipo);
+    Personaje(int _tipo,int _posx,int _posy);
     QTimer *timer;
     QPixmap *pixmap;
     float filas,columnas,ancho,alto;
-    float t,v,a,miu,normal;
+    float t,t1,v,a,miu,normal,alfa,vx,vy;
     int tipo;
     //Movimiento
     void Up();
@@ -30,8 +30,8 @@ public:
     void Left();
     void Rigth();
     void puente();
-    void friccion_izquierda();
-    void friccion_derecha();
+    void friccion();
+    void Saltar();
     int getx();
     int gety();
     //Dibujar.

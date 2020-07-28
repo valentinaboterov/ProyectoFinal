@@ -9,6 +9,7 @@ Genera la ventana para comparacion de la polea.
 #include <QRectF>
 #include <QDesktopWidget>
 #include<QObject>
+#include<QMediaPlayer>
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include"polea.h"
@@ -32,6 +33,7 @@ public:
 private:
     Ui::Polea_ventana *ui;
     Polea *polea;
+    QMediaPlayer *music=new QMediaPlayer();
     int masa2,nivel,paquetes;
     float x,y,ancho,alto;
 private slots:

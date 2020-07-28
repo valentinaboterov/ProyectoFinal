@@ -7,6 +7,7 @@ Perdedor::Perdedor(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Perdedor");
+    music->setMedia(QUrl("qrc:/Imagenes/musica_final.mp3"));
 }
 
 Perdedor::~Perdedor()
@@ -16,6 +17,7 @@ Perdedor::~Perdedor()
 
 void Perdedor::Causa(int _mensaje)
 {
+    music->play();
     if(_mensaje==0){        //Pierde por choque con pendulo
         texto="Lo siento";
         ui->mensaje->setText(texto);

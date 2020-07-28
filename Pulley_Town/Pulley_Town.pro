@@ -1,4 +1,5 @@
-QT       += core gui
+QT       += core gui \
+         multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     cargar.cpp \
     creditos.cpp \
+    extra.cpp \
     friccion.cpp \
     ganador.cpp \
     main.cpp \
@@ -39,6 +41,7 @@ SOURCES += \
 HEADERS += \
     cargar.h \
     creditos.h \
+    extra.h \
     friccion.h \
     ganador.h \
     modojuego.h \
@@ -59,6 +62,7 @@ HEADERS += \
 FORMS += \
     cargar.ui \
     creditos.ui \
+    extra.ui \
     ganador.ui \
     modojuego.ui \
     niveles.ui \

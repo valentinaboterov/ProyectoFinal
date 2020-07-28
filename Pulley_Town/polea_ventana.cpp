@@ -16,6 +16,7 @@ Polea_ventana::Polea_ventana(QWidget *parent) :
     polea=new Polea(200,-30,masa2,nivel);
     escena->addItem(polea);
     escena->setBackgroundBrush(QPixmap(":/Imagenes/fondopolea.jpg"));
+    music->setMedia(QUrl("qrc:/Imagenes/musica_polea.mp3"));
 }
 
 Polea_ventana::~Polea_ventana()
@@ -25,6 +26,7 @@ Polea_ventana::~Polea_ventana()
 
 void Polea_ventana::valores(int _masa2, int _nivel)
 {
+    music->play();
     masa2=_masa2;
     nivel=_nivel;
     ui->masa1->display(masa2);

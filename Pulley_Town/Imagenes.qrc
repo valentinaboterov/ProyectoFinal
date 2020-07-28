@@ -33,5 +33,12 @@
         <file>Imagenes/fondonivel.jpg</file>
         <file>Archivos.qrc</file>
         <file>Imagenes/fondo_carga.png</file>
+        <file>Imagenes/fondo_extra.png</file>
+        <file>Imagenes/logo_practica.png</file>
+        <file>Imagenes/aplausosfinal.mp3</file>
+        <file>Imagenes/musica_fondo.mp3</file>
+        <file>Imagenes/musica_nivel.mp3</file>
+        <file>Imagenes/musica_final.mp3</file>
+        <file>Imagenes/musica_polea.mp3</file>
     </qresource>
 </RCC>

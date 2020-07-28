@@ -184,6 +184,7 @@ void Cargar::on_pushButton_clicked()
         }
     if(mostrar==true){
         niveles->show();
+        this->close();
     }
     llenararchivo();
     }

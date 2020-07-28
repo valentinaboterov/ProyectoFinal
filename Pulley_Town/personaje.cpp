@@ -1,6 +1,6 @@
 #include "personaje.h"
 
-Personaje::Personaje(int _tipo)
+Personaje::Personaje(int _tipo,int _posx,int _posy)
 {
     timer = new QTimer();   //Variable para cambiar imagenes con el tiempo
     filas = 0;
@@ -14,13 +14,17 @@ Personaje::Personaje(int _tipo)
     //Dimensiones de cada imagen.
     ancho = 55;
     alto  = 70;
-    v=20;
-    a=5;
-    posx=35;
-    posy=75;
+    v=10;
+    a=40;
+    posx=_posx;
+    posy=_posy;
     miu=0.2;
-    normal=100;
+    normal=60;
     t=0.5;
+    alfa=1.24;
+    vx=v*cos(alfa);
+    vy=v*sin(alfa);
+    t1=0;
     timer->start(1000);
     //Se conecta el tiempo y el slot de actualizar la foto.
     connect(timer,&QTimer::timeout,this,&Personaje::Actualizacion);
@@ -88,13 +92,32 @@ void Personaje::puente()
     posx+=40;
 }
 
-void Personaje::friccion_derecha()
+void Personaje::friccion()
 {
-    pixmap->load(":/Imagenes/derecha.png");
-    posx=posx+(v-20)*t+a/2*pow(t,2)-miu*normal;
+    pixmap->load(":/Imagenes/derecha1.png");
+    posx=posx+v*t+a*pow(t,2)-miu*normal;
     setPos(posx,posy);
 }
 
+void Personaje::Saltar(){
+    for(int i=0;i<20;i++){
+        t1+=0.1;
+        posx=posx+vx*t1;
+        posy=posy-(vy*t1-5*pow(t1,2));
+        setPos(posx,posy);
+    }
+    t1=0;
+    /*
+    for(int i=0;i<20;i++){
+        t1+=0.1;
+        posx=posx+vx*t1;
+        posy=posy+vy*t1-5*pow(t1,2);
+        setPos(posx,posy);
+    }posy+=10;
+    setPos(posx,posy);
+    t1=0;
+    */
+}
 
 int Personaje::getx()
 {

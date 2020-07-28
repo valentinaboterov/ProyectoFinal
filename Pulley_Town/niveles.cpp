@@ -38,6 +38,7 @@ Niveles::Niveles(QWidget *parent) :
     v_izquierda.clear();
     h_arriba.clear();
     h_abajo.clear();
+    music->setMedia(QUrl("qrc:/Imagenes/musica_nivel.mp3"));
 }
 
 Niveles::~Niveles()
@@ -48,6 +49,8 @@ Niveles::~Niveles()
 //Variables iniciales para el nivel,creacion de la escena.
 void Niveles::Definicion(int _nivel, int modo)
 {
+    music->play();
+    bolsas="";
     escena=new QGraphicsScene(x,y,ancho,alto);
     escena->setBackgroundBrush(QPixmap(":/Imagenes/fondonivel1.png"));
     ui->graphicsView->setScene(escena);
@@ -91,9 +94,9 @@ void Niveles::Cargar(string _nivel, string _bolsas, string _posx, string _posy, 
         for(int i=0;i<_bolsas.length();i++){
             cant+=1;
             if(_bolsas[i]==','){
-                paque=stoi(_bolsas.substr(pos,cant));   //Toma el peso del string
-                cambiar(pesos,paque);   //Lo elimina de la lista
-                escena->removeItem(pesos[paque]);   //Remueve el item de la escena
+                paque=stoi(_bolsas.substr(pos,cant-1));   //Toma el peso del string
+                escena->removeItem(pesos.at(paque));   //Remueve el item de la escena
+                pesos=cambiar(pesos,paque);   //Lo elimina de la lista
                 paquetes+=1;    //Suma que se relecto un paquete.
                 pos=i+1;    //Reinicia variables para siguiente.
                 cant=0;
@@ -102,6 +105,7 @@ void Niveles::Cargar(string _nivel, string _bolsas, string _posx, string _posy, 
     }
     ui->paquetes->display(paquetes);    //Actualiza valor en el display.
     timer->start(10);   //Empieza a actualizar los objetos
+    music->play();
 }
 
 //Actualiza los objetos en la escena.
@@ -124,6 +128,7 @@ void Niveles::actualizar_tiempo()
         perdedor->Causa(2);
         this->close();
         perdedor->show();
+        music->stop();
     }
 }
 
@@ -180,6 +185,7 @@ void Niveles::on_Guardar_clicked()
                break;
          }
     }
+    music->stop();
 }
 
 //Cierra la ventana y vuelve al inicio.
@@ -348,6 +354,7 @@ void Niveles::Colisiones(Personaje *personaje1)
             }
             perdedor->Causa(0);
             perdedor->show();
+            music->stop();
         }
     }
     //Colisiona con resorte pierde
@@ -362,6 +369,7 @@ void Niveles::Colisiones(Personaje *personaje1)
             }
             perdedor->Causa(1);
             perdedor->show();
+            music->stop();
         }
     }
     //Colisiona con pesos, elimina el peso de la escena y aumenta paquetes.
@@ -369,7 +377,7 @@ void Niveles::Colisiones(Personaje *personaje1)
         for(int i=0;i<pesos.size();i++){
             if(personaje1->collidesWithItem(pesos.at(i))){
                 escena->removeItem(pesos.at(i));
-                bolsas=std::to_string(i)+",";
+                bolsas+=std::to_string(i)+",";
                 pesos=cambiar(pesos,i);
                 paquetes+=1;
                 ui->paquetes->display(paquetes);
@@ -405,9 +413,11 @@ void Niveles::Colisiones(Personaje *personaje1)
                 perdedor->Causa(3);
                 perdedor->Nombre(nombre1);
                 perdedor->show();
+                music->stop();
             }else{      //GANADOR
                 ganador->Nombre(nombre1);
                 ganador->show();
+                music->stop();
             }
         }if(personaje1==personajeb){
             polea->valores(paquetes1*kilos,dificultad);
@@ -419,9 +429,11 @@ void Niveles::Colisiones(Personaje *personaje1)
                 perdedor->Causa(3);
                 perdedor->Nombre(nombre2);
                 perdedor->show();
+                music->stop();
             }else{      //GANADOR
                 ganador->Nombre(nombre2);
                 ganador->show();
+                music->stop();
             }
         }
     }
@@ -448,7 +460,7 @@ void Niveles::cada_nivel()
     ui->paquetes->display(paquetes);
     ui->paquetes1->display(paquetes1);
     //Se agrega a la escena el primer personaje.
-    personajea=new Personaje(0);
+    personajea=new Personaje(0,35,75);
     escena->addItem(personajea);
     personajea->setFlag(QGraphicsItem::ItemIsFocusable);
     personajea->setFocus();
@@ -478,7 +490,7 @@ void Niveles::cada_nivel()
             resortes.push_back(new Resorte(350,380,10,1500,30,0)); escena->addItem(resortes.back());
             resortes.push_back(new Resorte(540,420,10,1000,30,0)); escena->addItem(resortes.back());
         if(modojuego==1){   //Multijugador.
-            personajeb=new Personaje(1);
+            personajeb=new Personaje(1,35,75);
             escena->addItem(personajeb);
             personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
             personajeb->setFocus();
@@ -514,7 +526,7 @@ void Niveles::cada_nivel()
         resortes.push_back(new Resorte(70,400,10,1000,20,0)); escena->addItem(resortes.back());
         pendulos.push_back(new Pendulo(730,240,30,80)); escena->addItem(pendulos.back());
         if(modojuego==1){   //Multijugador
-            personajeb=new Personaje(1);
+            personajeb=new Personaje(1,35,75);
             escena->addItem(personajeb);
             personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
             personajeb->setFocus();
@@ -558,7 +570,7 @@ void Niveles::cada_nivel()
         resortes.push_back(new Resorte(200,320,10,1000,20,0)); escena->addItem(resortes.back());
         resortes.push_back(new Resorte(240,90,10,1000,20,0)); escena->addItem(resortes.back());
         if(modojuego==1){   //Multijugador.
-            personajeb=new Personaje(1);
+            personajeb=new Personaje(1,35,75);
             escena->addItem(personajeb);
             personajeb->setFlag(QGraphicsItem::ItemIsFocusable);
             personajeb->setFocus();

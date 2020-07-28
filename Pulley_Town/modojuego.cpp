@@ -9,6 +9,8 @@ Modojuego::Modojuego(QWidget *parent) :
     setWindowTitle("Modo de juego");
     cont=0;
     espacios="";
+    modo=0;
+    music->setMedia(QUrl("qrc:/Imagenes/musica_fondo.mp3"));
 }
 
 Modojuego::~Modojuego()
@@ -18,6 +20,7 @@ Modojuego::~Modojuego()
 
 void Modojuego::Nombre(string _usuario1,int _tipousuario,int _veces)
 {
+    music->play();
     if(_veces==0){
         usuario1=_usuario1;
         tipousuario=_tipousuario;
@@ -39,31 +42,31 @@ void Modojuego::on_Empezar_clicked()
 {
     ui->partida->setText("");
     if(ui->novato->isChecked()){
-        nivel->Definicion(0,modo);
         if(modo==0){
             nivel->Nombres(usuario1,"");
         }else{
             nivel->Nombres(usuario1,usuario2);
         }
-
+        nivel->Definicion(0,modo);
     }
     if(ui->Aprendiz->isChecked()){
-        nivel->Definicion(1,modo);
         if(modo==0){
             nivel->Nombres(usuario1,"");
         }else{
             nivel->Nombres(usuario1,usuario2);
         }
+        nivel->Definicion(1,modo);
     }
     if(ui->Experto->isChecked()){
-        nivel->Definicion(2,modo);
         if(modo==0){
             nivel->Nombres(usuario1,"");
         }else{
             nivel->Nombres(usuario1,usuario2);
         }
+        nivel->Definicion(2,modo);
     }
     nivel->show();
+    music->stop();
 }
 
 void Modojuego::on_Cargar_clicked()
@@ -96,11 +99,17 @@ void Modojuego::MensajesInterfaz()
         ui->Mensaje->setText(texto);
     }
     if(tipousuario==0){  //Usuario nuevo
-        ui->Mensaje1->setText("   ELIGE LA DIFICULTAD QUE DESEAS");
-        ui->Mensaje2->setText("         Y OPRIME EMPEZAR");
+            ui->Mensaje1->setText("   ELIGE LA DIFICULTAD QUE DESEAS");
+            ui->Mensaje2->setText("         Y OPRIME EMPEZAR");
     }else{  //Usuario atiguo
-        ui->Mensaje1->setText("PUEDES ELEGIR SI DESEAS RECUPERAR UNA");
-        ui->Mensaje2->setText(" PARTIDA ANTERIOR O EMPEZAR UNA NUEVA.");
+        if(modo==0){
+            ui->Mensaje1->setText("PUEDES ELEGIR SI DESEAS RECUPERAR UNA");
+            ui->Mensaje2->setText(" PARTIDA ANTERIOR O EMPEZAR UNA NUEVA.");
+        }else{
+            ui->Mensaje1->setText("   ELIJAN LA DIFICULTAD QUE DESEAN");
+            ui->Mensaje2->setText("         Y OPRIME EMPEZAR");
+        }
+
     }
 }
 

@@ -17,6 +17,7 @@ Ventana con el nivel según el caso.
 #include<QMessageBox>
 #include<iostream>
 #include<fstream>
+#include <QMediaPlayer>
 #include"pendulo.h"
 #include"personaje.h"
 #include"pesos.h"
@@ -46,6 +47,7 @@ public:
     QGraphicsScene *escena;
     void Cargar(string _nivel,string _bolsas,string _posx,string _posy,string _tiempo);
     void llenararchivo();
+    QMediaPlayer * music = new QMediaPlayer;
 private:
     Ui::Niveles *ui;
     int tiempo,paquetes,paquetes1,kilos=10;

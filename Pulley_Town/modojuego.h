@@ -5,6 +5,7 @@ Ventana de inicio, donde se selecciona el nivel, o cargar partidas.
 #define MODOJUEGO_H
 using namespace std;
 #include <QWidget>
+#include<QMediaPlayer>
 #include"niveles.h"
 #include"cargar.h"
 
@@ -37,6 +38,7 @@ private:
     void MensajesInterfaz();        //Segun el modo muestra mensajes en pantalla.
     Niveles *nivel=new Niveles();
     Cargar *carga=new Cargar;
+    QMediaPlayer * music = new QMediaPlayer;
 };
 
 #endif // MODOJUEGO_H

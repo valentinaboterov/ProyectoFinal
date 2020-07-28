@@ -5,6 +5,7 @@ Ventana perdedor de juego.
 #define PERDEDOR_H
 using namespace std;
 #include <QWidget>
+#include<QMediaPlayer>
 
 namespace Ui {
 class Perdedor;
@@ -27,6 +28,7 @@ private slots:
 private:
     Ui::Perdedor *ui;
     QString texto;
+    QMediaPlayer * music = new QMediaPlayer;
 };
 
 #endif // PERDEDOR_H

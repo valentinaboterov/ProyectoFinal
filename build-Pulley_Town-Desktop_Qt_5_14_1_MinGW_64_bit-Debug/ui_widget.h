@@ -24,6 +24,7 @@ public:
     QPushButton *Creditos;
     QPushButton *Registro;
     QPushButton *Inicarsesion;
+    QPushButton *practicar;
 
     void setupUi(QWidget *Widget)
     {
@@ -41,13 +42,16 @@ public:
         label->setScaledContents(true);
         Creditos = new QPushButton(Widget);
         Creditos->setObjectName(QString::fromUtf8("Creditos"));
-        Creditos->setGeometry(QRect(620, 400, 100, 40));
+        Creditos->setGeometry(QRect(720, 400, 100, 40));
         Registro = new QPushButton(Widget);
         Registro->setObjectName(QString::fromUtf8("Registro"));
-        Registro->setGeometry(QRect(380, 400, 121, 40));
+        Registro->setGeometry(QRect(270, 400, 121, 40));
         Inicarsesion = new QPushButton(Widget);
         Inicarsesion->setObjectName(QString::fromUtf8("Inicarsesion"));
         Inicarsesion->setGeometry(QRect(110, 400, 121, 40));
+        practicar = new QPushButton(Widget);
+        practicar->setObjectName(QString::fromUtf8("practicar"));
+        practicar->setGeometry(QRect(560, 400, 101, 41));
         QWidget::setTabOrder(Inicarsesion, Creditos);
         QWidget::setTabOrder(Creditos, Registro);
 
@@ -63,6 +67,7 @@ public:
         Creditos->setText(QCoreApplication::translate("Widget", "Creditos", nullptr));
         Registro->setText(QCoreApplication::translate("Widget", "Registro", nullptr));
         Inicarsesion->setText(QCoreApplication::translate("Widget", "Iniciar sesi\303\263n", nullptr));
+        practicar->setText(QCoreApplication::translate("Widget", "Practicar", nullptr));
     } // retranslateUi
 
 };

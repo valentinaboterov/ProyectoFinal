@@ -123,6 +123,9 @@ void Cargar::llenararchivo()
 
 void Cargar::on_pushButton_clicked()
 {
+    if(numero==0){
+        ui->mensaje->setText("No tienes partidas guardadas.");
+    }
     if(numero>0){       //Tiene partidas guardadas
         cargar=(ui->partida->text()).toInt();
         if(cargar>numero){  //Excede la cantida de partidas

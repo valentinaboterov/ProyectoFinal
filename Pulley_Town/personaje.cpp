@@ -100,23 +100,13 @@ void Personaje::friccion()
 }
 
 void Personaje::Saltar(){
-    for(int i=0;i<20;i++){
+    for(int i=0;i<28;i++){
         t1+=0.1;
         posx=posx+vx*t1;
         posy=posy-(vy*t1-5*pow(t1,2));
         setPos(posx,posy);
     }
     t1=0;
-    /*
-    for(int i=0;i<20;i++){
-        t1+=0.1;
-        posx=posx+vx*t1;
-        posy=posy+vy*t1-5*pow(t1,2);
-        setPos(posx,posy);
-    }posy+=10;
-    setPos(posx,posy);
-    t1=0;
-    */
 }
 
 int Personaje::getx()
@@ -127,6 +117,12 @@ int Personaje::getx()
 int Personaje::gety()
 {
    return posy;
+}
+void Personaje::setx(int _x){
+    posx=_x;
+}
+void Personaje::sety(int _y){
+    posy=_y;
 }
 //Funciones propias de QT:
 QRectF Personaje::boundingRect() const

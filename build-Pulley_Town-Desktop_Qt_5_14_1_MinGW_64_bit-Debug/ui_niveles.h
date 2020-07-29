@@ -33,6 +33,7 @@ public:
     QLabel *jugador1;
     QLCDNumber *paquetes1;
     QLabel *jugador2;
+    QPushButton *musica;
 
     void setupUi(QWidget *Niveles)
     {
@@ -90,6 +91,9 @@ public:
         jugador2->setGeometry(QRect(280, 30, 91, 16));
         jugador2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
 "font: 8pt \"8514oem\";"));
+        musica = new QPushButton(Niveles);
+        musica->setObjectName(QString::fromUtf8("musica"));
+        musica->setGeometry(QRect(550, 10, 51, 41));
 
         retranslateUi(Niveles);
 
@@ -106,6 +110,7 @@ public:
         Salir->setText(QString());
         jugador1->setText(QString());
         jugador2->setText(QString());
+        musica->setText(QString());
     } // retranslateUi
 
 };

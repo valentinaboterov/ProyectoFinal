@@ -29,7 +29,7 @@ private:
     Ui::Registro *ui;
     int modojuego,tipojugador;
     int cont=0,cantidad;
-    string linea="";
+    string linea="",nombre="";
     string Buscar(string _linea,int romper);
     Modojuego modo;
     string nombre1,clave1,nombre2,clave2;

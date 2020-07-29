@@ -17,19 +17,18 @@ Niveles::Niveles(QWidget *parent) :
     ancho = 800;
     alto  = 750;
     pausa=0;
+    musica=0;
     dificultad=0; //Nivel 1 por defecto.
     perdedor=new Perdedor();
     ganador=new Ganador();
     timer=new QTimer(this);     //Timer para objetos.
     timer1=new QTimer(this);    //Timer para el tiempo de juego.
+    escena=new QGraphicsScene(x,y,ancho,alto);
+    escena->setBackgroundBrush(QPixmap(":/Imagenes/fondonivel1.png"));
+    ui->graphicsView->setScene(escena);
+    ui->graphicsView->resize(ancho,alto);
     connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
     connect(timer1,SIGNAL(timeout()),this,SLOT(actualizar_tiempo()));
-    ui->pausa->setIcon(QPixmap(":/Imagenes/boton_pausa.png"));
-    ui->pausa->setIconSize(QSize(50,40));
-    ui->Guardar->setIcon(QPixmap(":Imagenes/boton_guardar.png"));
-    ui->Guardar->setIconSize(QSize(50,40));
-    ui->Salir->setIcon(QPixmap(":/Imagenes/boton_salir.png"));
-    ui->Salir->setIconSize(QSize(50,40));
     //Limpieza de listas por reinicio de juego.
     pendulos.clear();
     resortes.clear();
@@ -50,13 +49,6 @@ Niveles::~Niveles()
 void Niveles::Definicion(int _nivel, int modo)
 {
     music->play();
-    bolsas="";
-    escena=new QGraphicsScene(x,y,ancho,alto);
-    escena->setBackgroundBrush(QPixmap(":/Imagenes/fondonivel1.png"));
-    ui->graphicsView->setScene(escena);
-    ui->graphicsView->resize(ancho,alto);
-    final=new plataforma(35,680);   //Plataforma.
-    escena->addItem(final);
     dificultad=_nivel;  //Determine que nivel se va a jugar
     modojuego=modo; //Un jugador o 2 jugadores
     nivel();    //Construye los muros del laberinto.
@@ -75,6 +67,21 @@ void Niveles::Nombres(string _nombre1, string _nombre2)
 void Niveles::Cargar(string _nivel, string _bolsas, string _posx, string _posy, string _tiempo)
 {
     int cant=0,pos=0,paque;
+    pendulos.clear();
+    resortes.clear();
+    pesos.clear();
+    v_derecha.clear();
+    v_izquierda.clear();
+    h_arriba.clear();
+    h_abajo.clear();
+    ui->pausa->setIcon(QPixmap(":/Imagenes/boton_pausa.png"));
+    ui->pausa->setIconSize(QSize(50,40));
+    ui->Guardar->setIcon(QPixmap(":Imagenes/boton_guardar.png"));
+    ui->Guardar->setIconSize(QSize(50,40));
+    ui->Salir->setIcon(QPixmap(":/Imagenes/boton_salir.png"));
+    ui->Salir->setIconSize(QSize(50,40));
+    ui->musica->setIcon(QPixmap(":/Imagenes/boton_sonidoa.png"));
+    ui->musica->setIconSize(QSize(50,40));
     //Inicia las variables y genera el nivel segun dificultad.
     escena=new QGraphicsScene(x,y,ancho,alto);
     escena->setBackgroundBrush(QPixmap(":/Imagenes/fondonivel1.png"));
@@ -126,9 +133,10 @@ void Niveles::actualizar_tiempo()
     //Se acabo el tiempo y pierde.
     if(tiempo<1000){
         perdedor->Causa(2);
-        this->close();
         perdedor->show();
-        music->stop();
+        this->close();
+        Reiniciar();
+        music->stop();   
     }
 }
 
@@ -145,12 +153,27 @@ void Niveles::on_pausa_clicked()
         pausa=1;
     }else{  //Reanudar.
         timer->start();
-        timer->start();
+        timer1->start();
         ui->pausa->setIcon(QPixmap(":/Imagenes/boton_pausa.png"));
         pausa=0;
     }
 }
 
+void Niveles::on_musica_clicked()
+{
+    //Si se oprime un avez pausa el juego.
+    if(musica==0){
+        music->stop();
+        //Cambia el icono.
+        ui->musica->setIcon(QPixmap(":/Imagenes/boton_sonidop.png"));
+        //Actualiza la variable.
+        musica=1;
+    }else{  //Reanudar.
+        music->play();
+        ui->musica->setIcon(QPixmap(":/Imagenes/boton_sonidoa.png"));
+        musica=0;
+    }
+}
 //Guardar partida.
 void Niveles::on_Guardar_clicked()
 {   //Para los timers.
@@ -185,6 +208,7 @@ void Niveles::on_Guardar_clicked()
                break;
          }
     }
+    Reiniciar();
     music->stop();
 }
 
@@ -192,6 +216,7 @@ void Niveles::on_Guardar_clicked()
 void Niveles::on_Salir_clicked()
 {
     this->close();
+    Reiniciar();
 }
 
 //Sirve para manejar los archivos de texto, los cuales están organizados al
@@ -262,6 +287,28 @@ void Niveles::sobreescribir(string usuario){
     }
     original.close();temp.close();  //Cierra archivos
     llenararchivo();
+}
+
+void Niveles::Reiniciar()
+{
+    timer->stop();
+    timer1->stop();
+    music->stop();
+    bolsas="";
+    pendulos.clear();
+    resortes.clear();
+    pesos.clear();
+    v_derecha.clear();
+    v_izquierda.clear();
+    h_arriba.clear();
+    h_abajo.clear();
+    if(modojuego==0){
+         escena->removeItem(personajea);
+    }else{
+       escena->removeItem(personajea);
+       escena->removeItem(personajeb);
+    }
+
 }
 
 //Intercambia archivo temporal por el original.
@@ -347,13 +394,21 @@ void Niveles::Colisiones(Personaje *personaje1)
         if(personaje1->collidesWithItem(pendulos.at(i))){
             //PIERDE
             this->close();
-            if(personaje1==personajea){
+            if(modojuego==0){
                 perdedor->Nombre(nombre1);
+                perdedor->Causa(0);
+                perdedor->show();
             }else{
-                perdedor->Nombre(nombre2);
-            }
-            perdedor->Causa(0);
-            perdedor->show();
+                if(personaje1==personajea){
+                    ganador->Nombre(nombre2);
+                    ganador->Multi(nombre1,0);
+                    ganador->show();
+                }else{
+                    ganador->Nombre(nombre1);
+                    ganador->Multi(nombre2,0);
+                    ganador->show();
+                }
+            }Reiniciar();
             music->stop();
         }
     }
@@ -362,13 +417,22 @@ void Niveles::Colisiones(Personaje *personaje1)
         if(personaje1->collidesWithItem(resortes.at(i))){
             //PIERDE
             this->close();
-            if(personaje1==personajea){
+            if(modojuego==0){
                 perdedor->Nombre(nombre1);
+                perdedor->Causa(1);
+                perdedor->show();
             }else{
-                perdedor->Nombre(nombre2);
+                if(personaje1==personajea){
+                    ganador->Nombre(nombre2);
+                    ganador->Multi(nombre1,1);
+                    ganador->show();
+                }else{
+                    ganador->Nombre(nombre1);
+                    ganador->Multi(nombre2,1);
+                    ganador->show();
+                }
             }
-            perdedor->Causa(1);
-            perdedor->show();
+            Reiniciar();
             music->stop();
         }
     }
@@ -405,37 +469,14 @@ void Niveles::Colisiones(Personaje *personaje1)
         polea=new Polea_ventana();
         if(personaje1==personajea){
             polea->valores(paquetes*kilos,dificultad);
-            polea->show();
-            int i=polea->cerrar();
+            polea->Nombre(nombre1);
             this->close();
-            if(i==0){
-                polea->close();
-                perdedor->Causa(3);
-                perdedor->Nombre(nombre1);
-                perdedor->show();
-                music->stop();
-            }else{      //GANADOR
-                ganador->Nombre(nombre1);
-                ganador->show();
-                music->stop();
-            }
         }if(personaje1==personajeb){
             polea->valores(paquetes1*kilos,dificultad);
+            polea->Nombre(nombre2);
             polea->show();
-            this->close();
-            int i=polea->cerrar();
-            if(i==0){
-                polea->close();
-                perdedor->Causa(3);
-                perdedor->Nombre(nombre2);
-                perdedor->show();
-                music->stop();
-            }else{      //GANADOR
-                ganador->Nombre(nombre2);
-                ganador->show();
-                music->stop();
-            }
         }
+        Reiniciar();
     }
 }
 
@@ -486,7 +527,7 @@ void Niveles::cada_nivel()
             puentes.push_back(new Puente(415,520)); escena->addItem(puentes.back());
             puentes.push_back(new Puente(547,330)); escena->addItem(puentes.back());
             resortes.push_back(new Resorte(500,170,10,1000,40,0)); escena->addItem(resortes.back());
-            resortes.push_back(new Resorte(70,510,10,1000,10,0)); escena->addItem(resortes.back());
+            resortes.push_back(new Resorte(60,510,10,1000,10,0)); escena->addItem(resortes.back());
             resortes.push_back(new Resorte(350,380,10,1500,30,0)); escena->addItem(resortes.back());
             resortes.push_back(new Resorte(540,420,10,1000,30,0)); escena->addItem(resortes.back());
         if(modojuego==1){   //Multijugador.
@@ -670,6 +711,8 @@ void Niveles::nivel(){
     v_izquierda.push_back(new Paredes(10,160,-540,-550)); escena->addItem(v_izquierda.back());
     v_derecha.push_back(new Paredes(10,160,-550,-550)); escena->addItem(v_derecha.back());
 }
+
+
 
 
 

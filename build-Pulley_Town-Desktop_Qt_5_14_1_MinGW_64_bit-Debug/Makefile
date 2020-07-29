@@ -587,6 +587,7 @@ qrc_Imagenes.cpp: ../Pulley_Town/Imagenes.qrc \
 		../Pulley_Town/Imagenes/abajo1.png \
 		../Pulley_Town/Imagenes/Fondoregistro.jpg \
 		../Pulley_Town/Imagenes/musica_polea.mp3 \
+		../Pulley_Town/Imagenes/boton_sonidoa.png \
 		../Pulley_Town/Imagenes/reloj\ .png \
 		../Pulley_Town/Imagenes/musica_nivel.mp3 \
 		../Pulley_Town/Imagenes/charco.png \
@@ -604,6 +605,7 @@ qrc_Imagenes.cpp: ../Pulley_Town/Imagenes.qrc \
 		../Pulley_Town/Imagenes/aplausosfinal.mp3 \
 		../Pulley_Town/Imagenes/fondo_extra.png \
 		../Pulley_Town/Imagenes/fondoinicio.jpeg \
+		../Pulley_Town/Imagenes/boton_sonidop.png \
 		../Pulley_Town/Imagenes/boton_guardar.png \
 		../Pulley_Town/Imagenes/Creditos.jpeg \
 		../Pulley_Town/Imagenes/fondomodojuego.png \
@@ -773,15 +775,17 @@ moc_cargar.cpp: ../Pulley_Town/cargar.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtMultimedia -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtNetwork -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\cargar.h -o moc_cargar.cpp
@@ -1028,6 +1032,8 @@ moc_extra.cpp: ../Pulley_Town/extra.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/plataforma.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
@@ -1313,15 +1319,17 @@ moc_modojuego.cpp: ../Pulley_Town/modojuego.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		../Pulley_Town/cargar.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
@@ -1478,15 +1486,17 @@ moc_niveles.cpp: ../Pulley_Town/niveles.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtMultimedia -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtNetwork -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\niveles.h -o moc_niveles.cpp
@@ -1722,6 +1732,8 @@ moc_personaje.cpp: ../Pulley_Town/personaje.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontinfo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfont.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtMultimedia -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtNetwork -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\personaje.h -o moc_personaje.cpp
@@ -1973,6 +1985,8 @@ moc_polea_ventana.cpp: ../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPixmap \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/WIN10 PRO/Desktop/ProyectoFinal/build-Pulley_Town-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtMultimedia -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtNetwork -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Pulley_Town\polea_ventana.h -o moc_polea_ventana.cpp
@@ -2130,15 +2144,17 @@ moc_registro.cpp: ../Pulley_Town/registro.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		../Pulley_Town/cargar.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
@@ -2298,15 +2314,17 @@ moc_widget.cpp: ../Pulley_Town/widget.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		../Pulley_Town/cargar.h \
 		../Pulley_Town/creditos.h \
 		../Pulley_Town/extra.h \
@@ -2525,15 +2543,17 @@ cargar.o: ../Pulley_Town/cargar.cpp ../Pulley_Town/cargar.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		ui_cargar.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
@@ -2822,6 +2842,8 @@ extra.o: ../Pulley_Town/extra.cpp ../Pulley_Town/extra.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/plataforma.h \
 		ui_extra.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/QVariant \
@@ -2937,6 +2959,8 @@ friccion.o: ../Pulley_Town/friccion.cpp ../Pulley_Town/friccion.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontinfo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfont.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QGraphicsView \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qscrollarea.h \
@@ -3252,15 +3276,17 @@ main.o: ../Pulley_Town/main.cpp ../Pulley_Town/widget.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		../Pulley_Town/cargar.h \
 		../Pulley_Town/creditos.h \
 		../Pulley_Town/extra.h \
@@ -3424,15 +3450,17 @@ modojuego.o: ../Pulley_Town/modojuego.cpp ../Pulley_Town/modojuego.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		../Pulley_Town/cargar.h \
 		ui_modojuego.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
@@ -3602,15 +3630,17 @@ niveles.o: ../Pulley_Town/niveles.cpp ../Pulley_Town/niveles.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		ui_niveles.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
@@ -4077,7 +4107,9 @@ personaje.o: ../Pulley_Town/personaje.cpp ../Pulley_Town/personaje.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qbrush.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontinfo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfont.h \
-		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontmetrics.h
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o personaje.o ..\Pulley_Town\personaje.cpp
 
 pesos.o: ../Pulley_Town/pesos.cpp ../Pulley_Town/pesos.h \
@@ -4232,14 +4264,16 @@ pesos.o: ../Pulley_Town/pesos.cpp ../Pulley_Town/pesos.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtNetwork/qnetworkconfiguration.h \
 		../Pulley_Town/pendulo.h \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
-		../Pulley_Town/puente.h \
-		../Pulley_Town/plataforma.h \
+		../Pulley_Town/ganador.h \
 		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h
+		../Pulley_Town/puente.h \
+		../Pulley_Town/plataforma.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pesos.o ..\Pulley_Town\pesos.cpp
 
 plataforma.o: ../Pulley_Town/plataforma.cpp ../Pulley_Town/plataforma.h \
@@ -4589,6 +4623,8 @@ polea_ventana.o: ../Pulley_Town/polea_ventana.cpp ../Pulley_Town/polea_ventana.h
 		../Pulley_Town/polea.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPixmap \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		ui_polea_ventana.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
@@ -4861,15 +4897,17 @@ registro.o: ../Pulley_Town/registro.cpp ../Pulley_Town/registro.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		../Pulley_Town/cargar.h \
 		ui_registro.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
@@ -5149,15 +5187,17 @@ widget.o: ../Pulley_Town/widget.cpp ../Pulley_Town/widget.h \
 		../Pulley_Town/pendulo.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QPainter \
 		../Pulley_Town/personaje.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QThread \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qthread.h \
 		../Pulley_Town/pesos.h \
 		../Pulley_Town/paredes.h \
 		../Pulley_Town/resorte.h \
 		../Pulley_Town/polea_ventana.h \
 		../Pulley_Town/polea.h \
+		../Pulley_Town/ganador.h \
+		../Pulley_Town/perdedor.h \
 		../Pulley_Town/puente.h \
 		../Pulley_Town/plataforma.h \
-		../Pulley_Town/perdedor.h \
-		../Pulley_Town/ganador.h \
 		../Pulley_Town/cargar.h \
 		../Pulley_Town/creditos.h \
 		../Pulley_Town/extra.h \

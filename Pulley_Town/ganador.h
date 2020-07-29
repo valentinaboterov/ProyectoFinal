@@ -20,13 +20,14 @@ public:
     explicit Ganador(QWidget *parent = nullptr);
     ~Ganador();
     void  Nombre(string _nombre);   //Recibe nombre de usuario.
+    void Multi(string _nombre1,int modo);
 
 private slots:
     void on_menu_clicked(); //Volver a inicio.
 
 private:
     Ui::Ganador *ui;
-    string nombre;
+    string nombre,nombre1;
     QMediaPlayer * music = new QMediaPlayer;
 };
 

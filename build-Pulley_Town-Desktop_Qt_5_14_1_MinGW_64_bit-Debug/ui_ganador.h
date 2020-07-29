@@ -25,6 +25,7 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QLabel *nombre;
+    QLabel *multijugador;
 
     void setupUi(QWidget *Ganador)
     {
@@ -81,6 +82,11 @@ public:
 "background-color: rgb(255, 255, 255);\n"
 "font: 8pt \"8514oem\";\n"
 ""));
+        multijugador = new QLabel(Ganador);
+        multijugador->setObjectName(QString::fromUtf8("multijugador"));
+        multijugador->setGeometry(QRect(56, 420, 351, 20));
+        multijugador->setStyleSheet(QString::fromUtf8("color: rgb(85, 255, 0);\n"
+"font: 8pt \"8514oem\";"));
 
         retranslateUi(Ganador);
 
@@ -95,6 +101,7 @@ public:
         label_2->setText(QCoreApplication::translate("Ganador", "FELICITACIONES!", nullptr));
         label_3->setText(QCoreApplication::translate("Ganador", "JUEGA DE NUEVO!", nullptr));
         nombre->setText(QString());
+        multijugador->setText(QString());
     } // retranslateUi
 
 };

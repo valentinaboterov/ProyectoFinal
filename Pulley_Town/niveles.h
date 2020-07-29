@@ -72,7 +72,7 @@ private:
     //Timers.
     QTimer *timer;
     QTimer *timer1;
-    int modojuego,dificultad,pausa;
+    int modojuego,dificultad,pausa,musica;
     QList<Pesos *> cambiar(QList<Pesos*> lista,int pos);
     //Funciones.
     void nivel();
@@ -81,7 +81,7 @@ private:
     void Colisiones(Personaje *personajea);
     string Buscar(string linea,int romper);
     void sobreescribir(string usuario);
-
+    void Reiniciar();
 
 private slots:
     void actualizar();  //Objetos
@@ -90,6 +90,7 @@ private slots:
     void on_pausa_clicked();
     void on_Guardar_clicked();
     void on_Salir_clicked();
+    void on_musica_clicked();
 };
 
 #endif // NIVELES_H

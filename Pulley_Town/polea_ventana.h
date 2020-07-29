@@ -13,6 +13,8 @@ Genera la ventana para comparacion de la polea.
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include"polea.h"
+#include"ganador.h"
+#include"perdedor.h"
 
 
 namespace Ui {
@@ -29,15 +31,17 @@ public:
      QGraphicsScene *escena;
      void valores(int _masa2,int _nivel);   //Recibe valores obtenidos en el nivel
      int cerrar();  //Cierra la ventana.
-
+    void Nombre(string _nombre);
 private:
     Ui::Polea_ventana *ui;
     Polea *polea;
+    Ganador *gana;
+    Perdedor *pierde;
+    string nombre;
     QMediaPlayer *music=new QMediaPlayer();
     int masa2,nivel,paquetes;
     float x,y,ancho,alto;
 private slots:
-    void actualizar();  //Llama funcion para comparar pesos.
     void on_Comparar_clicked(); //Boton para comparar
 };
 

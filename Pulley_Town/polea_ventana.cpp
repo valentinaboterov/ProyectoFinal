@@ -11,10 +11,10 @@ Polea_ventana::Polea_ventana(QWidget *parent) :
     y =0;
     ancho = 600;
     alto  = 386;
+    pierde=new Perdedor();
+    gana=new Ganador;
     escena=new QGraphicsScene(x,y,ancho,alto);
     ui->graphicsView->setScene(escena);
-    polea=new Polea(200,-30,masa2,nivel);
-    escena->addItem(polea);
     escena->setBackgroundBrush(QPixmap(":/Imagenes/fondopolea.jpg"));
     music->setMedia(QUrl("qrc:/Imagenes/musica_polea.mp3"));
 }
@@ -33,24 +33,33 @@ void Polea_ventana::valores(int _masa2, int _nivel)
     paquetes=masa2/10;
     QString texto = QString::fromStdString(std::to_string(paquetes));
     ui->paquetes->setText(texto);
+    polea=new Polea(200,-30,masa2,nivel);
+    escena->addItem(polea);
+    this->show();
+    polea->Comparacion();
 }
 
 int Polea_ventana::cerrar()
 {
-    if(polea->getx1()< polea->getx2() && polea->gety1()<polea->gety2()){
-        return 0;
+    if(polea->gety1()<polea->gety2()){  //Suficiente peso.
+        this->close();
+        pierde->Causa(3);
+        pierde->Nombre(nombre);
+        pierde->show();
+        music->stop();
     }
     else{
-        return 1;
+        this->close();
+        gana->Nombre(nombre);
+        gana->show();
+        music->stop();
     }
 }
 
-void Polea_ventana::actualizar()
-{
-    polea->Comparacion();
+void  Polea_ventana::Nombre(string _nombre){
+    nombre=_nombre;
 }
-
 void Polea_ventana::on_Comparar_clicked()
 {
-    actualizar();
+    cerrar();
 }

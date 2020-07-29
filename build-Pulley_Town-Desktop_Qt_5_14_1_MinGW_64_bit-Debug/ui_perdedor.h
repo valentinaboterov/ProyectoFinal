@@ -60,7 +60,7 @@ public:
 "background-color: rgb(214, 214, 214);"));
         mensaje = new QLabel(Perdedor);
         mensaje->setObjectName(QString::fromUtf8("mensaje"));
-        mensaje->setGeometry(QRect(140, 420, 131, 20));
+        mensaje->setGeometry(QRect(150, 420, 111, 20));
         QFont font2;
         font2.setFamily(QString::fromUtf8("8514oem"));
         font2.setPointSize(8);
@@ -73,7 +73,7 @@ public:
 "background-color: rgb(214, 214, 214);"));
         mensaje1 = new QLabel(Perdedor);
         mensaje1->setObjectName(QString::fromUtf8("mensaje1"));
-        mensaje1->setGeometry(QRect(100, 390, 241, 20));
+        mensaje1->setGeometry(QRect(30, 390, 351, 20));
         mensaje1->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 127);\n"
 "font: 8pt \"8514oem\";\n"
 "background-color: rgb(214, 214, 214);\n"

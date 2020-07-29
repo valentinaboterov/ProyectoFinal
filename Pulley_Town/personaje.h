@@ -10,6 +10,7 @@ Genera los personajes y sus movimientos.
 #include <QTimer>
 #include <QPixmap>
 #include <QPainter>
+#include <QThread>
 #include<math.h>
 
 
@@ -34,6 +35,9 @@ public:
     void Saltar();
     int getx();
     int gety();
+    void setx(int _x);
+    void sety(int _y);
+    static void msleep(unsigned long msecs){QThread::msleep(msecs);}
     //Dibujar.
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

@@ -53,7 +53,6 @@ bool Registro::validacion(string _usuario,string _clave)
         base.close();
         if(acceso==false){      //No existe el usuario
             ofstream outfile;      //Abre archivo de salida.
-            ofstream partida;
             int lon=_clave.length();
             if(lon!=4){   //Clave ingresada mas de 4 numeros.
                  ui->label->setText("La clave debe ser de 4 digitos");
@@ -61,14 +60,11 @@ bool Registro::validacion(string _usuario,string _clave)
                  return false;
             }else{
                 outfile.open("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Usuarios.txt",std::fstream::app);  //Lo abre como archivo de salida y escribe al final(app).
-                partida.open("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Partidas.txt",std::fstream::app);
                 if(!outfile.is_open()){          //Si no abrio exitosamente se acaba el programa.
                        exit(1);
                  }
                  outfile<<_usuario<<"/"<<_clave<<"/"<<endl;
-                 partida<<_usuario<<"/"<<endl;
-                 outfile.close();
-                 partida.close();
+                 outfile.close();                
                  ui->lineEdit->setText("");
                  ui->lineEdit_2->setText("");
                  return true;
@@ -158,6 +154,12 @@ void Registro::on_Entrar_clicked()
                 modo.Nombre(nombre1,tipojugador,0);
                 modo.show();
                 modo.Modo(modojuego);
+                if(tipojugador==0){//Usuario nuevo
+                    ofstream partida;
+                    partida.open("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Partidas.txt",std::fstream::app);
+                    partida<<nombre1<<"/"<<endl;
+                    partida.close();
+                }
                 this->close();
             }else{      //CONT==0, primer registro multijugador
                 modo.Nombre(nombre1,tipojugador,0);

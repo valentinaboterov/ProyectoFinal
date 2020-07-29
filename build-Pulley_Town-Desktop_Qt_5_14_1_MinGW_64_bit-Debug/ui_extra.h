@@ -25,13 +25,14 @@ public:
     {
         if (Extra->objectName().isEmpty())
             Extra->setObjectName(QString::fromUtf8("Extra"));
-        Extra->resize(400, 220);
-        Extra->setMaximumSize(QSize(1400, 220));
+        Extra->resize(500, 500);
+        Extra->setMaximumSize(QSize(500, 500));
         graphicsView = new QGraphicsView(Extra);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(0, 0, 401, 440));
-        graphicsView->setMaximumSize(QSize(16777215, 440));
+        graphicsView->setGeometry(QRect(0, 0, 500, 500));
+        graphicsView->setMaximumSize(QSize(500, 500));
         graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
         retranslateUi(Extra);
 

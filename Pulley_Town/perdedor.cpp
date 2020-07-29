@@ -53,5 +53,6 @@ void Perdedor::Nombre(string _nombre)
 
 void Perdedor::on_cerrar_clicked()
 {
+    music->stop();
     this->close();
 }

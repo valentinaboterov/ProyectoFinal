@@ -12,10 +12,10 @@
 #include<QPixmap>
 #include<QTimer>
 #include<QMessageBox>
-#include"pendulo.h"
 #include"resorte.h"
 #include"personaje.h"
 #include"plataforma.h"
+#include"paredes.h"
 
 namespace Ui {
 class Extra;
@@ -34,9 +34,12 @@ private:
     Ui::Extra *ui;
     QGraphicsScene *escena=new QGraphicsScene(this);
     Personaje *personaje;
-    Pendulo *pendulo= new Pendulo(100,0,100,40);
     Resorte *resorte;
     plataforma *final;
+    QList<Paredes *> v_izquierda;
+    QList<Paredes *> v_derecha;
+    QList<Paredes *> h_arriba;
+    QList<Paredes *> h_abajo;
     QList<Resorte *> resortes;
     QTimer *timer;
     void Nivel();

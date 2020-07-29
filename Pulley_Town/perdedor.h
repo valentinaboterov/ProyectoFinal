@@ -22,7 +22,6 @@ public:
     void Nombre(string _nombre);    //Nombre usuario.
 
 private slots:
-
     void on_cerrar_clicked();   //Cierra ventana.
 
 private:

@@ -40,5 +40,7 @@
         <file>Imagenes/musica_nivel.mp3</file>
         <file>Imagenes/musica_final.mp3</file>
         <file>Imagenes/musica_polea.mp3</file>
+        <file>Imagenes/boton_sonidoa.png</file>
+        <file>Imagenes/boton_sonidop.png</file>
     </qresource>
 </RCC>

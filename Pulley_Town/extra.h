@@ -1,3 +1,6 @@
+/*
+Nivel de práctica
+*/
 #ifndef EXTRA_H
 #define EXTRA_H
 

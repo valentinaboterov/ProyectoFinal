@@ -15,6 +15,7 @@ Perdedor::~Perdedor()
     delete ui;
 }
 
+//Recbe porque el jugador perdio y lo muestra en la interfaz
 void Perdedor::Causa(int _mensaje)
 {
     music->play();
@@ -44,13 +45,14 @@ void Perdedor::Causa(int _mensaje)
     }
 }
 
+//Obtiene el nombre dle jugador
 void Perdedor::Nombre(string _nombre)
 {
     QString texto1= QString::fromStdString(_nombre);
     ui->nombre->setText(texto1);
 }
 
-
+//Cierra la ventana
 void Perdedor::on_cerrar_clicked()
 {
     music->stop();

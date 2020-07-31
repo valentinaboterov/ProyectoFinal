@@ -12,6 +12,7 @@ Genera la ventana para comparacion de la polea.
 #include<QMediaPlayer>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include<QThread>
 #include"polea.h"
 #include"ganador.h"
 #include"perdedor.h"

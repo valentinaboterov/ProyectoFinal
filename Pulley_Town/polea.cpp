@@ -1,5 +1,6 @@
 #include "polea.h"
 
+//Inicializacion
 Polea::Polea(int _x,int _y,int _masa1,int _nivel)
 {
     x=_x;
@@ -29,8 +30,12 @@ Polea::Polea(int _x,int _y,int _masa1,int _nivel)
     posB[3]=265;
 }
 
+//Compara si es sufieinte peso y actualiza interfaz
 void Polea::Comparacion()
 {
+    posA[3]=265;
+    posB[3]=265;
+    this->update(posA[2],posA[3],posB[2],posB[3]);
     if(t1<t2){        //No es sufiente peso.
             posA[3]-=100;
             posB[3]+=100;
@@ -43,6 +48,7 @@ void Polea::Comparacion()
     }
 }
 
+//Obtener valores
 int Polea::getx1()
 {
     return posA[2];
@@ -60,6 +66,7 @@ int Polea::gety2()
     return posB[3];
 }
 
+//Graficar
 QRectF Polea::boundingRect() const
 {
     return QRectF(x,y,ancho,alto);
@@ -67,7 +74,7 @@ QRectF Polea::boundingRect() const
 
 void Polea::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::black);        //asigna el color
+    painter->setBrush(Qt::white);        //asigna el color
     painter->drawPixmap(x,y,*pixmap,0,0,ancho,alto);
     painter->drawLine(posA[0],posA[1],posA[2],posA[3]); //dibuja la cuerda
     painter->drawLine(posB[0],posB[1],posB[2],posB[3]); //dibuja la cuerda

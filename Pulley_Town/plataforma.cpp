@@ -1,6 +1,6 @@
 #include "plataforma.h"
 
-
+//Inicializacion
 plataforma::plataforma(int _x, int _y)
 {
     x=_x;
@@ -10,6 +10,7 @@ plataforma::plataforma(int _x, int _y)
     alto=40;
 }
 
+//Grafica
 QRectF plataforma::boundingRect() const
 {
     return QRectF(x,y,ancho,alto);

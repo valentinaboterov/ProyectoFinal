@@ -1,6 +1,7 @@
 #include "niveles.h"
 #include "ui_niveles.h"
 
+//Inicializacion
 Niveles::Niveles(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Niveles)
@@ -48,6 +49,22 @@ Niveles::~Niveles()
 //Variables iniciales para el nivel,creacion de la escena.
 void Niveles::Definicion(int _nivel, int modo)
 {
+    //Inicializacion
+    cargar=0;
+    ui->pausa->setIcon(QPixmap(":/Imagenes/boton_pausa.png"));
+    ui->pausa->setIconSize(QSize(50,40));
+    ui->Guardar->setIcon(QPixmap(":Imagenes/boton_guardar.png"));
+    ui->Guardar->setIconSize(QSize(50,40));
+    ui->Salir->setIcon(QPixmap(":/Imagenes/boton_salir.png"));
+    ui->Salir->setIconSize(QSize(50,40));
+    ui->musica->setIcon(QPixmap(":/Imagenes/boton_sonidoa.png"));
+    ui->musica->setIconSize(QSize(50,40));
+    escena=new QGraphicsScene(x,y,ancho,alto);
+    escena->setBackgroundBrush(QPixmap(":/Imagenes/fondonivel1.png"));
+    ui->graphicsView->setScene(escena);
+    ui->graphicsView->resize(ancho,alto);
+    final=new plataforma(35,680);   //Plataforma.
+    escena->addItem(final);
     music->play();
     dificultad=_nivel;  //Determine que nivel se va a jugar
     modojuego=modo; //Un jugador o 2 jugadores
@@ -66,6 +83,7 @@ void Niveles::Nombres(string _nombre1, string _nombre2)
 //Cuando se carga una partida anterior.
 void Niveles::Cargar(string _nivel, string _bolsas, string _posx, string _posy, string _tiempo)
 {
+    cargar=1;
     int cant=0,pos=0,paque;
     pendulos.clear();
     resortes.clear();
@@ -95,6 +113,8 @@ void Niveles::Cargar(string _nivel, string _bolsas, string _posx, string _posy, 
     cada_nivel();
     //Le da la nueva posicion al personaje y actualiza el tiempo
     personajea->setPos(stoi(_posx),stoi(_posy));
+    personajea->setx(stoi(_posx));
+    personajea->sety(stoi(_posy));
     tiempo=stoi(_tiempo);
     //Elimina los pesos que ya fueron tomados
     if(_bolsas.length()>=1){
@@ -181,6 +201,7 @@ void Niveles::on_Guardar_clicked()
     timer1->stop();
     //Solo se permite guardar partida con un solo jugador.
     if(modojuego==1){   //Multijugador sale QMessageBox.
+        timer1->stop();
         QMessageBox msgBox;
         msgBox.setText("No se permite guardar partidas en modo multijugador. ");
         msgBox.setStandardButtons(QMessageBox::Ok);
@@ -190,26 +211,41 @@ void Niveles::on_Guardar_clicked()
         int elegido = msgBox.exec();
         switch (elegido) {
            case QMessageBox::Ok:
-               this->close();
-               break;
+            timer1->start();
+            break;
          }
     }else{  //Guarda la partida en un archivo de texto.
-        sobreescribir(nombre1);
-        QMessageBox msgBox;
-        msgBox.setText("     Partida guardada. ");
-        msgBox.setStandardButtons(QMessageBox::Ok);
-        msgBox.setDefaultButton(QMessageBox::Ok);
-        msgBox.setWindowTitle("GUARDAR");
-        msgBox.setIconPixmap(QPixmap(":/Imagenes/boton_guardar.png"));
-        int elegido = msgBox.exec();
-        switch (elegido) {
-           case QMessageBox::Ok:
-               this->close();
-               break;
-         }
+        if(cargar==0){  //No es una partida cargada
+            sobreescribir(nombre1);     //Cambia el archivo de texto.
+            QMessageBox msgBox;
+            msgBox.setText("     Partida guardada. ");
+            msgBox.setStandardButtons(QMessageBox::Ok);
+            msgBox.setDefaultButton(QMessageBox::Ok);
+            msgBox.setWindowTitle("GUARDAR");
+            msgBox.setIconPixmap(QPixmap(":/Imagenes/boton_guardar.png"));
+            int elegido = msgBox.exec();
+            switch (elegido) {
+               case QMessageBox::Ok:
+                   this->close();
+                   break;
+             }
+            Reiniciar();        //Como se cierra la pventana se debe reiniciar
+            music->stop();
+        }else{
+            QMessageBox msgBox;
+            msgBox.setText(" No puedes guardar una partida cargada. ");
+            msgBox.setStandardButtons(QMessageBox::Ok);
+            msgBox.setDefaultButton(QMessageBox::Ok);
+            msgBox.setWindowTitle("GUARDAR");
+            msgBox.setIconPixmap(QPixmap(":/Imagenes/boton_guardar.png"));
+            int elegido = msgBox.exec();
+            switch (elegido) {
+               case QMessageBox::Ok:
+                   break;
+             }
+        }
+
     }
-    Reiniciar();
-    music->stop();
 }
 
 //Cierra la ventana y vuelve al inicio.
@@ -245,50 +281,40 @@ void Niveles::sobreescribir(string usuario){
     //Inicializacion de variables.
     string nombre="",nivel="",pesos="",posx="",posy="";
     char linea[200];
-    string linea1="",aux="";
-    bool bandera=false,terminar=true;
-    int cont=0;
-    ifstream original("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Partidas.txt");  //Abre archivo para leer
-    ofstream temp("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/temporal.txt"); //Copia para modificar saldo.
-    if(!original || !temp){         //Mira si se logró abrir los archivos exitosamente.
-        cout<<"Error al abrir el archivo"<<endl;
-        exit(2);
-    }
-    while(!original.eof()){  //Recorre todo el archivo linea a linea y lo guarda en variable linea.
-        original.getline(linea,sizeof (linea));
-        linea1=linea;  //Lo convierte a string.
-        for(int i=0;i<3;i++){
-            if(linea1[i]=='/n'){//Si la linea a leer esta en blanco ya termino el archivo.
-                cont+=1;
-            }if(cont>1){
-                terminar=false;  //Vuelve la bandera falsa para romper el ciclo.
-                break;
-            }
+    string linea1="",aux="",usuario1;
+    bool terminar=true,ban1=true;
+    ifstream original("Partidas.txt");  //Abre archivo para leer
+    ofstream temp("temporal.txt"); //Copia para modificar saldo.
+    while(!original.eof()){
+        original.getline(linea,sizeof (linea)); //Accede a cada linea del archivo.
+        usuario1=Buscar(linea,1);  //Usuario de la linea
+        if(usuario!=usuario1){  //Si son diferentes la bandera 1 es falsa.
+               ban1=false;
+        }else{
+               ban1=true;
         }
-        if(terminar==false){
+        if(ban1==true){ //Si encuentra el usario guarda la partida.
+            aux=std::to_string(dificultad)+'/'+bolsas+'/'+std::to_string(personajea->getx())+'/'+std::to_string(personajea->gety())+"/"+std::to_string(tiempo)+"/";
+            temp<<nombre1<<"/"<<endl;
+            temp<<aux<<endl;    //Cambia la linea deseada en el archivo temporal.
+            terminar=false;
+        }else{
+            temp<<linea<<endl;
+        }
+        if(usuario1==""){
             break;
         }
-        if(Buscar(linea1,1)!=usuario){
-            bandera=false;
-        }else{
-            bandera=true;
-            }
-        if(bandera==true){  //Esta es el usuario que necesitamos
-            if(usuario==""){  //Esta leyendo linea vacía, rompe el ciclo.
-                break;
-            }else{
-            aux=std::to_string(dificultad)+'/'+bolsas+'/'+std::to_string(personajea->getx())+'/'+std::to_string(personajea->gety())+"/"+std::to_string(tiempo)+"/";  //Variable para modificador el saldo.
-            temp<<nombre1<<"/";
-            temp<<endl<<aux<<endl;    //Cambia la linea deseada en el archivo temporal.
-            }
-        }else{
-            temp<<linea1<<endl;  //Si no es el usuario guarda la misma linea en el archivo temporal.
-        }
+    }
+    if(terminar==true){     //Nunca encontro el usuario.
+        aux=std::to_string(dificultad)+'/'+bolsas+'/'+std::to_string(personajea->getx())+'/'+std::to_string(personajea->gety())+"/"+std::to_string(tiempo)+"/";
+        temp<<nombre1<<"/";
+        temp<<endl<<aux;
     }
     original.close();temp.close();  //Cierra archivos
-    llenararchivo();
+    llenararchivo();  
 }
 
+//Reinicia valores al cerrar la ventana
 void Niveles::Reiniciar()
 {
     timer->stop();
@@ -308,15 +334,14 @@ void Niveles::Reiniciar()
        escena->removeItem(personajea);
        escena->removeItem(personajeb);
     }
-
 }
 
 //Intercambia archivo temporal por el original.
 void Niveles::llenararchivo(){
     char linea[200];
     string linea1="";
-    ifstream temp("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/temporal.txt");  //Abre archivo para leer
-    ofstream sudo("C:/Users/WIN10 PRO/Desktop/ProyectoFinal/Pulley_Town/Partidas.txt");  //Archivo final con informacion actualizada.
+    ifstream temp("temporal.txt");  //Abre archivo para leer
+    ofstream sudo("Partidas.txt");  //Archivo final con informacion actualizada.
     while(!temp.eof()){  //Hasta que llegue al final del archivo
         temp.getline(linea,sizeof (linea));     //Toma linea a linea
         linea1=linea;

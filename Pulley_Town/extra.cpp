@@ -1,6 +1,7 @@
 #include "extra.h"
 #include "ui_extra.h"
 
+//Inicializacion
 Extra::Extra(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Extra)
@@ -10,10 +11,6 @@ Extra::Extra(QWidget *parent) :
     escena->setSceneRect(0,0,500,500);
     ui->graphicsView->setScene(escena);
     ui->graphicsView->resize(500,500);
-    personaje=new Personaje(10,60,0);
-    escena->addItem(personaje);
-    personaje->setFlag(QGraphicsItem::ItemIsFocusable);
-    personaje->setFocus();
     this->resize(500,500);
     timer=new QTimer(this);    //Timer para objetos.
     connect(timer,SIGNAL(timeout()),this,SLOT(actualizar()));
@@ -32,6 +29,7 @@ Extra::~Extra()
     delete ui;
 }
 
+//Mostrar cuadro de texto con informacion antes de empezar
 void Extra::Mensaje()
 {
     resortes.clear();
@@ -40,9 +38,16 @@ void Extra::Mensaje()
     h_arriba.clear();
     h_abajo.clear();
     escena->setBackgroundBrush(QBrush(QImage(":/Imagenes/fondonivel1.png")));
-    personaje->setPos(10,60);
+    escena->setSceneRect(0,0,500,500);
+    ui->graphicsView->setScene(escena);
+    ui->graphicsView->resize(500,500);
+    personaje=new Personaje(10,70,0);
+    escena->addItem(personaje);
+    personaje->setFlag(QGraphicsItem::ItemIsFocusable);
+    personaje->setFocus();
+    personaje->setPos(10,70);
     personaje->setx(10);
-    personaje->sety(60);
+    personaje->sety(70);
     QMessageBox msgBox;
     msgBox.setText("Vuelvete experto en esquivar resortes, salta para subir a la plataforma.  (D: derecha, A: izquierda, S: arriba,S: abajo,J: Saltar)");
     msgBox.setIconPixmap(QPixmap(":/Imagenes/logo_practica.png"));
@@ -52,6 +57,7 @@ void Extra::Mensaje()
     int elegido = msgBox.exec();
     switch (elegido) {
        case QMessageBox::Ok:
+        //Forma el nivel
             Nivel();
             this->show();
     }
@@ -63,10 +69,11 @@ void Extra::actualizar(){
         resortes.at(i)->actualizar();
     }
 }
+
+//Forma las paredes y agrega los objetos a la escena
 void Extra::Nivel()
 {
-    personaje->setPos(10,60);
-    ui->graphicsView->centerOn(personaje);
+    personaje->setPos(10,70);
     h_arriba.push_back(new Paredes(480,10,-10,-10)); escena->addItem(h_arriba.back());
     h_abajo.push_back(new Paredes(480,10,-10,-20)); escena->addItem(h_abajo.back());
 
@@ -141,6 +148,10 @@ void Extra::colisiones()
    for(int i=0;i<resortes.length();i++){
        if(personaje->collidesWithItem(resortes.at(i))){
            msgBox.setText("Chocaste contra un resorte.Perdiste.");
+           for(int i=0;i<resortes.length();i++){
+               escena->removeItem(resortes.at(i));
+           }
+           escena->removeItem(personaje);
            msgBox.setStandardButtons(QMessageBox::Ok);
            msgBox.setDefaultButton(QMessageBox::Ok);
            msgBox.setWindowTitle("PRACTICA");
@@ -153,6 +164,7 @@ void Extra::colisiones()
    }
 }
 
+//Movimiento personaje
 void Extra::keyPressEvent(QKeyEvent *evento)
 {
     if(evento->key()==Qt::Key_D){
@@ -171,6 +183,7 @@ void Extra::keyPressEvent(QKeyEvent *evento)
         colisiones();
     }if(evento->key()==Qt::Key_J){
         personaje->Saltar();
+        //Debe saltar para poder subir a la plataforma
         if(personaje->collidesWithItem(final)){
             QMessageBox msgBox;
             msgBox.setText("Felicitaciones superaste todos los obstáculos.");

@@ -8,6 +8,7 @@ using namespace std;
 #include<QMediaPlayer>
 #include"niveles.h"
 #include"cargar.h"
+#include"instrucciones.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -24,11 +25,16 @@ public:
     ~Modojuego();
     void Nombre(string _usuario1,int _tipousuario,int _veces);
     void Modo(int _modo);
+    QMediaPlayer * music = new QMediaPlayer;
 private slots:
 
     void on_Empezar_clicked();  //Empezar juego nuevo
 
     void on_Cargar_clicked();   //Cargar juego antiguo
+
+    void on_instruccione_clicked();
+
+    void on_cerrar_clicked();
 
 private:
     Ui::Modojuego *ui;
@@ -37,8 +43,9 @@ private:
     string usuario1,usuario2;
     void MensajesInterfaz();        //Segun el modo muestra mensajes en pantalla.
     Niveles *nivel=new Niveles();
+    instrucciones *instruccion=new instrucciones();
     Cargar *carga=new Cargar;
-    QMediaPlayer * music = new QMediaPlayer;
+
 };
 
 #endif // MODOJUEGO_H

@@ -20,8 +20,8 @@ SOURCES += \
     cargar.cpp \
     creditos.cpp \
     extra.cpp \
-    friccion.cpp \
     ganador.cpp \
+    instrucciones.cpp \
     main.cpp \
     modojuego.cpp \
     niveles.cpp \
@@ -42,8 +42,8 @@ HEADERS += \
     cargar.h \
     creditos.h \
     extra.h \
-    friccion.h \
     ganador.h \
+    instrucciones.h \
     modojuego.h \
     niveles.h \
     paredes.h \
@@ -64,6 +64,7 @@ FORMS += \
     creditos.ui \
     extra.ui \
     ganador.ui \
+    instrucciones.ui \
     modojuego.ui \
     niveles.ui \
     perdedor.ui \

@@ -42,5 +42,6 @@
         <file>Imagenes/musica_polea.mp3</file>
         <file>Imagenes/boton_sonidoa.png</file>
         <file>Imagenes/boton_sonidop.png</file>
+        <file>Imagenes/instrucciones.jpeg</file>
     </qresource>
 </RCC>

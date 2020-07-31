@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Perdedor</class>
  <widget class="QWidget" name="Perdedor">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -48,7 +51,7 @@
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>500</y>
+     <y>520</y>
      <width>131</width>
      <height>51</height>
     </rect>
@@ -67,8 +70,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>450</y>
+     <x>90</x>
+     <y>490</y>
      <width>231</width>
      <height>20</height>
     </rect>
@@ -119,9 +122,9 @@ background-color: rgb(214, 214, 214);</string>
   <widget class="QLabel" name="mensaje1">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>390</y>
-     <width>351</width>
+     <width>371</width>
      <height>20</height>
     </rect>
    </property>
@@ -148,6 +151,24 @@ background-color: rgb(214, 214, 214);
     <string notr="true">color: rgb(255, 0, 127);
 background-color: rgb(214, 214, 214);
 font: 8pt &quot;8514oem&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>450</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 127);
+font: 8pt &quot;8514oem&quot;;
+background-color: rgb(214, 214, 214);</string>
    </property>
    <property name="text">
     <string/>

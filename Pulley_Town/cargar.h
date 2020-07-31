@@ -26,6 +26,8 @@ public:
 private slots:
     void on_pushButton_clicked();   //Boton para cargar la partida.
 
+    void on_regresar_clicked();
+
 private:
     Ui::Cargar *ui;
     string nivel,pesos,x,y,t,nombre,bolsas;

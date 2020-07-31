@@ -1,5 +1,6 @@
 #include "personaje.h"
 
+//Inicialiacion
 Personaje::Personaje(int _tipo,int _posx,int _posy)
 {
     timer = new QTimer();   //Variable para cambiar imagenes con el tiempo
@@ -92,6 +93,7 @@ void Personaje::puente()
     posx+=40;
 }
 
+//Movimiento con friccion
 void Personaje::friccion()
 {
     pixmap->load(":/Imagenes/derecha1.png");
@@ -109,6 +111,7 @@ void Personaje::Saltar(){
     t1=0;
 }
 
+//Obtener valores
 int Personaje::getx()
 {
     return posx;

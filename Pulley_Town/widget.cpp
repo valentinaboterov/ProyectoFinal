@@ -15,13 +15,13 @@ Widget::~Widget()
     delete ui;
 }
 
-
+//Boton nuevo usario
 void Widget::on_Registro_clicked()
 {
     registro.Registrar(0,0);
 
 }
-
+//Boton usuario antiguo
 void Widget::on_Inicarsesion_clicked()
 {
      QMessageBox msgBox;
@@ -40,11 +40,13 @@ void Widget::on_Inicarsesion_clicked()
       }
 
 }
+//Ver creditos
 void Widget::on_Creditos_clicked()
 {
     creditos.show();
 }
 
+//Practicar
 void Widget::on_practicar_clicked()
 {
     extra->Mensaje();

@@ -1,5 +1,6 @@
 #include "puente.h"
 
+//Inicilizacion
 Puente::Puente(int _x,int _y)
 {
     x=_x;
@@ -8,6 +9,7 @@ Puente::Puente(int _x,int _y)
     ancho=46;
     alto=20;
 }
+//Grafica
 QRectF Puente::boundingRect() const
 {
     return QRectF(x,y,ancho,alto);

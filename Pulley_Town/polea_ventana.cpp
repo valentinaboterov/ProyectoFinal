@@ -1,6 +1,7 @@
 #include "polea_ventana.h"
 #include "ui_polea_ventana.h"
 
+//Inicializacion
 Polea_ventana::Polea_ventana(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Polea_ventana)
@@ -24,6 +25,7 @@ Polea_ventana::~Polea_ventana()
     delete ui;
 }
 
+//Valores a comprar(los que obtuvo el usuario)
 void Polea_ventana::valores(int _masa2, int _nivel)
 {
     music->play();
@@ -42,6 +44,7 @@ void Polea_ventana::valores(int _masa2, int _nivel)
 int Polea_ventana::cerrar()
 {
     if(polea->gety1()<polea->gety2()){  //Suficiente peso.
+        QThread::sleep(4);
         this->close();
         pierde->Causa(3);
         pierde->Nombre(nombre);
@@ -49,6 +52,7 @@ int Polea_ventana::cerrar()
         music->stop();
     }
     else{
+        QThread::sleep(4);
         this->close();
         gana->Nombre(nombre);
         gana->show();

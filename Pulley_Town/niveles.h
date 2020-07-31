@@ -50,7 +50,7 @@ public:
     QMediaPlayer * music = new QMediaPlayer;
 private:
     Ui::Niveles *ui;
-    int tiempo,paquetes,paquetes1,kilos=10;
+    int tiempo,paquetes,paquetes1,kilos=10,cargar=0;
     string nombre1,nombre2,bolsas="";
     float x,y,ancho,alto;
     Perdedor *perdedor;

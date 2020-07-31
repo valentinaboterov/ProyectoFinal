@@ -27,7 +27,7 @@ void Cargar::Partida(string _nombre)
     bool bandera=false,terminar=true;
     int cont=0;
     numero=0;
-    ifstream original("Partidas.txt");  //Abre archivo para leer
+    ifstream original("../Pulley_Town/Partidas.txt");  //Abre archivo para leer
     if(!original){         //Mira si se logró abrir los archivos exitosamente.
         exit(1);
     }
@@ -113,8 +113,8 @@ void Cargar::llenararchivo()
 {
     char linea[200];
     string linea1="";
-    ifstream temp("temporal.txt");  //Abre archivo para leer
-    ofstream sudo("Partidas.txt");  //Archivo final con informacion actualizada.
+    ifstream temp("../Pulley_Town/temporal.txt");  //Abre archivo para leer
+    ofstream sudo("../Pulley_Town/Partidas.txt");  //Archivo final con informacion actualizada.
     while(!temp.eof()){  //Hasta que llegue al final del archivo
         temp.getline(linea,sizeof (linea));     //Toma linea a linea
         linea1=linea;
@@ -126,7 +126,6 @@ void Cargar::llenararchivo()
 // Boton para cargar la partida
 void Cargar::on_pushButton_clicked()
 {
-    ui->mensaje->setText("");
     if(numero==0){
         ui->mensaje->setText("No tienes partidas guardadas.");
     }
@@ -142,8 +141,8 @@ void Cargar::on_pushButton_clicked()
             bool bandera=false,encontrar=false,terminar=true;
             int cont=0,contador=0;
             numero=0;
-            ifstream original("Partidas.txt");  //Abre archivo para leer
-            ofstream temp("temporal.txt"); //Copia para modificar saldo.
+            ifstream original("../Pulley_Town/Partidas.txt");  //Abre archivo para leer
+            ofstream temp("../Pulley_Town/temporal.txt"); //Copia para modificar saldo.
             if(!original || !temp){         //Mira si se logró abrir los archivos exitosamente.
                 cout<<"Error al abrir el archivo"<<endl;
                 exit(2);

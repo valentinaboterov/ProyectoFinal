@@ -144,14 +144,15 @@ font: 8pt &quot;8514oem&quot;;</string>
   <widget class="QLabel" name="mensaje">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>790</y>
+     <x>170</x>
+     <y>770</y>
      <width>411</width>
      <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(85, 255, 0);
+background-color: rgb(240, 240, 240);
 font: 75 8pt &quot;8514oem&quot;;
 </string>
    </property>

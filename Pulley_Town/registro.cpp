@@ -25,7 +25,7 @@ bool Registro::validacion(string _usuario,string _clave)
     ui->lineEdit->setText("");
     ui->lineEdit_2->setText("");
     if(tipojugador==0){ //Usuario nuevo, se agrega al final del documento
-        ifstream base("Usuarios.txt");  //Abre el archivo
+        ifstream base("../Pulley_Town/Usuarios.txt");  //Abre el archivo
         int lonu=_usuario.length();
         while(!base.eof()){
             base.getline(linea,sizeof (linea)); //Accede a cada linea del archivo.
@@ -59,7 +59,7 @@ bool Registro::validacion(string _usuario,string _clave)
                  ui->lineEdit_2->setText("");
                  return false;
             }else{
-                outfile.open("Usuarios.txt",std::fstream::app);  //Lo abre como archivo de salida y escribe al final(app).
+                outfile.open("../Pulley_Town/Usuarios.txt",std::fstream::app);  //Lo abre como archivo de salida y escribe al final(app).
                 if(!outfile.is_open()){          //Si no abrio exitosamente se acaba el programa.
                        exit(1);
                  }
@@ -71,7 +71,7 @@ bool Registro::validacion(string _usuario,string _clave)
             }
          }
     }else{      //Usuario antiguo,Se valida la cuenta
-        ifstream base("Usuarios.txt");  //Abre el archivo
+        ifstream base("../Pulley_Town/Usuarios.txt");  //Abre el archivo
         int lonu=_usuario.length(),lonc=_clave.length();
         while(!base.eof()){
             base.getline(linea,sizeof (linea)); //Accede a cada linea del archivo.

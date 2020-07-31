@@ -283,8 +283,8 @@ void Niveles::sobreescribir(string usuario){
     char linea[200];
     string linea1="",aux="",usuario1;
     bool terminar=true,ban1=true;
-    ifstream original("Partidas.txt");  //Abre archivo para leer
-    ofstream temp("temporal.txt"); //Copia para modificar saldo.
+    ifstream original("../Pulley_Town/Partidas.txt");  //Abre archivo para leer
+    ofstream temp("../Pulley_Town/temporal.txt"); //Copia para modificar
     while(!original.eof()){
         original.getline(linea,sizeof (linea)); //Accede a cada linea del archivo.
         usuario1=Buscar(linea,1);  //Usuario de la linea
@@ -299,11 +299,13 @@ void Niveles::sobreescribir(string usuario){
             temp<<aux<<endl;    //Cambia la linea deseada en el archivo temporal.
             terminar=false;
         }else{
-            temp<<linea<<endl;
+            if(usuario1==""){
+                break;
+            }else{
+                temp<<linea<<endl;
+            }
         }
-        if(usuario1==""){
-            break;
-        }
+
     }
     if(terminar==true){     //Nunca encontro el usuario.
         aux=std::to_string(dificultad)+'/'+bolsas+'/'+std::to_string(personajea->getx())+'/'+std::to_string(personajea->gety())+"/"+std::to_string(tiempo)+"/";
@@ -340,8 +342,8 @@ void Niveles::Reiniciar()
 void Niveles::llenararchivo(){
     char linea[200];
     string linea1="";
-    ifstream temp("temporal.txt");  //Abre archivo para leer
-    ofstream sudo("Partidas.txt");  //Archivo final con informacion actualizada.
+    ifstream temp("../Pulley_Town/temporal.txt");  //Abre archivo para leer
+    ofstream sudo("../Pulley_Town/Partidas.txt");  //Archivo final con informacion actualizada.
     while(!temp.eof()){  //Hasta que llegue al final del archivo
         temp.getline(linea,sizeof (linea));     //Toma linea a linea
         linea1=linea;

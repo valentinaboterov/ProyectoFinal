@@ -8,7 +8,7 @@ Dibuja las paredes del laberinto.
 #include <QObject>
 #include <QGraphicsItem>
 #include <QPainter>
-class Paredes:public QGraphicsItem
+class Paredes:  public QGraphicsItem
 {
     int w,h;    //Ancho y alto
     int posx, posy;     //Posiciones
